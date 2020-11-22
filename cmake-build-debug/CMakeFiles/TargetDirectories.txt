@@ -1,0 +1,3 @@
+/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/EasyBank.dir

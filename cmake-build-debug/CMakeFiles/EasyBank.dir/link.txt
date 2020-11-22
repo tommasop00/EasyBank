@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/EasyBank.dir/main.cpp.o  -o EasyBank 
