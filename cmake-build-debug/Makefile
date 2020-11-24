@@ -143,6 +143,114 @@ EasyBank/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/build
 .PHONY : EasyBank/fast
 
+Account.o: Account.cpp.o
+
+.PHONY : Account.o
+
+# target to build an object file
+Account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.o
+.PHONY : Account.cpp.o
+
+Account.i: Account.cpp.i
+
+.PHONY : Account.i
+
+# target to preprocess a source file
+Account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.i
+.PHONY : Account.cpp.i
+
+Account.s: Account.cpp.s
+
+.PHONY : Account.s
+
+# target to generate assembly for a file
+Account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.s
+.PHONY : Account.cpp.s
+
+Bank.o: Bank.cpp.o
+
+.PHONY : Bank.o
+
+# target to build an object file
+Bank.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.o
+.PHONY : Bank.cpp.o
+
+Bank.i: Bank.cpp.i
+
+.PHONY : Bank.i
+
+# target to preprocess a source file
+Bank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.i
+.PHONY : Bank.cpp.i
+
+Bank.s: Bank.cpp.s
+
+.PHONY : Bank.s
+
+# target to generate assembly for a file
+Bank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.s
+.PHONY : Bank.cpp.s
+
+Private.o: Private.cpp.o
+
+.PHONY : Private.o
+
+# target to build an object file
+Private.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.o
+.PHONY : Private.cpp.o
+
+Private.i: Private.cpp.i
+
+.PHONY : Private.i
+
+# target to preprocess a source file
+Private.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.i
+.PHONY : Private.cpp.i
+
+Private.s: Private.cpp.s
+
+.PHONY : Private.s
+
+# target to generate assembly for a file
+Private.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.s
+.PHONY : Private.cpp.s
+
+Public.o: Public.cpp.o
+
+.PHONY : Public.o
+
+# target to build an object file
+Public.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.o
+.PHONY : Public.cpp.o
+
+Public.i: Public.cpp.i
+
+.PHONY : Public.i
+
+# target to preprocess a source file
+Public.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.i
+.PHONY : Public.cpp.i
+
+Public.s: Public.cpp.s
+
+.PHONY : Public.s
+
+# target to generate assembly for a file
+Public.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.s
+.PHONY : Public.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +287,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... EasyBank"
+	@echo "... Account.o"
+	@echo "... Account.i"
+	@echo "... Account.s"
+	@echo "... Bank.o"
+	@echo "... Bank.i"
+	@echo "... Bank.s"
+	@echo "... Private.o"
+	@echo "... Private.i"
+	@echo "... Private.s"
+	@echo "... Public.o"
+	@echo "... Public.i"
+	@echo "... Public.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -82,7 +82,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account.cpp">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account.h">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Bank.cpp">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Bank.h">
+			<Option target="EasyBank"/>
+		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Private.cpp">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Private.h">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Public.cpp">
+			<Option target="EasyBank"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Public.h">
 			<Option target="EasyBank"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h">
