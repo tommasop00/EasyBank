@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named core
+
+# Build rule for target.
+core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 core
+.PHONY : core
+
+# fast build rule for target.
+core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/build
+.PHONY : core/fast
+
+#=============================================================================
 # Target rules for targets named EasyBank
 
 # Build rule for target.
@@ -143,13 +156,52 @@ EasyBank/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/build
 .PHONY : EasyBank/fast
 
+#=============================================================================
+# Target rules for targets named runEasyBankTest
+
+# Build rule for target.
+runEasyBankTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runEasyBankTest
+.PHONY : runEasyBankTest
+
+# fast build rule for target.
+runEasyBankTest/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runEasyBankTest.dir/build.make test/CMakeFiles/runEasyBankTest.dir/build
+.PHONY : runEasyBankTest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest_main.dir/build.make test/lib/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest.dir/build.make test/lib/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
 Account.o: Account.cpp.o
 
 .PHONY : Account.o
 
 # target to build an object file
 Account.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.o
 .PHONY : Account.cpp.o
 
 Account.i: Account.cpp.i
@@ -158,7 +210,7 @@ Account.i: Account.cpp.i
 
 # target to preprocess a source file
 Account.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.i
 .PHONY : Account.cpp.i
 
 Account.s: Account.cpp.s
@@ -167,7 +219,7 @@ Account.s: Account.cpp.s
 
 # target to generate assembly for a file
 Account.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Account.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.s
 .PHONY : Account.cpp.s
 
 Bank.o: Bank.cpp.o
@@ -176,7 +228,7 @@ Bank.o: Bank.cpp.o
 
 # target to build an object file
 Bank.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.o
 .PHONY : Bank.cpp.o
 
 Bank.i: Bank.cpp.i
@@ -185,7 +237,7 @@ Bank.i: Bank.cpp.i
 
 # target to preprocess a source file
 Bank.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.i
 .PHONY : Bank.cpp.i
 
 Bank.s: Bank.cpp.s
@@ -194,7 +246,7 @@ Bank.s: Bank.cpp.s
 
 # target to generate assembly for a file
 Bank.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Bank.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.s
 .PHONY : Bank.cpp.s
 
 Private.o: Private.cpp.o
@@ -203,7 +255,7 @@ Private.o: Private.cpp.o
 
 # target to build an object file
 Private.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.o
 .PHONY : Private.cpp.o
 
 Private.i: Private.cpp.i
@@ -212,7 +264,7 @@ Private.i: Private.cpp.i
 
 # target to preprocess a source file
 Private.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.i
 .PHONY : Private.cpp.i
 
 Private.s: Private.cpp.s
@@ -221,7 +273,7 @@ Private.s: Private.cpp.s
 
 # target to generate assembly for a file
 Private.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Private.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.s
 .PHONY : Private.cpp.s
 
 Public.o: Public.cpp.o
@@ -230,7 +282,7 @@ Public.o: Public.cpp.o
 
 # target to build an object file
 Public.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.o
 .PHONY : Public.cpp.o
 
 Public.i: Public.cpp.i
@@ -239,7 +291,7 @@ Public.i: Public.cpp.i
 
 # target to preprocess a source file
 Public.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.i
 .PHONY : Public.cpp.i
 
 Public.s: Public.cpp.s
@@ -248,7 +300,7 @@ Public.s: Public.cpp.s
 
 # target to generate assembly for a file
 Public.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/EasyBank.dir/build.make CMakeFiles/EasyBank.dir/Public.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.s
 .PHONY : Public.cpp.s
 
 main.o: main.cpp.o
@@ -287,6 +339,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... EasyBank"
+	@echo "... core"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... runEasyBankTest"
 	@echo "... Account.o"
 	@echo "... Account.i"
 	@echo "... Account.s"

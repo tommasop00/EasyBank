@@ -1,8 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/EasyBank.dir/Account.cpp.o"
-  "CMakeFiles/EasyBank.dir/Bank.cpp.o"
-  "CMakeFiles/EasyBank.dir/Private.cpp.o"
-  "CMakeFiles/EasyBank.dir/Public.cpp.o"
   "CMakeFiles/EasyBank.dir/main.cpp.o"
   "EasyBank"
   "EasyBank.pdb"

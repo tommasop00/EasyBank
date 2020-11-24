@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/EasyBank.dir/main.cpp.o CMakeFiles/EasyBank.dir/Bank.cpp.o CMakeFiles/EasyBank.dir/Account.cpp.o CMakeFiles/EasyBank.dir/Private.cpp.o CMakeFiles/EasyBank.dir/Public.cpp.o  -o EasyBank 
+/usr/bin/c++  -g   CMakeFiles/EasyBank.dir/main.cpp.o  -o EasyBank  libcore.a 
