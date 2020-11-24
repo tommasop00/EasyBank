@@ -38,8 +38,9 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
+  # Include the install script for each subdirectory.
   include("/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/cmake_install.cmake")
+
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
