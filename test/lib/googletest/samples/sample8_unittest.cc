@@ -36,7 +36,6 @@
 #include "prime_tables.h"
 
 #include "gtest/gtest.h"
-
 namespace {
 
 // Suppose we want to introduce a new, improved implementation of PrimeTable
@@ -46,40 +45,40 @@ namespace {
 // appropriate under the circumstances. But in low memory conditions, it can be
 // told to instantiate without PrecalcPrimeTable instance at all and use only
 // OnTheFlyPrimeTable.
-    class HybridPrimeTable : public PrimeTable {
-    public:
-        HybridPrimeTable(bool force_on_the_fly, int max_precalculated)
-                : on_the_fly_impl_(new OnTheFlyPrimeTable),
-                  precalc_impl_(force_on_the_fly
-                                ? nullptr
-                                : new PreCalculatedPrimeTable(max_precalculated)),
-                  max_precalculated_(max_precalculated) {}
+class HybridPrimeTable : public PrimeTable {
+public:
+    HybridPrimeTable(bool force_on_the_fly, int max_precalculated)
+            : on_the_fly_impl_(new OnTheFlyPrimeTable),
+              precalc_impl_(force_on_the_fly
+                            ? nullptr
+                            : new PreCalculatedPrimeTable(max_precalculated)),
+              max_precalculated_(max_precalculated) {}
 
-        ~HybridPrimeTable() override {
-            delete on_the_fly_impl_;
-            delete precalc_impl_;
-        }
+    ~HybridPrimeTable() override {
+        delete on_the_fly_impl_;
+        delete precalc_impl_;
+    }
 
-        bool IsPrime(int n) const override {
-            if (precalc_impl_ != nullptr && n < max_precalculated_)
-                return precalc_impl_->IsPrime(n);
-            else
-                return on_the_fly_impl_->IsPrime(n);
-        }
+    bool IsPrime(int n) const override {
+        if (precalc_impl_ != nullptr && n < max_precalculated_)
+            return precalc_impl_->IsPrime(n);
+        else
+            return on_the_fly_impl_->IsPrime(n);
+    }
 
-        int GetNextPrime(int p) const override {
-            int next_prime = -1;
-            if (precalc_impl_ != nullptr && p < max_precalculated_)
-                next_prime = precalc_impl_->GetNextPrime(p);
+    int GetNextPrime(int p) const override {
+        int next_prime = -1;
+        if (precalc_impl_ != nullptr && p < max_precalculated_)
+            next_prime = precalc_impl_->GetNextPrime(p);
 
-            return next_prime != -1 ? next_prime : on_the_fly_impl_->GetNextPrime(p);
-        }
+        return next_prime != -1 ? next_prime : on_the_fly_impl_->GetNextPrime(p);
+    }
 
-    private:
-        OnTheFlyPrimeTable *on_the_fly_impl_;
-        PreCalculatedPrimeTable *precalc_impl_;
-        int max_precalculated_;
-    };
+private:
+    OnTheFlyPrimeTable *on_the_fly_impl_;
+    PreCalculatedPrimeTable *precalc_impl_;
+    int max_precalculated_;
+};
 
     using ::testing::TestWithParam;
     using ::testing::Bool;

@@ -38,7 +38,6 @@
 #include "prime_tables.h"
 
 #include "gtest/gtest.h"
-
 namespace {
 
     using ::testing::TestWithParam;

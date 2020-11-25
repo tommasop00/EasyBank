@@ -47,34 +47,20 @@
 #include "src/gtest-internal-inl.h"
 
 namespace testing {
-    namespace internal {
-        namespace {
+namespace internal {
+    namespace {
 
 // Turns the given relative path into an absolute path.
-            FilePath GetAbsolutePathOf(const FilePath &relative_path) {
-                return FilePath::ConcatPaths(FilePath::GetCurrentDir(), relative_path);
-            }
+        FilePath GetAbsolutePathOf(const FilePath &relative_path) {
+            return FilePath::ConcatPaths(FilePath::GetCurrentDir(), relative_path);
+        }
 
 // Testing UnitTestOptions::GetOutputFormat/GetOutputFile.
 
-            TEST(XmlOutputTest, GetOutputFormatDefault
-            ) {
-            GTEST_FLAG(output) = "";
-            EXPECT_STREQ("",
-
-            UnitTestOptions::GetOutputFormat()
-
-            .
-
-            c_str()
-
-            );
-        }
-
-        TEST(XmlOutputTest, GetOutputFormat
+        TEST(XmlOutputTest, GetOutputFormatDefault
         ) {
-        GTEST_FLAG(output) = "xml:filename";
-        EXPECT_STREQ("xml",
+        GTEST_FLAG(output) = "";
+        EXPECT_STREQ("",
 
         UnitTestOptions::GetOutputFormat()
 
@@ -84,6 +70,20 @@ namespace testing {
 
         );
     }
+
+    TEST(XmlOutputTest, GetOutputFormat
+    ) {
+    GTEST_FLAG(output) = "xml:filename";
+    EXPECT_STREQ("xml",
+
+    UnitTestOptions::GetOutputFormat()
+
+    .
+
+    c_str()
+
+    );
+}
 
     TEST(XmlOutputTest, GetOutputFileDefault
     ) {

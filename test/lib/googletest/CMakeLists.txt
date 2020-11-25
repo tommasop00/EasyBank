@@ -68,18 +68,18 @@ endif ()
 # These commands only run if this is the main project
 if (CMAKE_PROJECT_NAME STREQUAL "gtest" OR CMAKE_PROJECT_NAME STREQUAL "googletest-distribution")
 
-  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to
-  # make it prominent in the GUI.
-  option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)
+    # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to
+    # make it prominent in the GUI.
+    option(BUILD_SHARED_LIBS "Build shared libraries (DLLs)." OFF)
 
 else ()
 
-  mark_as_advanced(
-          gtest_force_shared_crt
-          gtest_build_tests
-          gtest_build_samples
-          gtest_disable_pthreads
-          gtest_hide_internal_symbols)
+    mark_as_advanced(
+            gtest_force_shared_crt
+            gtest_build_tests
+            gtest_build_samples
+            gtest_disable_pthreads
+            gtest_hide_internal_symbols)
 
 endif ()
 
@@ -135,12 +135,12 @@ set_target_properties(gtest_main PROPERTIES VERSION ${GOOGLETEST_VERSION})
 # to the targets for when we are part of a parent build (ie being pulled
 # in via add_subdirectory() rather than being a standalone build).
 if (DEFINED CMAKE_VERSION AND NOT "${CMAKE_VERSION}" VERSION_LESS "2.8.11")
-  target_include_directories(gtest SYSTEM INTERFACE
-          "$<BUILD_INTERFACE:${gtest_build_include_dirs}>"
-          "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
-  target_include_directories(gtest_main SYSTEM INTERFACE
-          "$<BUILD_INTERFACE:${gtest_build_include_dirs}>"
-          "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
+    target_include_directories(gtest SYSTEM INTERFACE
+            "$<BUILD_INTERFACE:${gtest_build_include_dirs}>"
+            "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
+    target_include_directories(gtest_main SYSTEM INTERFACE
+            "$<BUILD_INTERFACE:${gtest_build_include_dirs}>"
+            "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
 endif ()
 target_link_libraries(gtest_main PUBLIC gtest)
 
@@ -223,10 +223,10 @@ if (gtest_build_tests)
 
   # MSVC 7.1 does not support STL with exceptions disabled.
   if (NOT MSVC OR MSVC_VERSION GREATER 1310)
-    cxx_library(gtest_no_exception "${cxx_no_exception}"
-            src/gtest-all.cc)
-    cxx_library(gtest_main_no_exception "${cxx_no_exception}"
-            src/gtest-all.cc src/gtest_main.cc)
+      cxx_library(gtest_no_exception "${cxx_no_exception}"
+              src/gtest-all.cc)
+      cxx_library(gtest_main_no_exception "${cxx_no_exception}"
+              src/gtest-all.cc src/gtest_main.cc)
   endif ()
   cxx_library(gtest_main_no_rtti "${cxx_no_rtti}"
           src/gtest-all.cc src/gtest_main.cc)
@@ -261,11 +261,11 @@ if (gtest_build_tests)
 
   # Visual Studio .NET 2003 does not support STL with exceptions disabled.
   if (NOT MSVC OR MSVC_VERSION GREATER 1310)  # 1310 is Visual Studio .NET 2003
-    cxx_executable_with_flags(
-            googletest-catch-exceptions-no-ex-test_
-            "${cxx_no_exception}"
-            gtest_main_no_exception
-            test/googletest-catch-exceptions-test_.cc)
+      cxx_executable_with_flags(
+              googletest-catch-exceptions-no-ex-test_
+              "${cxx_no_exception}"
+              gtest_main_no_exception
+              test/googletest-catch-exceptions-test_.cc)
   endif ()
 
   cxx_executable_with_flags(
@@ -303,6 +303,7 @@ if (gtest_build_tests)
             PROPERTIES
             COMPILE_FLAGS "${cxx_no_exception}")
     py_test(googletest-throw-on-failure-test)
+
   endif ()
 
   cxx_executable(googletest-uninitialized-test_ test gtest)

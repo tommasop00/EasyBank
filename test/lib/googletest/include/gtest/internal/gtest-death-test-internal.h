@@ -43,14 +43,14 @@
 #include <memory>
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
-        GTEST_DECLARE_string_(internal_run_death_test);
+    GTEST_DECLARE_string_(internal_run_death_test);
 
 // Names of the flags (needed for parsing Google Test flags).
-        const char kDeathTestStyleFlag[] = "death_test_style";
-        const char kDeathTestUseFork[] = "death_test_use_fork";
-        const char kInternalRunDeathTestFlag[] = "internal_run_death_test";
+    const char kDeathTestStyleFlag[] = "death_test_style";
+    const char kDeathTestUseFork[] = "death_test_use_fork";
+    const char kInternalRunDeathTestFlag[] = "internal_run_death_test";
 
 #if GTEST_HAS_DEATH_TEST
 

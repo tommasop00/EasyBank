@@ -43,7 +43,6 @@
 #include <limits.h>
 #include "sample1.h"
 #include "gtest/gtest.h"
-
 namespace {
 
 // Step 2. Use the TEST macro to define your tests.

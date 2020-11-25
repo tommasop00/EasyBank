@@ -108,7 +108,6 @@ FooTest\.
   Test3
 """)
 
-
 # Utilities.
 
 

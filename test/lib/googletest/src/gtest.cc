@@ -67,7 +67,7 @@
 # include <string>
 
 #elif GTEST_OS_ZOS
-                                                                                                                        # include <sys/time.h>  // NOLINT
+# include <sys/time.h>  // NOLINT
 
 // On z/OS we additionally need strings.h for strcasecmp.
 # include <strings.h>  // NOLINT
@@ -105,18 +105,14 @@
 #endif  // GTEST_OS_LINUX
 
 #if GTEST_HAS_EXCEPTIONS
-
 # include <stdexcept>
-
 #endif
 
 #if GTEST_CAN_STREAM_RESULTS_
-
 # include <arpa/inet.h>  // NOLINT
 # include <netdb.h>  // NOLINT
 # include <sys/socket.h>  // NOLINT
 # include <sys/types.h>  // NOLINT
-
 #endif
 
 #include "src/gtest-internal-inl.h"
@@ -1828,7 +1824,6 @@ AssertionResult CmpHelper##op_name(const char* expr1, const char* expr2, \
             const ::std::wstring &needle, const ::std::wstring &haystack) {
         return IsSubstringImpl(false, needle_expr, haystack_expr, needle, haystack);
     }
-
 #endif  // GTEST_HAS_STD_WSTRING
 
     namespace internal {
@@ -3463,7 +3458,6 @@ static WORD GetNewColor(GTestColor color, WORD old_color_attrs) {
             }
             fflush(stdout);
         }
-
 #else
                                                                                                                                 void PrettyUnitTestResultPrinter::OnTestSuiteStart(
     const TestSuite& test_suite) {
@@ -3535,7 +3529,6 @@ static WORD GetNewColor(GTestColor color, WORD old_color_attrs) {
                    internal::StreamableToString(test_case.elapsed_time()).c_str());
             fflush(stdout);
         }
-
 #else
                                                                                                                                 void PrettyUnitTestResultPrinter::OnTestSuiteEnd(const TestSuite& test_suite) {
   if (!GTEST_FLAG(print_time)) return;
@@ -5191,7 +5184,6 @@ void TestEventRepeater::Name(const Type& parameter) { \
     const TestCase *UnitTest::GetTestCase(int i) const {
         return impl()->GetTestCase(i);
     }
-
 #endif  //  GTEST_REMOVE_LEGACY_TEST_CASEAPI_
 
 // Returns the TestResult containing information on test failures and
@@ -5420,7 +5412,6 @@ void TestEventRepeater::Name(const Type& parameter) { \
         internal::MutexLock lock(&mutex_);
         return impl_->current_test_suite();
     }
-
 #endif
 
 // Returns the TestInfo object for the test that's currently running,
@@ -5537,7 +5528,6 @@ void TestEventRepeater::Name(const Type& parameter) { \
             if (internal_run_death_test_flag_.get() != nullptr)
                 listeners()->SuppressEventForwarding();
         }
-
 #endif  // GTEST_HAS_DEATH_TEST
 
 // Initializes event listeners performing XML output as specified by
@@ -5573,7 +5563,6 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 }
             }
         }
-
 #endif  // GTEST_CAN_STREAM_RESULTS_
 
 // Performs initialization dependent upon flag values obtained in
@@ -6503,7 +6492,6 @@ void TestEventRepeater::Name(const Type& parameter) { \
                     g_help_flag = true;
             }
         }
-
 #endif  // GTEST_USE_OWN_FLAGFILE_FLAG_
 
 // Parses the command line for Google Test flags, without initializing

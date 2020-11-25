@@ -53,9 +53,9 @@
 
 namespace testing {
 
-    namespace {
+namespace {
 
-        using ::std::ostream;
+    using ::std::ostream;
 
 // Prints a segment of bytes in the given object.
         GTEST_ATTRIBUTE_NO_SANITIZE_MEMORY_
@@ -358,7 +358,6 @@ namespace testing {
                 PrintCharsAsStringTo(s, wcslen(s), os);
             }
         }
-
 #endif  // wchar_t is native
 
         namespace {

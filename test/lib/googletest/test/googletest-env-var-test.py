@@ -34,6 +34,7 @@
 import os
 import gtest_test_utils
 
+
 IS_WINDOWS = os.name == 'nt'
 IS_LINUX = os.name == 'posix' and os.uname()[0] == 'Linux'
 
@@ -113,7 +114,6 @@ class GTestEnvVarTest(gtest_test_utils.TestCase):
         SetEnvVar('GTEST_OUTPUT', 'xml:tmp/foo.xml')
         SetEnvVar('XML_OUTPUT_FILE', 'tmp/bar.xml')
         AssertEq('xml:tmp/foo.xml', GetFlag('output'))
-
 
 if __name__ == '__main__':
     gtest_test_utils.Main()

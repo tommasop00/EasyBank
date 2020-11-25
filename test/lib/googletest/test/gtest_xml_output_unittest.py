@@ -58,7 +58,7 @@ SHARD_STATUS_FILE_ENV_VAR = 'GTEST_SHARD_STATUS_FILE'
 SUPPORTS_STACK_TRACES = NO_STACKTRACE_SUPPORT_FLAG not in sys.argv
 
 if SUPPORTS_STACK_TRACES:
-    STACK_TRACE_TEMPLATE = '\nStack trace:\n*'
+  STACK_TRACE_TEMPLATE = '\nStack trace:\n*'
 else:
     STACK_TRACE_TEMPLATE = ''
     # unittest.main() can't handle unknown flags

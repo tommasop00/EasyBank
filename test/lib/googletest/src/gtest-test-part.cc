@@ -37,7 +37,7 @@
 
 namespace testing {
 
-    using internal::GetUnitTestImpl;
+using internal::GetUnitTestImpl;
 
 // Gets the summary of the failure message by omitting the stack trace
 // in it.

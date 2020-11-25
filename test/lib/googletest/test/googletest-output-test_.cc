@@ -57,7 +57,7 @@ namespace posix = ::testing::internal::posix;
 
 // A subroutine used by the following test.
 void TestEq1(int x) {
-    ASSERT_EQ(1, x);
+  ASSERT_EQ(1, x);
 }
 
 // This function calls a test subroutine, catches the fatal failure it

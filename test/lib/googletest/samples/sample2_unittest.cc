@@ -39,7 +39,6 @@
 
 #include "sample2.h"
 #include "gtest/gtest.h"
-
 namespace {
 // In this example, we test the MyString class (a simple string).
 

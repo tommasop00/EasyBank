@@ -52,7 +52,7 @@ NO_STACKTRACE_SUPPORT_FLAG = '--no_stacktrace_support'
 SUPPORTS_STACK_TRACES = NO_STACKTRACE_SUPPORT_FLAG not in sys.argv
 
 if SUPPORTS_STACK_TRACES:
-    STACK_TRACE_TEMPLATE = '\nStack trace:\n*'
+  STACK_TRACE_TEMPLATE = '\nStack trace:\n*'
 else:
     STACK_TRACE_TEMPLATE = ''
 

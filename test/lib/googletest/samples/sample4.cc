@@ -35,7 +35,7 @@
 
 // Returns the current counter value, and increments it.
 int Counter::Increment() {
-    return counter_++;
+  return counter_++;
 }
 
 // Returns the current counter value, and decrements it.

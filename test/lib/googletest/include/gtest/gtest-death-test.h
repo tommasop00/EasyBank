@@ -215,7 +215,6 @@ namespace testing {
     private:
         const int signum_;
     };
-
 # endif  // !GTEST_OS_WINDOWS
 
 // EXPECT_DEBUG_DEATH asserts that the given statements die in debug mode.

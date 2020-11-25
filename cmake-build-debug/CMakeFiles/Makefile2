@@ -138,12 +138,12 @@ test/lib/googletest/clean: test/lib/googletest/CMakeFiles/gtest.dir/clean
 CMakeFiles/core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6 "Built target core"
 .PHONY : CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/core.dir/rule
@@ -170,7 +170,7 @@ CMakeFiles/EasyBank.dir/all: CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EasyBank.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/EasyBank.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/EasyBank.dir/rule
@@ -189,16 +189,17 @@ CMakeFiles/EasyBank.dir/clean:
 # Target rules for target test/CMakeFiles/runEasyBankTest.dir
 
 # All Build rule for target.
+test/CMakeFiles/runEasyBankTest.dir/all: test/lib/googletest/CMakeFiles/gtest_main.dir/all
 test/CMakeFiles/runEasyBankTest.dir/all: test/lib/googletest/CMakeFiles/gtest.dir/all
 test/CMakeFiles/runEasyBankTest.dir/all: CMakeFiles/core.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runEasyBankTest.dir/build.make test/CMakeFiles/runEasyBankTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runEasyBankTest.dir/build.make test/CMakeFiles/runEasyBankTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target runEasyBankTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=11,12,13 "Built target runEasyBankTest"
 .PHONY : test/CMakeFiles/runEasyBankTest.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/runEasyBankTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/runEasyBankTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 0
 .PHONY : test/CMakeFiles/runEasyBankTest.dir/rule
@@ -220,7 +221,7 @@ test/CMakeFiles/runEasyBankTest.dir/clean:
 test/lib/googletest/CMakeFiles/gtest_main.dir/all: test/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest_main.dir/build.make test/lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest_main.dir/build.make test/lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest_main"
 .PHONY : test/lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -247,7 +248,7 @@ test/lib/googletest/CMakeFiles/gtest_main.dir/clean:
 test/lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest.dir/build.make test/lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest.dir/build.make test/lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest"
 .PHONY : test/lib/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.

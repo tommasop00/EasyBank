@@ -141,7 +141,6 @@ def _RemoveTempDir():
     if _temp_dir:
         shutil.rmtree(_temp_dir, ignore_errors=True)
 
-
 atexit.register(_RemoveTempDir)
 
 

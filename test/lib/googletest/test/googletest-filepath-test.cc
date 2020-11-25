@@ -46,67 +46,67 @@
 #endif  // GTEST_OS_WINDOWS_MOBILE
 
 namespace testing {
-    namespace internal {
-        namespace {
+namespace internal {
+    namespace {
 
 #if GTEST_OS_WINDOWS_MOBILE
 
-            // Windows CE doesn't have the remove C function.
-            int remove(const char* path) {
-              LPCWSTR wpath = String::AnsiToUtf16(path);
-              int ret = DeleteFile(wpath) ? 0 : -1;
-              delete [] wpath;
-              return ret;
-            }
-            // Windows CE doesn't have the _rmdir C function.
-            int _rmdir(const char* path) {
-              FilePath filepath(path);
-              LPCWSTR wpath = String::AnsiToUtf16(
-                  filepath.RemoveTrailingPathSeparator().c_str());
-              int ret = RemoveDirectory(wpath) ? 0 : -1;
-              delete [] wpath;
-              return ret;
-            }
+        // Windows CE doesn't have the remove C function.
+        int remove(const char* path) {
+          LPCWSTR wpath = String::AnsiToUtf16(path);
+          int ret = DeleteFile(wpath) ? 0 : -1;
+          delete [] wpath;
+          return ret;
+        }
+        // Windows CE doesn't have the _rmdir C function.
+        int _rmdir(const char* path) {
+          FilePath filepath(path);
+          LPCWSTR wpath = String::AnsiToUtf16(
+              filepath.RemoveTrailingPathSeparator().c_str());
+          int ret = RemoveDirectory(wpath) ? 0 : -1;
+          delete [] wpath;
+          return ret;
+        }
 
 #else
 
-            TEST(GetCurrentDirTest, ReturnsCurrentDir
-            ) {
-            const FilePath original_dir = FilePath::GetCurrentDir();
-            EXPECT_FALSE(original_dir
-            .
+        TEST(GetCurrentDirTest, ReturnsCurrentDir
+        ) {
+        const FilePath original_dir = FilePath::GetCurrentDir();
+        EXPECT_FALSE(original_dir
+        .
 
-            IsEmpty()
+        IsEmpty()
 
-            );
+        );
 
-            posix::ChDir(GTEST_PATH_SEP_);
-            const FilePath cwd = FilePath::GetCurrentDir();
-            posix::ChDir(original_dir
-            .
+        posix::ChDir(GTEST_PATH_SEP_);
+        const FilePath cwd = FilePath::GetCurrentDir();
+        posix::ChDir(original_dir
+        .
 
-            c_str()
+        c_str()
 
-            );
+        );
 
 # if GTEST_OS_WINDOWS || GTEST_OS_OS2
 
-            // Skips the ":".
-            const char* const cwd_without_drive = strchr(cwd.c_str(), ':');
-            ASSERT_TRUE(cwd_without_drive != NULL);
-            EXPECT_STREQ(GTEST_PATH_SEP_, cwd_without_drive + 1);
+        // Skips the ":".
+        const char* const cwd_without_drive = strchr(cwd.c_str(), ':');
+        ASSERT_TRUE(cwd_without_drive != NULL);
+        EXPECT_STREQ(GTEST_PATH_SEP_, cwd_without_drive + 1);
 
 # else
 
-            EXPECT_EQ(GTEST_PATH_SEP_, cwd
-            .
+        EXPECT_EQ(GTEST_PATH_SEP_, cwd
+        .
 
-            string()
+        string()
 
-            );
+        );
 
 # endif
-        }
+    }
 
 #endif  // GTEST_OS_WINDOWS_MOBILE
 

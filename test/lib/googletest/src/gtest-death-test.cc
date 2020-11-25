@@ -49,9 +49,7 @@
 # include <limits.h>
 
 # if GTEST_OS_LINUX
-
 #  include <signal.h>
-
 # endif  // GTEST_OS_LINUX
 
 # include <stdarg.h>
@@ -59,10 +57,8 @@
 # if GTEST_OS_WINDOWS
 #  include <windows.h>
 # else
-
 #  include <sys/mman.h>
 #  include <sys/wait.h>
-
 # endif  // GTEST_OS_WINDOWS
 
 # if GTEST_OS_QNX
@@ -200,7 +196,6 @@ namespace testing {
 #  endif  // defined(GTEST_KILLED_BY_SIGNAL_OVERRIDE_)
         return WIFSIGNALED(exit_status) && WTERMSIG(exit_status) == signum_;
     }
-
 # endif  // !GTEST_OS_WINDOWS && !GTEST_OS_FUCHSIA
 
     namespace internal {
@@ -1286,7 +1281,6 @@ namespace testing {
                            GetLastErrnoDescription());
             return EXIT_FAILURE;
         }
-
 #  endif  // GTEST_OS_QNX
 
 #  if GTEST_HAS_CLONE

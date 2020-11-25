@@ -35,11 +35,8 @@
 #define GTEST_SRC_GTEST_INTERNAL_INL_H_
 
 #ifndef _WIN32_WCE
-
 # include <errno.h>
-
 #endif  // !_WIN32_WCE
-
 #include <stddef.h>
 #include <stdlib.h>  // For strtoll/_strtoul64/malloc/free.
 #include <string.h>  // For memmove.
@@ -53,10 +50,8 @@
 #include "gtest/internal/gtest-port.h"
 
 #if GTEST_CAN_STREAM_RESULTS_
-
 # include <arpa/inet.h>  // NOLINT
 # include <netdb.h>  // NOLINT
-
 #endif
 
 #if GTEST_OS_WINDOWS
@@ -1064,7 +1059,6 @@ namespace testing {
             }
             return false;
         }
-
 #endif  // GTEST_HAS_DEATH_TEST
 
 // TestResult contains some private methods that should be hidden from

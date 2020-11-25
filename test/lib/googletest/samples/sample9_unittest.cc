@@ -46,46 +46,46 @@ using ::testing::UnitTest;
 namespace {
 // Provides alternative output mode which produces minimal amount of
 // information about tests.
-    class TersePrinter : public EmptyTestEventListener {
-    private:
-        // Called before any test activity starts.
-        void OnTestProgramStart(const UnitTest & /* unit_test */) override {}
+class TersePrinter : public EmptyTestEventListener {
+private:
+    // Called before any test activity starts.
+    void OnTestProgramStart(const UnitTest & /* unit_test */) override {}
 
-        // Called after all test activities have ended.
-        void OnTestProgramEnd(const UnitTest &unit_test) override {
-            fprintf(stdout, "TEST %s\n", unit_test.Passed() ? "PASSED" : "FAILED");
-            fflush(stdout);
-        }
+    // Called after all test activities have ended.
+    void OnTestProgramEnd(const UnitTest &unit_test) override {
+        fprintf(stdout, "TEST %s\n", unit_test.Passed() ? "PASSED" : "FAILED");
+        fflush(stdout);
+    }
 
-        // Called before a test starts.
-        void OnTestStart(const TestInfo &test_info) override {
-            fprintf(stdout,
-                    "*** Test %s.%s starting.\n",
-                    test_info.test_case_name(),
-                    test_info.name());
-            fflush(stdout);
-        }
+    // Called before a test starts.
+    void OnTestStart(const TestInfo &test_info) override {
+        fprintf(stdout,
+                "*** Test %s.%s starting.\n",
+                test_info.test_case_name(),
+                test_info.name());
+        fflush(stdout);
+    }
 
-        // Called after a failed assertion or a SUCCEED() invocation.
-        void OnTestPartResult(const TestPartResult &test_part_result) override {
-            fprintf(stdout,
-                    "%s in %s:%d\n%s\n",
-                    test_part_result.failed() ? "*** Failure" : "Success",
-                    test_part_result.file_name(),
-                    test_part_result.line_number(),
-                    test_part_result.summary());
-            fflush(stdout);
-        }
+    // Called after a failed assertion or a SUCCEED() invocation.
+    void OnTestPartResult(const TestPartResult &test_part_result) override {
+        fprintf(stdout,
+                "%s in %s:%d\n%s\n",
+                test_part_result.failed() ? "*** Failure" : "Success",
+                test_part_result.file_name(),
+                test_part_result.line_number(),
+                test_part_result.summary());
+        fflush(stdout);
+    }
 
-        // Called after a test ends.
-        void OnTestEnd(const TestInfo &test_info) override {
-            fprintf(stdout,
-                    "*** Test %s.%s ending.\n",
-                    test_info.test_case_name(),
-                    test_info.name());
-            fflush(stdout);
-        }
-    };  // class TersePrinter
+    // Called after a test ends.
+    void OnTestEnd(const TestInfo &test_info) override {
+        fprintf(stdout,
+                "*** Test %s.%s ending.\n",
+                test_info.test_case_name(),
+                test_info.name());
+        fflush(stdout);
+    }
+};  // class TersePrinter
 
     TEST(CustomOutputTest, PrintsMessage
     ) {

@@ -115,43 +115,43 @@ namespace testing {
 
 // Definitions in the internal* namespaces are subject to change without notice.
 // DO NOT USE THEM IN USER CODE!
-    namespace internal {
+namespace internal {
 
-        template<typename T>
-        void UniversalPrint(const T &value, ::std::ostream *os);
+    template<typename T>
+    void UniversalPrint(const T &value, ::std::ostream *os);
 
 // Used to print an STL-style container when the user doesn't define
 // a PrintTo() for it.
-        struct ContainerPrinter {
-            template<typename T,
-                    typename = typename std::enable_if<
-                            (sizeof(IsContainerTest<T>(0)) == sizeof(IsContainer)) &&
-                            !IsRecursiveContainer<T>::value>::type>
-            static void PrintValue(const T &container, std::ostream *os) {
-                const size_t kMaxCount = 32;  // The maximum number of elements to print.
-                *os << '{';
-                size_t count = 0;
-                for (auto &&elem : container) {
-                    if (count > 0) {
-                        *os << ',';
-                        if (count == kMaxCount) {  // Enough has been printed.
-                            *os << " ...";
-                            break;
-                        }
-                    }
-                    *os << ' ';
-                    // We cannot call PrintTo(elem, os) here as PrintTo() doesn't
-                    // handle `elem` being a native array.
-                    internal::UniversalPrint(elem, os);
-                    ++count;
-                }
-
+    struct ContainerPrinter {
+        template<typename T,
+                typename = typename std::enable_if<
+                        (sizeof(IsContainerTest<T>(0)) == sizeof(IsContainer)) &&
+                        !IsRecursiveContainer<T>::value>::type>
+        static void PrintValue(const T &container, std::ostream *os) {
+            const size_t kMaxCount = 32;  // The maximum number of elements to print.
+            *os << '{';
+            size_t count = 0;
+            for (auto &&elem : container) {
                 if (count > 0) {
-                    *os << ' ';
+                    *os << ',';
+                    if (count == kMaxCount) {  // Enough has been printed.
+                        *os << " ...";
+                        break;
+                    }
                 }
-                *os << '}';
+                *os << ' ';
+                // We cannot call PrintTo(elem, os) here as PrintTo() doesn't
+                // handle `elem` being a native array.
+                internal::UniversalPrint(elem, os);
+                ++count;
             }
-        };
+
+            if (count > 0) {
+                *os << ' ';
+            }
+            *os << '}';
+        }
+    };
 
 // Used to print a pointer that is neither a char pointer nor a member
 // pointer, when the user doesn't define PrintTo() for it.  (A member
@@ -159,103 +159,103 @@ namespace testing {
 // a location in the address space.  Their representation is
 // implementation-defined.  Therefore they will be printed as raw
 // bytes.)
-        struct FunctionPointerPrinter {
-            template<typename T, typename = typename std::enable_if<
-                    std::is_function<T>::value>::type>
-            static void PrintValue(T *p, ::std::ostream *os) {
-                if (p == nullptr) {
-                    *os << "NULL";
-                } else {
-                    // T is a function type, so '*os << p' doesn't do what we want
-                    // (it just prints p as bool).  We want to print p as a const
-                    // void*.
-                    *os << reinterpret_cast<const void *>(p);
-                }
+    struct FunctionPointerPrinter {
+        template<typename T, typename = typename std::enable_if<
+                std::is_function<T>::value>::type>
+        static void PrintValue(T *p, ::std::ostream *os) {
+            if (p == nullptr) {
+                *os << "NULL";
+            } else {
+                // T is a function type, so '*os << p' doesn't do what we want
+                // (it just prints p as bool).  We want to print p as a const
+                // void*.
+                *os << reinterpret_cast<const void *>(p);
             }
-        };
+        }
+    };
 
-        struct PointerPrinter {
-            template<typename T>
-            static void PrintValue(T *p, ::std::ostream *os) {
-                if (p == nullptr) {
-                    *os << "NULL";
-                } else {
-                    // T is not a function type.  We just call << to print p,
-                    // relying on ADL to pick up user-defined << for their pointer
-                    // types, if any.
-                    *os << p;
-                }
+    struct PointerPrinter {
+        template<typename T>
+        static void PrintValue(T *p, ::std::ostream *os) {
+            if (p == nullptr) {
+                *os << "NULL";
+            } else {
+                // T is not a function type.  We just call << to print p,
+                // relying on ADL to pick up user-defined << for their pointer
+                // types, if any.
+                *os << p;
             }
-        };
+        }
+    };
 
-        namespace internal_stream_operator_without_lexical_name_lookup {
+    namespace internal_stream_operator_without_lexical_name_lookup {
 
 // The presence of an operator<< here will terminate lexical scope lookup
 // straight away (even though it cannot be a match because of its argument
 // types). Thus, the two operator<< calls in StreamPrinter will find only ADL
 // candidates.
-            struct LookupBlocker {
-            };
-
-            void operator<<(LookupBlocker, LookupBlocker);
-
-            struct StreamPrinter {
-                template<typename T,
-                        // Don't accept member pointers here. We'd print them via implicit
-                        // conversion to bool, which isn't useful.
-                        typename = typename std::enable_if<
-                                !std::is_member_pointer<T>::value>::type,
-                        // Only accept types for which we can find a streaming operator via
-                        // ADL (possibly involving implicit conversions).
-                        typename = decltype(std::declval<std::ostream &>()
-                                << std::declval<const T &>())>
-                static void PrintValue(const T &value, ::std::ostream *os) {
-                    // Call streaming operator found by ADL, possibly with implicit conversions
-                    // of the arguments.
-                    *os << value;
-                }
-            };
-
-        }  // namespace internal_stream_operator_without_lexical_name_lookup
-
-        struct ProtobufPrinter {
-            // We print a protobuf using its ShortDebugString() when the string
-            // doesn't exceed this many characters; otherwise we print it using
-            // DebugString() for better readability.
-            static const size_t kProtobufOneLinerMaxLength = 50;
-
-            template<typename T,
-                    typename = typename std::enable_if<
-                            internal::HasDebugStringAndShortDebugString<T>::value>::type>
-            static void PrintValue(const T &value, ::std::ostream *os) {
-                std::string pretty_str = value.ShortDebugString();
-                if (pretty_str.length() > kProtobufOneLinerMaxLength) {
-                    pretty_str = "\n" + value.DebugString();
-                }
-                *os << ("<" + pretty_str + ">");
-            }
+        struct LookupBlocker {
         };
 
-        struct ConvertibleToIntegerPrinter {
-            // Since T has no << operator or PrintTo() but can be implicitly
-            // converted to BiggestInt, we print it as a BiggestInt.
-            //
-            // Most likely T is an enum type (either named or unnamed), in which
-            // case printing it as an integer is the desired behavior.  In case
-            // T is not an enum, printing it as an integer is the best we can do
-            // given that it has no user-defined printer.
-            static void PrintValue(internal::BiggestInt value, ::std::ostream *os) {
+        void operator<<(LookupBlocker, LookupBlocker);
+
+        struct StreamPrinter {
+            template<typename T,
+                    // Don't accept member pointers here. We'd print them via implicit
+                    // conversion to bool, which isn't useful.
+                    typename = typename std::enable_if<
+                            !std::is_member_pointer<T>::value>::type,
+                    // Only accept types for which we can find a streaming operator via
+                    // ADL (possibly involving implicit conversions).
+                    typename = decltype(std::declval<std::ostream &>()
+                            << std::declval<const T &>())>
+            static void PrintValue(const T &value, ::std::ostream *os) {
+                // Call streaming operator found by ADL, possibly with implicit conversions
+                // of the arguments.
                 *os << value;
             }
         };
 
-        struct ConvertibleToStringViewPrinter {
-#if GTEST_INTERNAL_HAS_STRING_VIEW
-            static void PrintValue(internal::StringView value, ::std::ostream* os) {
-              internal::UniversalPrint(value, os);
+    }  // namespace internal_stream_operator_without_lexical_name_lookup
+
+    struct ProtobufPrinter {
+        // We print a protobuf using its ShortDebugString() when the string
+        // doesn't exceed this many characters; otherwise we print it using
+        // DebugString() for better readability.
+        static const size_t kProtobufOneLinerMaxLength = 50;
+
+        template<typename T,
+                typename = typename std::enable_if<
+                        internal::HasDebugStringAndShortDebugString<T>::value>::type>
+        static void PrintValue(const T &value, ::std::ostream *os) {
+            std::string pretty_str = value.ShortDebugString();
+            if (pretty_str.length() > kProtobufOneLinerMaxLength) {
+                pretty_str = "\n" + value.DebugString();
             }
+            *os << ("<" + pretty_str + ">");
+        }
+    };
+
+    struct ConvertibleToIntegerPrinter {
+        // Since T has no << operator or PrintTo() but can be implicitly
+        // converted to BiggestInt, we print it as a BiggestInt.
+        //
+        // Most likely T is an enum type (either named or unnamed), in which
+        // case printing it as an integer is the desired behavior.  In case
+        // T is not an enum, printing it as an integer is the best we can do
+        // given that it has no user-defined printer.
+        static void PrintValue(internal::BiggestInt value, ::std::ostream *os) {
+            *os << value;
+        }
+    };
+
+    struct ConvertibleToStringViewPrinter {
+#if GTEST_INTERNAL_HAS_STRING_VIEW
+        static void PrintValue(internal::StringView value, ::std::ostream* os) {
+          internal::UniversalPrint(value, os);
+        }
 #endif
-        };
+    };
 
 
 // Prints the given number of bytes in the given object to the given
@@ -872,7 +872,6 @@ namespace testing {
                 }
             }
         };
-
 #endif
 
         template<>

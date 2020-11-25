@@ -14,7 +14,6 @@ import sys
 
 SUBST_PATH_ENV_VAR_NAME = "SUBST_PATH"
 
-
 def main():
     if SUBST_PATH_ENV_VAR_NAME in os.environ:
         os.environ["PATH"] = os.environ[SUBST_PATH_ENV_VAR_NAME]
@@ -28,7 +27,6 @@ def main():
         exit_code = 100
 
     sys.exit(exit_code)
-
 
 if __name__ == "__main__":
     main()

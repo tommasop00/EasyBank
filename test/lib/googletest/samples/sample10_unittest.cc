@@ -34,7 +34,6 @@
 #include <stdlib.h>
 
 #include "gtest/gtest.h"
-
 using ::testing::EmptyTestEventListener;
 using ::testing::InitGoogleTest;
 using ::testing::Test;
@@ -45,26 +44,26 @@ using ::testing::UnitTest;
 
 namespace {
 // We will track memory used by this class.
-    class Water {
-    public:
-        // Normal Water declarations go here.
+class Water {
+public:
+    // Normal Water declarations go here.
 
-        // operator new and operator delete help us control water allocation.
-        void *operator new(size_t allocation_size) {
-            allocated_++;
-            return malloc(allocation_size);
-        }
+    // operator new and operator delete help us control water allocation.
+    void *operator new(size_t allocation_size) {
+        allocated_++;
+        return malloc(allocation_size);
+    }
 
-        void operator delete(void *block, size_t /* allocation_size */) {
-            allocated_--;
-            free(block);
-        }
+    void operator delete(void *block, size_t /* allocation_size */) {
+        allocated_--;
+        free(block);
+    }
 
-        static int allocated() { return allocated_; }
+    static int allocated() { return allocated_; }
 
-    private:
-        static int allocated_;
-    };
+private:
+    static int allocated_;
+};
 
     int Water::allocated_ = 0;
 

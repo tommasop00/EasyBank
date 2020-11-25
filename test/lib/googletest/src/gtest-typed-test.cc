@@ -33,7 +33,7 @@
 #include "gtest/gtest.h"
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
 #if GTEST_HAS_TYPED_TEST_P
 

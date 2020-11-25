@@ -62,7 +62,7 @@ import urllib2
 import urlparse
 
 try:
-    import readline
+  import readline
 except ImportError:
     pass
 
@@ -553,7 +553,6 @@ def GetContentType(filename):
 
 # Use a shell for subcommands on Windows to get a PATH search.
 use_shell = sys.platform.startswith("win")
-
 
 def RunShellWithReturnCode(command, print_output=False,
                            universal_newlines=True):

@@ -44,6 +44,7 @@ import re
 import sys
 import gtest_test_utils
 
+
 # The flag for generating the golden file
 GENGOLDEN_FLAG = '--gengolden'
 CATCH_EXCEPTIONS_ENV_VAR_NAME = 'GTEST_CATCH_EXCEPTIONS'

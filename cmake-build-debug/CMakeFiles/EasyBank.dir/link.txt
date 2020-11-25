@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/EasyBank.dir/main.cpp.o  -o EasyBank  libcore.a 
+/usr/bin/c++   -std=c++11 -g   CMakeFiles/EasyBank.dir/main.cpp.o  -o EasyBank  libcore.a 

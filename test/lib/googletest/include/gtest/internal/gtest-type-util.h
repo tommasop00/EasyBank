@@ -40,31 +40,29 @@
 // #ifdef __GNUC__ is too general here.  It is possible to use gcc without using
 // libstdc++ (which is where cxxabi.h comes from).
 # if GTEST_HAS_CXXABI_H_
-
 #  include <cxxabi.h>
-
 # elif defined(__HP_aCC)
 #  include <acxx_demangle.h>
 # endif  // GTEST_HASH_CXXABI_H_
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
 // Canonicalizes a given name with respect to the Standard C++ Library.
 // This handles removing the inline namespace within `std` that is
 // used by various standard libraries (e.g., `std::__1`).  Names outside
 // of namespace std are returned unmodified.
-        inline std::string CanonicalizeForStdLibVersioning(std::string s) {
-            static const char prefix[] = "std::__";
-            if (s.compare(0, strlen(prefix), prefix) == 0) {
-                std::string::size_type end = s.find("::", strlen(prefix));
-                if (end != s.npos) {
-                    // Erase everything between the initial `std` and the second `::`.
-                    s.erase(strlen("std"), end - strlen("std"));
-                }
+    inline std::string CanonicalizeForStdLibVersioning(std::string s) {
+        static const char prefix[] = "std::__";
+        if (s.compare(0, strlen(prefix), prefix) == 0) {
+            std::string::size_type end = s.find("::", strlen(prefix));
+            if (end != s.npos) {
+                // Erase everything between the initial `std` and the second `::`.
+                s.erase(strlen("std"), end - strlen("std"));
             }
-            return s;
         }
+        return s;
+    }
 
 #if GTEST_HAS_RTTI
 
@@ -86,7 +84,6 @@ namespace testing {
             return name;
 #endif  // GTEST_HAS_CXXABI_H_ || __HP_aCC
         }
-
 #endif  // GTEST_HAS_RTTI
 
 // GetTypeName<T>() returns a human-readable name of type T if and only if

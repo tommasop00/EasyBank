@@ -54,7 +54,7 @@ SHUFFLED_SHARDED_TESTS = []
 
 
 def AlsoRunDisabledTestsFlag():
-    return '--gtest_also_run_disabled_tests'
+  return '--gtest_also_run_disabled_tests'
 
 
 def FilterFlag(test_filter):
@@ -318,7 +318,6 @@ class GTestShuffleUnitTest(gtest_test_utils.TestCase):
         sorted_active_tests.extend(ACTIVE_TESTS)
         sorted_active_tests.sort()
         self.assertEqual(sorted_active_tests, sorted_sharded_tests)
-
 
 if __name__ == '__main__':
     gtest_test_utils.Main()

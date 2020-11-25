@@ -52,44 +52,44 @@ namespace testing {
 // generated in the same thread that created this object or it can intercept
 // all generated failures. The scope of this mock object can be controlled with
 // the second argument to the two arguments constructor.
-    class GTEST_API_ ScopedFakeTestPartResultReporter
-            : public TestPartResultReporterInterface {
-    public:
-        // The two possible mocking modes of this object.
-        enum InterceptMode {
-            INTERCEPT_ONLY_CURRENT_THREAD,  // Intercepts only thread local failures.
-            INTERCEPT_ALL_THREADS           // Intercepts all failures.
-        };
-
-        // The c'tor sets this object as the test part result reporter used
-        // by Google Test.  The 'result' parameter specifies where to report the
-        // results. This reporter will only catch failures generated in the current
-        // thread. DEPRECATED
-        explicit ScopedFakeTestPartResultReporter(TestPartResultArray *result);
-
-        // Same as above, but you can choose the interception scope of this object.
-        ScopedFakeTestPartResultReporter(InterceptMode intercept_mode,
-                                         TestPartResultArray *result);
-
-        // The d'tor restores the previous test part result reporter.
-        ~ScopedFakeTestPartResultReporter() override;
-
-        // Appends the TestPartResult object to the TestPartResultArray
-        // received in the constructor.
-        //
-        // This method is from the TestPartResultReporterInterface
-        // interface.
-        void ReportTestPartResult(const TestPartResult &result) override;
-
-    private:
-        void Init();
-
-        const InterceptMode intercept_mode_;
-        TestPartResultReporterInterface *old_reporter_;
-        TestPartResultArray *const result_;
-
-        GTEST_DISALLOW_COPY_AND_ASSIGN_(ScopedFakeTestPartResultReporter);
+class GTEST_API_ ScopedFakeTestPartResultReporter
+        : public TestPartResultReporterInterface {
+public:
+    // The two possible mocking modes of this object.
+    enum InterceptMode {
+        INTERCEPT_ONLY_CURRENT_THREAD,  // Intercepts only thread local failures.
+        INTERCEPT_ALL_THREADS           // Intercepts all failures.
     };
+
+    // The c'tor sets this object as the test part result reporter used
+    // by Google Test.  The 'result' parameter specifies where to report the
+    // results. This reporter will only catch failures generated in the current
+    // thread. DEPRECATED
+    explicit ScopedFakeTestPartResultReporter(TestPartResultArray *result);
+
+    // Same as above, but you can choose the interception scope of this object.
+    ScopedFakeTestPartResultReporter(InterceptMode intercept_mode,
+                                     TestPartResultArray *result);
+
+    // The d'tor restores the previous test part result reporter.
+    ~ScopedFakeTestPartResultReporter() override;
+
+    // Appends the TestPartResult object to the TestPartResultArray
+    // received in the constructor.
+    //
+    // This method is from the TestPartResultReporterInterface
+    // interface.
+    void ReportTestPartResult(const TestPartResult &result) override;
+
+private:
+    void Init();
+
+    const InterceptMode intercept_mode_;
+    TestPartResultReporterInterface *old_reporter_;
+    TestPartResultArray *const result_;
+
+    GTEST_DISALLOW_COPY_AND_ASSIGN_(ScopedFakeTestPartResultReporter);
+};
 
     namespace internal {
 

@@ -42,9 +42,8 @@ we test that here also.
 
 import os
 import re
-
 try:
-    from sets import Set as set  # For Python 2.3 compatibility
+  from sets import Set as set  # For Python 2.3 compatibility
 except ImportError:
     pass
 import sys
@@ -64,6 +63,7 @@ if sys.executable:
         [sys.executable, '-c', 'import os; print(\'EMPTY_VAR\' in os.environ)'])
     CAN_PASS_EMPTY_ENV = eval(child.output)
 
+
 # Check if this platform can unset environment variables in child processes.
 # We set an env variable to a non-empty string, unset it, and invoke
 # a python script in a subprocess to print whether the variable
@@ -79,11 +79,13 @@ if sys.executable:
          ])
     CAN_UNSET_ENV = eval(child.output)
 
+
 # Checks if we should test with an empty filter. This doesn't
 # make sense on platforms that cannot pass empty env variables (Win32)
 # and on platforms that cannot unset variables (since we cannot tell
 # the difference between "" and NULL -- Borland and Solaris < 5.10)
 CAN_TEST_EMPTY_FILTER = (CAN_PASS_EMPTY_ENV and CAN_UNSET_ENV)
+
 
 # The environment variable for specifying the test filters.
 FILTER_ENV_VAR = 'GTEST_FILTER'
@@ -221,7 +223,6 @@ def RunWithSharding(total_shards, shard_index, command):
     extra_env = {SHARD_INDEX_ENV_VAR: str(shard_index),
                  TOTAL_SHARDS_ENV_VAR: str(total_shards)}
     return InvokeWithModifiedEnv(extra_env, RunAndExtractTestList, command)
-
 
 # The unit test.
 
@@ -633,7 +634,6 @@ class GTestFilterUnitTest(gtest_test_utils.TestCase):
                                               check_exit_0=True, args=[flag])
                 self.RunAndVerifyWithSharding(gtest_filter, 5, expected_tests,
                                               check_exit_0=True, args=[flag])
-
 
 if __name__ == '__main__':
     gtest_test_utils.Main()

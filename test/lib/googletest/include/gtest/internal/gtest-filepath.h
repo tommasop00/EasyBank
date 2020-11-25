@@ -46,7 +46,7 @@ GTEST_DISABLE_MSC_WARNINGS_PUSH_(4251 \
 /* class A needs to have dll-interface to be used by clients of class B */)
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
 // FilePath - a class for file and directory pathname manipulation which
 // handles platform-specific conventions (like the pathname separator).

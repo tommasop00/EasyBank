@@ -58,6 +58,5 @@ class GTestParamTestInvalidName2Test(gtest_test_utils.TestCase):
     def testExitCodeAndOutput(self):
         TestExitCodeAndOutput(COMMAND)
 
-
 if __name__ == '__main__':
     gtest_test_utils.Main()

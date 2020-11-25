@@ -30,8 +30,10 @@
 
 __author__ = 'wan@google.com (Zhanyong Wan)'
 
+
 import os
 import re
+
 
 # Matches the line from 'svn info .' output that describes what SVN
 # path the current local directory corresponds to.  For example, in

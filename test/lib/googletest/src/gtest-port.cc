@@ -47,9 +47,7 @@
 #  include <crtdbg.h>
 # endif  // _MSC_VER
 #else
-
 # include <unistd.h>
-
 #endif  // GTEST_OS_WINDOWS
 
 #if GTEST_OS_MAC
@@ -89,7 +87,7 @@
 #include "src/gtest-internal-inl.h"
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
 #if defined(_MSC_VER) || defined(__BORLANDC__)
         // MSVC and C++Builder do not provide a definition of STDERR_FILENO.
@@ -1261,7 +1259,6 @@ namespace testing {
             delete g_injected_test_argvs;
             g_injected_test_argvs = nullptr;
         }
-
 #endif  // GTEST_HAS_DEATH_TEST
 
 #if GTEST_OS_WINDOWS_MOBILE

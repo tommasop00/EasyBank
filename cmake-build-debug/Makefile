@@ -195,113 +195,86 @@ gtest/fast:
 	$(MAKE) $(MAKESILENT) -f test/lib/googletest/CMakeFiles/gtest.dir/build.make test/lib/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-Account.o: Account.cpp.o
+Account/Account.o: Account/Account.cpp.o
 
-.PHONY : Account.o
-
-# target to build an object file
-Account.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.o
-.PHONY : Account.cpp.o
-
-Account.i: Account.cpp.i
-
-.PHONY : Account.i
-
-# target to preprocess a source file
-Account.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.i
-.PHONY : Account.cpp.i
-
-Account.s: Account.cpp.s
-
-.PHONY : Account.s
-
-# target to generate assembly for a file
-Account.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account.cpp.s
-.PHONY : Account.cpp.s
-
-Bank.o: Bank.cpp.o
-
-.PHONY : Bank.o
+.PHONY : Account/Account.o
 
 # target to build an object file
-Bank.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.o
-.PHONY : Bank.cpp.o
+Account/Account.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Account.cpp.o
+.PHONY : Account/Account.cpp.o
 
-Bank.i: Bank.cpp.i
+Account/Account.i: Account/Account.cpp.i
 
-.PHONY : Bank.i
+.PHONY : Account/Account.i
 
 # target to preprocess a source file
-Bank.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.i
-.PHONY : Bank.cpp.i
+Account/Account.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Account.cpp.i
+.PHONY : Account/Account.cpp.i
 
-Bank.s: Bank.cpp.s
+Account/Account.s: Account/Account.cpp.s
 
-.PHONY : Bank.s
+.PHONY : Account/Account.s
 
 # target to generate assembly for a file
-Bank.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Bank.cpp.s
-.PHONY : Bank.cpp.s
+Account/Account.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Account.cpp.s
+.PHONY : Account/Account.cpp.s
 
-Private.o: Private.cpp.o
+Account/Private.o: Account/Private.cpp.o
 
-.PHONY : Private.o
+.PHONY : Account/Private.o
 
 # target to build an object file
-Private.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.o
-.PHONY : Private.cpp.o
+Account/Private.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Private.cpp.o
+.PHONY : Account/Private.cpp.o
 
-Private.i: Private.cpp.i
+Account/Private.i: Account/Private.cpp.i
 
-.PHONY : Private.i
+.PHONY : Account/Private.i
 
 # target to preprocess a source file
-Private.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.i
-.PHONY : Private.cpp.i
+Account/Private.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Private.cpp.i
+.PHONY : Account/Private.cpp.i
 
-Private.s: Private.cpp.s
+Account/Private.s: Account/Private.cpp.s
 
-.PHONY : Private.s
+.PHONY : Account/Private.s
 
 # target to generate assembly for a file
-Private.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Private.cpp.s
-.PHONY : Private.cpp.s
+Account/Private.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Private.cpp.s
+.PHONY : Account/Private.cpp.s
 
-Public.o: Public.cpp.o
+Account/Public.o: Account/Public.cpp.o
 
-.PHONY : Public.o
+.PHONY : Account/Public.o
 
 # target to build an object file
-Public.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.o
-.PHONY : Public.cpp.o
+Account/Public.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Public.cpp.o
+.PHONY : Account/Public.cpp.o
 
-Public.i: Public.cpp.i
+Account/Public.i: Account/Public.cpp.i
 
-.PHONY : Public.i
+.PHONY : Account/Public.i
 
 # target to preprocess a source file
-Public.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.i
-.PHONY : Public.cpp.i
+Account/Public.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Public.cpp.i
+.PHONY : Account/Public.cpp.i
 
-Public.s: Public.cpp.s
+Account/Public.s: Account/Public.cpp.s
 
-.PHONY : Public.s
+.PHONY : Account/Public.s
 
 # target to generate assembly for a file
-Public.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Public.cpp.s
-.PHONY : Public.cpp.s
+Account/Public.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Public.cpp.s
+.PHONY : Account/Public.cpp.s
 
 main.o: main.cpp.o
 
@@ -343,18 +316,15 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... runEasyBankTest"
-	@echo "... Account.o"
-	@echo "... Account.i"
-	@echo "... Account.s"
-	@echo "... Bank.o"
-	@echo "... Bank.i"
-	@echo "... Bank.s"
-	@echo "... Private.o"
-	@echo "... Private.i"
-	@echo "... Private.s"
-	@echo "... Public.o"
-	@echo "... Public.i"
-	@echo "... Public.s"
+	@echo "... Account/Account.o"
+	@echo "... Account/Account.i"
+	@echo "... Account/Account.s"
+	@echo "... Account/Private.o"
+	@echo "... Account/Private.i"
+	@echo "... Account/Private.s"
+	@echo "... Account/Public.o"
+	@echo "... Account/Public.i"
+	@echo "... Account/Public.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -46,78 +46,78 @@ namespace testing {
 // assertion or an explicit FAIL(), ADD_FAILURE(), or SUCCESS()).
 //
 // Don't inherit from TestPartResult as its destructor is not virtual.
-    class GTEST_API_ TestPartResult {
-    public:
-        // The possible outcomes of a test part (i.e. an assertion or an
-        // explicit SUCCEED(), FAIL(), or ADD_FAILURE()).
-        enum Type {
-            kSuccess,          // Succeeded.
-            kNonFatalFailure,  // Failed but the test can continue.
-            kFatalFailure,     // Failed and the test should be terminated.
-            kSkip              // Skipped.
-        };
-
-        // C'tor.  TestPartResult does NOT have a default constructor.
-        // Always use this constructor (with parameters) to create a
-        // TestPartResult object.
-        TestPartResult(Type a_type, const char *a_file_name, int a_line_number,
-                       const char *a_message)
-                : type_(a_type),
-                  file_name_(a_file_name == nullptr ? "" : a_file_name),
-                  line_number_(a_line_number),
-                  summary_(ExtractSummary(a_message)),
-                  message_(a_message) {}
-
-        // Gets the outcome of the test part.
-        Type type() const { return type_; }
-
-        // Gets the name of the source file where the test part took place, or
-        // NULL if it's unknown.
-        const char *file_name() const {
-            return file_name_.empty() ? nullptr : file_name_.c_str();
-        }
-
-        // Gets the line in the source file where the test part took place,
-        // or -1 if it's unknown.
-        int line_number() const { return line_number_; }
-
-        // Gets the summary of the failure message.
-        const char *summary() const { return summary_.c_str(); }
-
-        // Gets the message associated with the test part.
-        const char *message() const { return message_.c_str(); }
-
-        // Returns true if and only if the test part was skipped.
-        bool skipped() const { return type_ == kSkip; }
-
-        // Returns true if and only if the test part passed.
-        bool passed() const { return type_ == kSuccess; }
-
-        // Returns true if and only if the test part non-fatally failed.
-        bool nonfatally_failed() const { return type_ == kNonFatalFailure; }
-
-        // Returns true if and only if the test part fatally failed.
-        bool fatally_failed() const { return type_ == kFatalFailure; }
-
-        // Returns true if and only if the test part failed.
-        bool failed() const { return fatally_failed() || nonfatally_failed(); }
-
-    private:
-        Type type_;
-
-        // Gets the summary of the failure message by omitting the stack
-        // trace in it.
-        static std::string ExtractSummary(const char *message);
-
-        // The name of the source file where the test part took place, or
-        // "" if the source file is unknown.
-        std::string file_name_;
-        // The line in the source file where the test part took place, or -1
-        // if the line number is unknown.
-        int line_number_;
-        std::string summary_;  // The test failure summary.
-        std::string message_;  // The test failure message.
+class GTEST_API_ TestPartResult {
+public:
+    // The possible outcomes of a test part (i.e. an assertion or an
+    // explicit SUCCEED(), FAIL(), or ADD_FAILURE()).
+    enum Type {
+        kSuccess,          // Succeeded.
+        kNonFatalFailure,  // Failed but the test can continue.
+        kFatalFailure,     // Failed and the test should be terminated.
+        kSkip              // Skipped.
     };
+
+    // C'tor.  TestPartResult does NOT have a default constructor.
+    // Always use this constructor (with parameters) to create a
+    // TestPartResult object.
+    TestPartResult(Type a_type, const char *a_file_name, int a_line_number,
+                   const char *a_message)
+            : type_(a_type),
+              file_name_(a_file_name == nullptr ? "" : a_file_name),
+              line_number_(a_line_number),
+              summary_(ExtractSummary(a_message)),
+              message_(a_message) {}
+
+    // Gets the outcome of the test part.
+    Type type() const { return type_; }
+
+    // Gets the name of the source file where the test part took place, or
+    // NULL if it's unknown.
+    const char *file_name() const {
+        return file_name_.empty() ? nullptr : file_name_.c_str();
+    }
+
+    // Gets the line in the source file where the test part took place,
+    // or -1 if it's unknown.
+    int line_number() const { return line_number_; }
+
+    // Gets the summary of the failure message.
+    const char *summary() const { return summary_.c_str(); }
+
+    // Gets the message associated with the test part.
+    const char *message() const { return message_.c_str(); }
+
+    // Returns true if and only if the test part was skipped.
+    bool skipped() const { return type_ == kSkip; }
+
+    // Returns true if and only if the test part passed.
+    bool passed() const { return type_ == kSuccess; }
+
+    // Returns true if and only if the test part non-fatally failed.
+    bool nonfatally_failed() const { return type_ == kNonFatalFailure; }
+
+    // Returns true if and only if the test part fatally failed.
+    bool fatally_failed() const { return type_ == kFatalFailure; }
+
+    // Returns true if and only if the test part failed.
+    bool failed() const { return fatally_failed() || nonfatally_failed(); }
+
+private:
+    Type type_;
+
+    // Gets the summary of the failure message by omitting the stack
+    // trace in it.
+    static std::string ExtractSummary(const char *message);
+
+    // The name of the source file where the test part took place, or
+    // "" if the source file is unknown.
+    std::string file_name_;
+    // The line in the source file where the test part took place, or -1
+    // if the line number is unknown.
+    int line_number_;
+    std::string summary_;  // The test failure summary.
+    std::string message_;  // The test failure message.
+};
 
 // Prints a TestPartResult object.
     std::ostream &operator<<(std::ostream &os, const TestPartResult &result);

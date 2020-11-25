@@ -40,18 +40,14 @@
 #include "gtest/internal/gtest-port.h"
 
 #if GTEST_OS_LINUX
-
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/wait.h>
 # include <unistd.h>
-
 #endif  // GTEST_OS_LINUX
 
 #if GTEST_HAS_EXCEPTIONS
-
 # include <stdexcept>
-
 #endif
 
 #include <ctype.h>
@@ -95,7 +91,7 @@
 #define GTEST_STRINGIFY_(...) GTEST_STRINGIFY_HELPER_(__VA_ARGS__, )
 
 namespace proto2 {
-    class MessageLite;
+class MessageLite;
 }
 
 namespace testing {

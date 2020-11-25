@@ -50,6 +50,5 @@ class GTestSetUpTestSuiteTest(gtest_test_utils.TestCase):
             ' 2 FAILED TEST SUITES\n',
             p.output)
 
-
 if __name__ == '__main__':
     gtest_test_utils.Main()

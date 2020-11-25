@@ -1851,7 +1851,7 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
                                                  const char *rhs_expression,
                                                  RawType lhs_value,
                                                  RawType rhs_value) {
-            const FloatingPoint<RawType> lhs(lhs_value), rhs(rhs_value);
+            const FloatingPoint <RawType> lhs(lhs_value), rhs(rhs_value);
 
             if (lhs.AlmostEquals(rhs)) {
                 return AssertionSuccess();

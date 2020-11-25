@@ -13,7 +13,7 @@
 #   called *after* the options have been defined.
 
 if (POLICY CMP0054)
-    cmake_policy(SET CMP0054 NEW)
+  cmake_policy(SET CMP0054 NEW)
 endif (POLICY CMP0054)
 
 # Tweaks CMake's default compiler/linker settings to suit Google Test's needs.

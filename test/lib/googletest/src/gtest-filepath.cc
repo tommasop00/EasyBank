@@ -39,10 +39,8 @@
 # include <direct.h>
 # include <io.h>
 #else
-
 # include <limits.h>
 # include <climits>  // Some Linux distributions define PATH_MAX here.
-
 #endif  // GTEST_OS_WINDOWS_MOBILE
 
 #include "gtest/internal/gtest-string.h"
@@ -58,7 +56,7 @@
 #endif  // GTEST_OS_WINDOWS
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
 #if GTEST_OS_WINDOWS
         // On Windows, '\\' is the standard path separator, but many tools and the

@@ -49,30 +49,30 @@ using std::make_pair;
 using std::pair;
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
-        TEST(IsXDigitTest, WorksForNarrowAscii
-        ) {
-        EXPECT_TRUE(IsXDigit('0')
-        );
-        EXPECT_TRUE(IsXDigit('9')
-        );
-        EXPECT_TRUE(IsXDigit('A')
-        );
-        EXPECT_TRUE(IsXDigit('F')
-        );
-        EXPECT_TRUE(IsXDigit('a')
-        );
-        EXPECT_TRUE(IsXDigit('f')
-        );
+    TEST(IsXDigitTest, WorksForNarrowAscii
+    ) {
+    EXPECT_TRUE(IsXDigit('0')
+    );
+    EXPECT_TRUE(IsXDigit('9')
+    );
+    EXPECT_TRUE(IsXDigit('A')
+    );
+    EXPECT_TRUE(IsXDigit('F')
+    );
+    EXPECT_TRUE(IsXDigit('a')
+    );
+    EXPECT_TRUE(IsXDigit('f')
+    );
 
-        EXPECT_FALSE(IsXDigit('-')
-        );
-        EXPECT_FALSE(IsXDigit('g')
-        );
-        EXPECT_FALSE(IsXDigit('G')
-        );
-    }
+    EXPECT_FALSE(IsXDigit('-')
+    );
+    EXPECT_FALSE(IsXDigit('g')
+    );
+    EXPECT_FALSE(IsXDigit('G')
+    );
+}
 
     TEST(IsXDigitTest, ReturnsFalseForNarrowNonAscii
     ) {

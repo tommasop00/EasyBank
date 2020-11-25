@@ -69,10 +69,11 @@ TEST_LIST = gtest_test_utils.Subprocess(
 SUPPORTS_SEH_EXCEPTIONS = 'ThrowsSehException' in TEST_LIST
 
 if SUPPORTS_SEH_EXCEPTIONS:
-    BINARY_OUTPUT = gtest_test_utils.Subprocess([EXE_PATH], env=environ).output
+  BINARY_OUTPUT = gtest_test_utils.Subprocess([EXE_PATH], env=environ).output
 
 EX_BINARY_OUTPUT = gtest_test_utils.Subprocess(
     [EX_EXE_PATH], env=environ).output
+
 
 # The tests.
 if SUPPORTS_SEH_EXCEPTIONS:

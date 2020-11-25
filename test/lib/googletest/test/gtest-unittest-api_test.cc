@@ -40,60 +40,60 @@
 using ::testing::InitGoogleTest;
 
 namespace testing {
-    namespace internal {
+namespace internal {
 
-        template<typename T>
-        struct LessByName {
-            bool operator()(const T *a, const T *b) {
-                return strcmp(a->name(), b->name()) < 0;
+    template<typename T>
+    struct LessByName {
+        bool operator()(const T *a, const T *b) {
+            return strcmp(a->name(), b->name()) < 0;
+        }
+    };
+
+    class UnitTestHelper {
+    public:
+        // Returns the array of pointers to all test suites sorted by the test suite
+        // name.  The caller is responsible for deleting the array.
+        static TestSuite const **GetSortedTestSuites() {
+            UnitTest &unit_test = *UnitTest::GetInstance();
+            auto const **const test_suites = new const TestSuite *[static_cast<size_t>(
+                    unit_test.total_test_suite_count())];
+
+            for (int i = 0; i < unit_test.total_test_suite_count(); ++i)
+                test_suites[i] = unit_test.GetTestSuite(i);
+
+            std::sort(test_suites,
+                      test_suites + unit_test.total_test_suite_count(),
+                      LessByName<TestSuite>());
+            return test_suites;
+        }
+
+        // Returns the test suite by its name.  The caller doesn't own the returned
+        // pointer.
+        static const TestSuite *FindTestSuite(const char *name) {
+            UnitTest &unit_test = *UnitTest::GetInstance();
+            for (int i = 0; i < unit_test.total_test_suite_count(); ++i) {
+                const TestSuite *test_suite = unit_test.GetTestSuite(i);
+                if (0 == strcmp(test_suite->name(), name))
+                    return test_suite;
             }
-        };
+            return nullptr;
+        }
 
-        class UnitTestHelper {
-        public:
-            // Returns the array of pointers to all test suites sorted by the test suite
-            // name.  The caller is responsible for deleting the array.
-            static TestSuite const **GetSortedTestSuites() {
-                UnitTest &unit_test = *UnitTest::GetInstance();
-                auto const **const test_suites = new const TestSuite *[static_cast<size_t>(
-                        unit_test.total_test_suite_count())];
+        // Returns the array of pointers to all tests in a particular test suite
+        // sorted by the test name.  The caller is responsible for deleting the
+        // array.
+        static TestInfo const **GetSortedTests(const TestSuite *test_suite) {
+            TestInfo const **const tests = new const TestInfo *[static_cast<size_t>(
+                    test_suite->total_test_count())];
 
-                for (int i = 0; i < unit_test.total_test_suite_count(); ++i)
-                    test_suites[i] = unit_test.GetTestSuite(i);
+            for (int i = 0; i < test_suite->total_test_count(); ++i)
+                tests[i] = test_suite->GetTestInfo(i);
 
-                std::sort(test_suites,
-                          test_suites + unit_test.total_test_suite_count(),
-                          LessByName<TestSuite>());
-                return test_suites;
-            }
-
-            // Returns the test suite by its name.  The caller doesn't own the returned
-            // pointer.
-            static const TestSuite *FindTestSuite(const char *name) {
-                UnitTest &unit_test = *UnitTest::GetInstance();
-                for (int i = 0; i < unit_test.total_test_suite_count(); ++i) {
-                    const TestSuite *test_suite = unit_test.GetTestSuite(i);
-                    if (0 == strcmp(test_suite->name(), name))
-                        return test_suite;
-                }
-                return nullptr;
-            }
-
-            // Returns the array of pointers to all tests in a particular test suite
-            // sorted by the test name.  The caller is responsible for deleting the
-            // array.
-            static TestInfo const **GetSortedTests(const TestSuite *test_suite) {
-                TestInfo const **const tests = new const TestInfo *[static_cast<size_t>(
-                        test_suite->total_test_count())];
-
-                for (int i = 0; i < test_suite->total_test_count(); ++i)
-                    tests[i] = test_suite->GetTestInfo(i);
-
-                std::sort(tests, tests + test_suite->total_test_count(),
-                          LessByName<TestInfo>());
-                return tests;
-            }
-        };
+            std::sort(tests, tests + test_suite->total_test_count(),
+                      LessByName<TestInfo>());
+            return tests;
+        }
+    };
 
 #if GTEST_HAS_TYPED_TEST
         template <typename T> class TestSuiteWithCommentTest : public Test {};

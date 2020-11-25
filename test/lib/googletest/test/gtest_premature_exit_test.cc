@@ -43,31 +43,31 @@ using ::testing::internal::posix::StatStruct;
 
 namespace {
 
-    class PrematureExitTest : public Test {
-    public:
-        // Returns true if and only if the given file exists.
-        static bool FileExists(const char *filepath) {
-            StatStruct stat;
-            return Stat(filepath, &stat) == 0;
+class PrematureExitTest : public Test {
+public:
+    // Returns true if and only if the given file exists.
+    static bool FileExists(const char *filepath) {
+        StatStruct stat;
+        return Stat(filepath, &stat) == 0;
+    }
+
+protected:
+    PrematureExitTest() {
+        premature_exit_file_path_ = GetEnv("TEST_PREMATURE_EXIT_FILE");
+
+        // Normalize NULL to "" for ease of handling.
+        if (premature_exit_file_path_ == nullptr) {
+            premature_exit_file_path_ = "";
         }
+    }
 
-    protected:
-        PrematureExitTest() {
-            premature_exit_file_path_ = GetEnv("TEST_PREMATURE_EXIT_FILE");
+    // Returns true if and only if the premature-exit file exists.
+    bool PrematureExitFileExists() const {
+        return FileExists(premature_exit_file_path_);
+    }
 
-            // Normalize NULL to "" for ease of handling.
-            if (premature_exit_file_path_ == nullptr) {
-                premature_exit_file_path_ = "";
-            }
-        }
-
-        // Returns true if and only if the premature-exit file exists.
-        bool PrematureExitFileExists() const {
-            return FileExists(premature_exit_file_path_);
-        }
-
-        const char *premature_exit_file_path_;
-    };
+    const char *premature_exit_file_path_;
+};
 
     typedef PrematureExitTest PrematureExitDeathTest;
 
