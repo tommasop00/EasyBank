@@ -7,47 +7,52 @@
 bool login(std::string &s, std::string &username, std::string &password);
 
 int main() {
-    std::ifstream iFile;
     std::cout << "Hello, World!" << std::endl;
     std::string username;
     std::string passsword;
 
     std::cout << "LOGIN" << std::endl;
-    std::cout << "Inserisci Username ";
-    std::cin >> username;
-    std::cout << std::endl;
-    std::cout << "Inserisci Password ";
-    std::cin >> passsword;
-    std::cout << std::endl;
 
+    const char *fileName = "/home/tommaso/CLionProjects/EasyBank/loginFile.txt";
 
-    std::cout << "Username : " << username << std::endl;
-    std::cout << "Password : " << passsword << std::endl;
-
-
-    const char *fileName = "/home/tommaso/Scrivania/CLionProject/EasyBank/loginFile.txt";
-
-    iFile.open(fileName);
+    std::ifstream iFile(fileName);
 
     //char c = iFile.get();
-    if (iFile.is_open())
-        std::cout << "OPEN" << std::endl;
-    else
+    if (iFile.is_open()){
+
+        bool res = false;
+        while(!res){
+
+            std::cout << "Inserisci Username ";
+            std::cin >> username;
+            std::cout << std::endl;
+            std::cout << "Inserisci Password ";
+            std::cin >> passsword;
+            std::cout << std::endl;
+
+            std::string line;
+            while (getline(iFile, line)) {
+                res = login(line, username, passsword);
+                if (res) {
+                    break;
+                }
+            }
+
+            if(res) {
+                std::cout << "Benvenuto " << username << std::endl;
+                iFile.close();
+            }else{
+                std::cout << "Credenziali Errate" << std::endl;
+                iFile.clear();
+                iFile.seekg(0,std::ios::beg);
+            }
+
+        }
+    }else
         std::cout << "ERROR" << std::endl;
 
 
-    std::string line;
-    int row = 0;
-    bool res = false;
-    while (getline(iFile, line)) {
-        std::cout << line << std::endl;
-        res = login(line, username, passsword);
-        if (res) {
-            break;
-        }
-    }
-    std::cout << res << std::endl;
-    iFile.close();
+
 
 
     return 0;
@@ -59,13 +64,10 @@ bool login(std::string &s, std::string &username, std::string &password) {
     pos = s.find(' ');
     token = s.substr(0, pos);
     if (token == username) {
-        std::cout << token << std::endl;
         s.erase(0, pos + 1);
         if (s == password) {
             return true;
         }
     }
     return false;
-
-
 }
