@@ -7,7 +7,8 @@
 bool login(std::string &s, std::string &username, std::string &password);
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+
     std::string username;
     std::string passsword;
 

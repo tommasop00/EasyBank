@@ -565,7 +565,7 @@ namespace testing {
 // Assesses the success or failure of a death test, using both private
 // members which have previously been set, and one argument:
 //
-// Private data members:
+// rivate data members:
 //   outcome:  An enumeration describing how the death test
 //             concluded: DIED, LIVED, THREW, or RETURNED.  The death test
 //             fails in the latter three cases.

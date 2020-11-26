@@ -1,19 +1,18 @@
 //
-// Created by tommaso on 24/11/20.
+// Created by tommaso on 26/11/20.
 //
-
-#include <string>
 
 #ifndef EASYBANK_ACCOUNT_H
 #define EASYBANK_ACCOUNT_H
 
-
-#include "../Subject.h"
-
-class Account : public Subject {
+#include <string>
+#include "../Observer.h"
+class Account : public Observer {
 
 protected:
+    int ammount;
     std::string IBAN;
+
 };
 
 
