@@ -2,12 +2,13 @@
 // Created by tommaso on 26/11/20.
 //
 
-#ifndef EASYBANK_PRIVATEACCOUNT_H
-#define EASYBANK_PRIVATEACCOUNT_H
+#ifndef EASYBANK_PRIVATECURRENTACCOUNT_H
+#define EASYBANK_PRIVATECURRENTACCOUNT_H
 
 #include <string>
 #include "Account.h"
-class PrivateAccount : public Account {
+
+class PrivateCurrentAccount : public Account {
 
 private:
     std::string FiscalCode;
@@ -17,4 +18,4 @@ private:
 };
 
 
-#endif //EASYBANK_PRIVATEACCOUNT_H
+#endif //EASYBANK_PRIVATECURRENTACCOUNT_H

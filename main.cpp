@@ -1,10 +1,10 @@
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <iomanip>
+#include <vector>
+#include "Account/MyAccount.h"
 
 
-bool login(std::string &s, std::string &username, std::string &password);
+bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
 
 int main() {
 
@@ -14,7 +14,7 @@ int main() {
 
     std::cout << "LOGIN" << std::endl;
 
-    const char *fileName = "/home/tommaso/CLionProjects/EasyBank/loginFile.txt";
+    const char *fileName = "/home/tommaso/Scrivania/CLionProject/EasyBank/loginFile.txt";
 
     std::ifstream iFile(fileName);
 
@@ -22,8 +22,7 @@ int main() {
     if (iFile.is_open()){
 
         bool res = false;
-        while(!res){
-
+        while(!res) {
             std::cout << "Inserisci Username ";
             std::cin >> username;
             std::cout << std::endl;
@@ -32,25 +31,33 @@ int main() {
             std::cout << std::endl;
 
             std::string line;
-            while (getline(iFile, line)) {
-                res = login(line, username, passsword);
+            std::vector<std::string> array;
+
+            int count = 0;
+            while (getline(iFile, line)) { //getLine <string> function
+                count++;
+                array = spit(line, ' ');
+                res = login(array, username, passsword);
                 if (res) {
                     break;
                 }
             }
 
-            if(res) {
+            if (res) {
+                /*   HERE if all is ok */
+                MyAccount account(username, count);
                 std::cout << "Benvenuto " << username << std::endl;
+                array.push_back(std::to_string(count));
+
                 iFile.close();
             }else{
                 std::cout << "Credenziali Errate" << std::endl;
                 iFile.clear();
                 iFile.seekg(0,std::ios::beg);
             }
-
         }
     }else
-        std::cout << "ERROR" << std::endl;
+        throw std::runtime_error("Errore , file non aperto");
 
 
 
@@ -59,16 +66,13 @@ int main() {
     return 0;
 }
 
-bool login(std::string &s, std::string &username, std::string &password) {
-    size_t pos = 0;
-    std::string token;
-    pos = s.find(' ');
-    token = s.substr(0, pos);
-    if (token == username) {
-        s.erase(0, pos + 1);
-        if (s == password) {
+bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password) {
+    if (s[1] == username) {
+        if (s[2] == password) {
             return true;
         }
     }
     return false;
 }
+
+
