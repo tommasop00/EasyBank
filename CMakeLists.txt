@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 
 add_subdirectory(test)
-set(SOURCE_FILES Observer.h Subject.h Account/Account.cpp Account/Account.h Account/PrivateCurrentAccount.cpp Account/PrivateCurrentAccount.h Account/ProfessionalCurrentAccount.cpp Account/ProfessionalCurrentAccount.h Account/MyAccount.cpp Account/MyAccount.h Account/AccountFactory.cpp Account/AccountFactory.h MyString.h)
+set(SOURCE_FILES Observer.h Subject.h Account/Account.cpp Account/Account.h Account/MyAccount.cpp Account/MyAccount.h MyString.h Account/OtherAccount.cpp Account/OtherAccount.h)
 
 add_executable(EasyBank main.cpp MethodClass.h)
 add_library(core ${SOURCE_FILES})

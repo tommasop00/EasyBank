@@ -9,35 +9,30 @@
 #include "../Subject.h"
 #include <memory>
 #include <vector>
+#include <map>
 #include <stdexcept>
 #include <fstream>
-#include "AccountFactory.h"
 #include "../MethodClass.h"
+#include "Account.h"
+
 
 class MyAccount : public Subject {
 
 public:
 
-    MyAccount(const std::string &username, const int id) : Subject(), username(username), id(id) {
+    MyAccount(const std::string username, const int id) : Subject(), user(std::make_pair(username, id)) {
         this->ibans = this->findIbans();
     }
 
-    int getId() const;
+    const std::string &getSelectedIban() const;
 
-    void setId(int id);
+    void setSelectedIban(const std::string &selectedIban);
 
-    int getAmmount() const;
-
-    void setAmmount(int ammount);
-
-    const std::string &getUsername() const;
-
-    void setUsername(const std::string &username);
-
-    std::unique_ptr<std::vector<std::string>> findIbans() const;
+    const std::map<std::string, std::unique_ptr<Account>> &getIbans() const;
 
     virtual ~MyAccount() {}
 
+    std::map<std::string, std::unique_ptr<Account>> findIbans() const;
 
     void addObserver(
             std::unique_ptr<Observer> ob) override;//TODO come parametro ci potrebbre stare di passsare direttamente il vettore
@@ -45,12 +40,9 @@ public:
     void notify() override;
 
 private:
-    int id;
-    int ammount{};
-    std::string username;
-    std::unique_ptr<std::vector<std::string>> ibans;
-
-
+    std::pair<std::string, int> user;
+    std::map<std::string, std::unique_ptr<Account>> ibans;
+    std::string selectedIban;
 };
 
 

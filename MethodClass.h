@@ -9,7 +9,7 @@
 #include <vector>
 
 
-std::vector<std::string> spit(std::string &data, const char &demilimiter) {
+inline std::vector<std::string> split(std::string &data, const char &demilimiter) {
     size_t pos = 0;
     std::vector<std::string> splitArray;
 

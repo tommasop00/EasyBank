@@ -7,22 +7,42 @@
 
 #include <string>
 #include <vector>
-#include "../Observer.h"
 
-class Account : public Observer {
+class Account {
 
 public:
-    int getAmmount() const;
+    Account() {};
 
-    void setAmmount(int ammount);
+    Account(std::string iban, float ammount, std::string FCVatNumber, std::string surnameBusinessName) : iban(iban),
+                                                                                                         ammount(ammount),
+                                                                                                         FCVatNumber(
+                                                                                                                 FCVatNumber),
+                                                                                                         surnameBusinessName(
+                                                                                                                 surnameBusinessName) {};
 
-    const std::vector<std::string> &getIbans() const;
+    virtual ~Account() {};
 
-    void setIbans(const std::vector<std::string> &ibans);
+    const std::string &getIban() const {
+        return iban;
+    }
+
+    const std::string &getFcVatNumber() const {
+        return FCVatNumber;
+    }
+
+    float getAmmount() const {
+        return ammount;
+    }
+
+    const std::string &getSurnameBusinessName() const {
+        return surnameBusinessName;
+    }
 
 protected:
-    std::vector<std::string> ibans;
-    int ammount;
+    std::string iban;
+    std::string FCVatNumber;
+    float ammount;
+    std::string surnameBusinessName;
 
 };
 
