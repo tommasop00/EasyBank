@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -52,7 +52,7 @@
 #include "gtest/gtest-test-part.h"
 
 namespace testing {
-// Input to a parameterized test name generator, describing a test parameter.
+// Input to a parameterized test nameProprietary generator, describing a test parameter.
 // Consists of the parameter value and the integer parameter index.
     template<class ParamType>
     struct TestParamInfo {
@@ -64,7 +64,7 @@ namespace testing {
         size_t index;
     };
 
-// A builtin parameterized test name generator which returns the result of
+// A builtin parameterized test nameProprietary generator which returns the result of
 // testing::PrintToString.
     struct PrintToStringParamName {
         template<class ParamType>
@@ -80,7 +80,7 @@ namespace testing {
 
 // Outputs a message explaining invalid registration of different
 // fixture class for the same test suite. This may happen when
-// TEST_P macro is used to define two tests with the same name
+// TEST_P macro is used to define two tests with the same nameProprietary
 // but in different namespaces.
         GTEST_API_ void ReportInvalidTestSuiteType(const char *test_suite_name,
                                                    CodeLocation code_location);
@@ -404,7 +404,7 @@ namespace testing {
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
-// Default parameterized test name generator, returns a string containing the
+// Default parameterized test nameProprietary generator, returns a string containing the
 // integer test parameter index.
         template<class ParamType>
         std::string DefaultParamName(const TestParamInfo<ParamType> &info) {
@@ -494,7 +494,7 @@ namespace testing {
         public:
             virtual ~ParameterizedTestSuiteInfoBase() {}
 
-            // Base part of test suite name for display purposes.
+            // Base part of test suite nameProprietary for display purposes.
             virtual const std::string &GetTestSuiteName() const = 0;
 
             // Test suite id to verify identity.
@@ -515,7 +515,7 @@ namespace testing {
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
-// Report a the name of a test_suit as safe to ignore
+// Report a the nameProprietary of a test_suit as safe to ignore
 // as the side effect of construction of this type.
         struct MarkAsIgnored {
             explicit MarkAsIgnored(const char *test_suite);
@@ -548,7 +548,7 @@ namespace testing {
                                                 CodeLocation code_location)
                     : test_suite_name_(name), code_location_(code_location) {}
 
-            // Test suite base name for display purposes.
+            // Test suite base nameProprietary for display purposes.
             const std::string &GetTestSuiteName() const override {
                 return test_suite_name_;
             }
@@ -558,10 +558,10 @@ namespace testing {
 
             // TEST_P macro uses AddTestPattern() to record information
             // about a single test in a LocalTestInfo structure.
-            // test_suite_name is the base name of the test suite (without invocation
-            // prefix). test_base_name is the name of an individual test without
+            // test_suite_name is the base nameProprietary of the test suite (without invocation
+            // prefix). test_base_name is the nameProprietary of an individual test without
             // parameter index. For the test SequenceA/FooTest.DoBar/1 FooTest is
-            // test suite base name and DoBar is test base name.
+            // test suite base nameProprietary and DoBar is test base nameProprietary.
             void AddTestPattern(const char *test_suite_name, const char *test_base_name,
                                 TestMetaFactoryBase<ParamType> *meta_factory,
                                 CodeLocation code_location) {
@@ -618,12 +618,12 @@ namespace testing {
                                     TestParamInfo<ParamType>(*param_it, i));
 
                             GTEST_CHECK_(IsValidParamName(param_name))
-                                        << "Parameterized test name '" << param_name
+                                        << "Parameterized test nameProprietary '" << param_name
                                         << "' is invalid, in " << file
                                         << " line " << line << std::endl;
 
                             GTEST_CHECK_(test_param_names.count(param_name) == 0)
-                                        << "Duplicate parameterized test name '" << param_name
+                                        << "Duplicate parameterized test nameProprietary '" << param_name
                                         << "', in " << file << " line " << line << std::endl;
 
                             test_param_names.insert(param_name);
@@ -672,7 +672,7 @@ namespace testing {
             using TestInfoContainer = ::std::vector<std::shared_ptr<TestInfo> >;
 
             // Records data received from INSTANTIATE_TEST_SUITE_P macros:
-            //  <Instantiation name, Sequence generator creation function,
+            //  <Instantiation nameProprietary, Sequence generator creation function,
             //     Name generator function, Source file, Source line>
             struct InstantiationInfo {
                 InstantiationInfo(const std::string &name_in,

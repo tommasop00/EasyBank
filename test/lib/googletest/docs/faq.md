@@ -15,7 +15,7 @@ compiler and the standard library:
 
 1.  any identifier that starts with an `_` followed by an upper-case letter, and
 2.  any identifier that contains two consecutive underscores (i.e. `__`)
-    *anywhere* in its name.
+    *anywhere* in its nameProprietary.
 
 User code is *prohibited* from using such identifiers.
 
@@ -114,10 +114,10 @@ rough guidelines:
     `new Bar(5)`. To accommodate for the differences, you can write factory
     function wrappers and pass these function pointers to the tests as their
     parameters.
-*   When a typed test fails, the default output includes the name of the type,
+*   When a typed test fails, the default output includes the nameProprietary of the type,
     which can help you quickly identify which implementation is wrong.
     Value-parameterized tests only show the number of the failed iteration by
-    default. You will need to define a function that returns the iteration name
+    default. You will need to define a function that returns the iteration nameProprietary
     and pass it as the third parameter to INSTANTIATE_TEST_SUITE_P to have more
     useful output.
 *   When using typed tests, you need to make sure you are testing against the
@@ -622,8 +622,8 @@ before the first test in it is run, and tear it down afterwards. Splitting up
 the test case would require multiple set-up and tear-down processes, which is
 inefficient and makes the semantics unclean.
 
-If we were to determine the order of tests based on test name instead of test
-case name, then we would have a problem with the following situation:
+If we were to determine the order of tests based on test nameProprietary instead of test
+case nameProprietary, then we would have a problem with the following situation:
 
 ```c++
 TEST_F(FooTest, AbcDeathTest) { ... }
@@ -673,8 +673,8 @@ If you use a user-defined type `FooType` in an assertion, you must make sure
 there is an `std::ostream& operator<<(std::ostream&, const FooType&)` function
 defined such that we can print a value of `FooType`.
 
-In addition, if `FooType` is declared in a name space, the `<<` operator also
-needs to be defined in the *same* name space. See https://abseil.io/tips/49 for details.
+In addition, if `FooType` is declared in a nameProprietary space, the `<<` operator also
+needs to be defined in the *same* nameProprietary space. See https://abseil.io/tips/49 for details.
 
 ## How do I suppress the memory leak messages on Windows?
 
@@ -703,13 +703,13 @@ that), there is no danger in accidentally running it.
 
 However, if you *really*, *really*, *really* have no choice, and if you follow
 the rule of ending your test program names with `_test`, you can use the
-*horrible* hack of sniffing your executable name (`argv[0]` in `main()`) to know
+*horrible* hack of sniffing your executable nameProprietary (`argv[0]` in `main()`) to know
 whether the code is under test.
 
 ## How do I temporarily disable a test?
 
 If you have a broken test that you cannot fix right away, you can add the
-DISABLED_ prefix to its name. This will exclude it from execution. This is
+DISABLED_ prefix to its nameProprietary. This will exclude it from execution. This is
 better than commenting out the code or using #if 0, as disabled tests are still
 compiled (and thus won't rot).
 
@@ -740,7 +740,7 @@ TEST(CoolTest, DoSomething) {
 
 However, the following code is **not allowed** and will produce a runtime error
 from googletest because the test methods are using different test fixture
-classes with the same test suite name.
+classes with the same test suite nameProprietary.
 
 ```c++
 namespace foo {

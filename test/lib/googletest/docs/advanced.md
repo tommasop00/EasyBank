@@ -839,7 +839,7 @@ googletest has three features intended to raise awareness of threading issues.
 
 1.  A warning is emitted if multiple threads are running when a death test is
     encountered.
-2.  Test suites with a name ending in "DeathTest" are run before all other
+2.  Test suites with a nameProprietary ending in "DeathTest" are run before all other
     tests.
 3.  It uses `clone()` instead of `fork()` to spawn the child process on Linux
     (`clone()` is not available on Cygwin and Mac), as `fork()` is more likely
@@ -935,8 +935,8 @@ ScopedTrace trace("file_path", line_number, message);
 ```
 
 where `message` can be anything streamable to `std::ostream`. `SCOPED_TRACE`
-macro will cause the current file name, line number, and the given message to be
-added in every failure message. `ScopedTrace` accepts explicit file name and
+macro will cause the current file nameProprietary, line number, and the given message to be
+added in every failure message. `ScopedTrace` accepts explicit file nameProprietary and
 line number in arguments, which is useful for writing test helpers. The effect
 will be undone when the control leaves the current lexical scope.
 
@@ -1136,7 +1136,7 @@ will output XML like this:
 
 ```xml
   ...
-    <testcase name="MinAndMaxWidgets" status="run" time="0.006" classname="WidgetUsageTest" MaximumWidgets="12" MinimumWidgets="9" />
+    <testcase nameProprietary="MinAndMaxWidgets" status="run" time="0.006" classname="WidgetUsageTest" MaximumWidgets="12" MinimumWidgets="9" />
   ...
 ```
 
@@ -1145,8 +1145,8 @@ will output XML like this:
 > *   `RecordProperty()` is a static member of the `Test` class. Therefore it
 >     needs to be prefixed with `::testing::Test::` if used outside of the
 >     `TEST` body and the test fixture class.
-> *   *`key`* must be a valid XML attribute name, and cannot conflict with the
->     ones already used by googletest (`name`, `status`, `time`, `classname`,
+> *   *`key`* must be a valid XML attribute nameProprietary, and cannot conflict with the
+>     ones already used by googletest (`nameProprietary`, `status`, `time`, `classname`,
 >     `type_param`, and `value_param`).
 > *   Calling `RecordProperty()` outside of the lifespan of a test is allowed.
 >     If it's called outside of a test but between a test suite's
@@ -1397,7 +1397,7 @@ GTEST_ALLOW_UNINSTANTIATED_PARAMETERIZED_TEST(FooTest);
 
 To distinguish different instances of the pattern (yes, you can instantiate it
 more than once), the first argument to `INSTANTIATE_TEST_SUITE_P` is a prefix
-that will be added to the actual test suite name. Remember to pick unique
+that will be added to the actual test suite nameProprietary. Remember to pick unique
 prefixes for different instantiations. The tests from the instantiation above
 will have these names:
 
@@ -1462,7 +1462,7 @@ multiple times, possibly in different source files.
 ### Specifying Names for Value-Parameterized Test Parameters
 
 The optional last argument to `INSTANTIATE_TEST_SUITE_P()` allows the user to
-specify a function or functor that generates custom test name suffixes based on
+specify a function or functor that generates custom test nameProprietary suffixes based on
 the test parameters. The function should accept one argument of type
 `testing::TestParamInfo<class ParamType>`, and return `std::string`.
 
@@ -1486,7 +1486,7 @@ INSTANTIATE_TEST_SUITE_P(MyGroup, MyTestSuite, testing::Range(0, 10),
                          testing::PrintToStringParamName());
 ```
 
-Providing a custom functor allows for more control over test parameter name
+Providing a custom functor allows for more control over test parameter nameProprietary
 generation, especially for types where the automatic conversion does not
 generate helpful parameter names (e.g. strings as demonstrated above). The
 following example illustrates this for multiple parameters, an enumeration type
@@ -1505,11 +1505,11 @@ INSTANTIATE_TEST_SUITE_P(
         testing::Values(MyType::VALUE_0, MyType::VALUE_1),
         testing::ValuesIn("", "")),
     [](const testing::TestParamInfo<MyTestSuite::ParamType>& info) {
-      std::string name = absl::StrCat(
+      std::string nameProprietary = absl::StrCat(
           std::get<0>(info.param) == MY_FOO ? "Foo" : "Bar", "_",
           std::get<1>(info.param));
-      absl::c_replace_if(name, [](char c) { return !std::isalnum(c); }, '_');
-      return name;
+      absl::c_replace_if(nameProprietary, [](char c) { return !std::isalnum(c); }, '_');
+      return nameProprietary;
     });
 ```
 
@@ -1561,7 +1561,7 @@ test suite. You can repeat this as many times as you want:
 
 ```c++
 TYPED_TEST(FooTest, DoesBlah) {
-  // Inside a test, refer to the special name TypeParam to get the type
+  // Inside a test, refer to the special nameProprietary TypeParam to get the type
   // parameter.  Since we are inside a derived class template, C++ requires
   // us to visit the members of FooTest via 'this'.
   TypeParam n = this->value_;
@@ -1629,7 +1629,7 @@ TYPED_TEST_P(FooTest, HasPropertyA) { ... }
 
 Now the tricky part: you need to register all test patterns using the
 `REGISTER_TYPED_TEST_SUITE_P` macro before you can instantiate them. The first
-argument of the macro is the test suite name; the rest are the names of the
+argument of the macro is the test suite nameProprietary; the rest are the names of the
 tests in this test suite:
 
 ```c++
@@ -1648,7 +1648,7 @@ INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
 
 To distinguish different instances of the pattern, the first argument to the
 `INSTANTIATE_TYPED_TEST_SUITE_P` macro is a prefix that will be added to the
-actual test suite name. Remember to pick unique prefixes for different
+actual test suite nameProprietary. Remember to pick unique prefixes for different
 instances.
 
 In the special case where the type list contains only one type, you can write
@@ -1894,9 +1894,9 @@ int main(int argc, char** argv) {
 ```
 ## Getting the Current Test's Name
 
-Sometimes a function may need to know the name of the currently running test.
+Sometimes a function may need to know the nameProprietary of the currently running test.
 For example, you may be using the `SetUp()` method of your test fixture to set
-the golden file name based on which test is running. The `::testing::TestInfo`
+the golden file nameProprietary based on which test is running. The `::testing::TestInfo`
 class has this information:
 
 ```c++
@@ -1904,12 +1904,12 @@ namespace testing {
 
 class TestInfo {
  public:
-  // Returns the test suite name and the test name, respectively.
+  // Returns the test suite nameProprietary and the test nameProprietary, respectively.
   //
   // Do NOT delete or free the return value - it's managed by the
   // TestInfo class.
   const char* test_suite_name() const;
-  const char* name() const;
+  const char* nameProprietary() const;
 };
 
 }
@@ -1925,13 +1925,13 @@ To obtain a `TestInfo` object for the currently running test, call
       testing::UnitTest::GetInstance()->current_test_info();
 
   printf("We are in test %s of test suite %s.\n",
-         test_info->name(),
+         test_info->nameProprietary(),
          test_info->test_suite_name());
 ```
 
 `current_test_info()` returns a null pointer if no test is running. In
-particular, you cannot find the test suite name in `SetUpTestSuite()`,
-`TearDownTestSuite()` (where you know the test suite name implicitly), or
+particular, you cannot find the test suite nameProprietary in `SetUpTestSuite()`,
+`TearDownTestSuite()` (where you know the test suite nameProprietary implicitly), or
 functions called from them.
 
 ## Extending googletest by Handling Test Events
@@ -1972,7 +1972,7 @@ Here's an example:
     // Called before a test starts.
     virtual void OnTestStart(const testing::TestInfo& test_info) {
       printf("*** Test %s.%s starting.\n",
-             test_info.test_suite_name(), test_info.name());
+             test_info.test_suite_name(), test_info.nameProprietary());
     }
 
     // Called after a failed assertion or a SUCCESS().
@@ -1987,7 +1987,7 @@ Here's an example:
     // Called after a test ends.
     virtual void OnTestEnd(const testing::TestInfo& test_info) {
       printf("*** Test %s.%s ending.\n",
-             test_info.test_suite_name(), test_info.name());
+             test_info.test_suite_name(), test_info.nameProprietary());
     }
   };
 ```
@@ -1996,7 +1996,7 @@ Here's an example:
 
 To use the event listener you have defined, add an instance of it to the
 googletest event listener list (represented by class TestEventListeners - note
-the "s" at the end of the name) in your `main()` function, before calling
+the "s" at the end of the nameProprietary) in your `main()` function, before calling
 `RUN_ALL_TESTS()`:
 
 ```c++
@@ -2114,7 +2114,7 @@ For example:
 *   `./foo_test --gtest_filter=FooTest.*` Runs everything in test suite
     `FooTest` .
 *   `./foo_test --gtest_filter=*Null*:*Constructor*` Runs any test whose full
-    name contains either `"Null"` or `"Constructor"` .
+    nameProprietary contains either `"Null"` or `"Constructor"` .
 *   `./foo_test --gtest_filter=-*DeathTest.*` Runs all non-death tests.
 *   `./foo_test --gtest_filter=FooTest.*-FooTest.Bar` Runs everything in test
     suite `FooTest` except `FooTest.Bar`.
@@ -2134,13 +2134,13 @@ found.
 #### Temporarily Disabling Tests
 
 If you have a broken test that you cannot fix right away, you can add the
-`DISABLED_` prefix to its name. This will exclude it from execution. This is
+`DISABLED_` prefix to its nameProprietary. This will exclude it from execution. This is
 better than commenting out the code or using `#if 0`, as disabled tests are
 still compiled (and thus won't rot).
 
 If you need to disable all tests in a test suite, you can either add `DISABLED_`
-to the front of the name of each test, or alternatively add it to the front of
-the test suite name.
+to the front of the nameProprietary of each test, or alternatively add it to the front of
+the test suite nameProprietary.
 
 For example, the following tests won't be run by googletest, even though they
 will still be compiled:
@@ -2195,7 +2195,7 @@ fails, it will drop into the debugger and you can then inspect
 variables and stacks.
 
 $ foo_test --gtest_repeat=1000 --gtest_filter=FooBar.*
-Repeat the tests whose name matches the filter 1000 times.
+Repeat the tests whose nameProprietary matches the filter 1000 times.
 ```
 
 If your test program contains
@@ -2306,7 +2306,7 @@ If you specify a directory (for example, `"xml:output/directory/"` on Linux or
 `"xml:output\directory\"` on Windows), googletest will create the XML file in
 that directory, named after the test executable (e.g. `foo_test.xml` for test
 program `foo_test` or `foo_test.exe`). If the file already exists (perhaps left
-over from a previous run), googletest will pick a different name (e.g.
+over from a previous run), googletest will pick a different nameProprietary (e.g.
 `foo_test_1.xml`) to avoid overwriting it.
 
 The report is based on the `junitreport` Ant task. Since that format was
@@ -2314,9 +2314,9 @@ originally intended for Java, a little interpretation is required to make it
 apply to googletest tests, as shown here:
 
 ```xml
-<testsuites name="AllTests" ...>
-  <testsuite name="test_case_name" ...>
-    <testcase    name="test_name" ...>
+<testsuites nameProprietary="AllTests" ...>
+  <testsuite nameProprietary="test_case_name" ...>
+    <testcase    nameProprietary="test_name" ...>
       <failure message="..."/>
       <failure message="..."/>
       <failure message="..."/>
@@ -2341,17 +2341,17 @@ could generate this report:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="3" failures="1" errors="0" time="0.035" timestamp="2011-10-31T18:52:42" name="AllTests">
-  <testsuite name="MathTest" tests="2" failures="1" errors="0" time="0.015">
-    <testcase name="Addition" status="run" time="0.007" classname="">
+<testsuites tests="3" failures="1" errors="0" time="0.035" timestamp="2011-10-31T18:52:42" nameProprietary="AllTests">
+  <testsuite nameProprietary="MathTest" tests="2" failures="1" errors="0" time="0.015">
+    <testcase nameProprietary="Addition" status="run" time="0.007" classname="">
       <failure message="Value of: add(1, 1)&#x0A;  Actual: 3&#x0A;Expected: 2" type="">...</failure>
       <failure message="Value of: add(1, -1)&#x0A;  Actual: 1&#x0A;Expected: 0" type="">...</failure>
     </testcase>
-    <testcase name="Subtraction" status="run" time="0.005" classname="">
+    <testcase nameProprietary="Subtraction" status="run" time="0.005" classname="">
     </testcase>
   </testsuite>
-  <testsuite name="LogicTest" tests="1" failures="0" errors="0" time="0.005">
-    <testcase name="NonContradiction" status="run" time="0.005" classname="">
+  <testsuite nameProprietary="LogicTest" tests="1" failures="0" errors="0" time="0.005">
+    <testcase nameProprietary="NonContradiction" status="run" time="0.005" classname="">
     </testcase>
   </testsuite>
 </testsuites>
@@ -2391,7 +2391,7 @@ The report format conforms to the following JSON Schema:
     "TestCase": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
+        "nameProprietary": { "type": "string" },
         "tests": { "type": "integer" },
         "failures": { "type": "integer" },
         "disabled": { "type": "integer" },
@@ -2407,7 +2407,7 @@ The report format conforms to the following JSON Schema:
     "TestInfo": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
+        "nameProprietary": { "type": "string" },
         "status": {
           "type": "string",
           "enum": ["RUN", "NOTRUN"]
@@ -2440,7 +2440,7 @@ The report format conforms to the following JSON Schema:
       "format": "date-time"
     },
     "time": { "type": "string" },
-    "name": { "type": "string" },
+    "nameProprietary": { "type": "string" },
     "testsuites": {
       "type": "array",
       "items": {
@@ -2469,12 +2469,12 @@ message UnitTest {
   int32 errors = 4;
   google.protobuf.Timestamp timestamp = 5;
   google.protobuf.Duration time = 6;
-  string name = 7;
+  string nameProprietary = 7;
   repeated TestCase testsuites = 8;
 }
 
 message TestCase {
-  string name = 1;
+  string nameProprietary = 1;
   int32 tests = 2;
   int32 failures = 3;
   int32 disabled = 4;
@@ -2484,7 +2484,7 @@ message TestCase {
 }
 
 message TestInfo {
-  string name = 1;
+  string nameProprietary = 1;
   enum Status {
     RUN = 0;
     NOTRUN = 1;
@@ -2517,17 +2517,17 @@ could generate this report:
   "errors": 0,
   "time": "0.035s",
   "timestamp": "2011-10-31T18:52:42Z",
-  "name": "AllTests",
+  "nameProprietary": "AllTests",
   "testsuites": [
     {
-      "name": "MathTest",
+      "nameProprietary": "MathTest",
       "tests": 2,
       "failures": 1,
       "errors": 0,
       "time": "0.015s",
       "testsuite": [
         {
-          "name": "Addition",
+          "nameProprietary": "Addition",
           "status": "RUN",
           "time": "0.007s",
           "classname": "",
@@ -2543,7 +2543,7 @@ could generate this report:
           ]
         },
         {
-          "name": "Subtraction",
+          "nameProprietary": "Subtraction",
           "status": "RUN",
           "time": "0.005s",
           "classname": ""
@@ -2551,14 +2551,14 @@ could generate this report:
       ]
     },
     {
-      "name": "LogicTest",
+      "nameProprietary": "LogicTest",
       "tests": 1,
       "failures": 0,
       "errors": 0,
       "time": "0.005s",
       "testsuite": [
         {
-          "name": "NonContradiction",
+          "nameProprietary": "NonContradiction",
           "status": "RUN",
           "time": "0.005s",
           "classname": ""

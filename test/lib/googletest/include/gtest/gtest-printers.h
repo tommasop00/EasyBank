@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -651,7 +651,7 @@ namespace internal {
             // disable the warning.
             GTEST_DISABLE_MSC_WARNINGS_PUSH_(4180)
 
-            // Note: we deliberately don't call this PrintTo(), as that name
+            // Note: we deliberately don't call this PrintTo(), as that nameProprietary
             // conflicts with ::testing::internal::PrintTo in the body of the
             // function.
             static void Print(const T &value, ::std::ostream *os) {

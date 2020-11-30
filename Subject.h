@@ -14,7 +14,11 @@ class Subject {
 public:
     virtual ~Subject() {};
 
-    virtual void addObserver(std::unique_ptr<Observer> ob) = 0;
+    virtual void addObserver(Observer *ob) = 0;
+
+    virtual void removeObserver(Observer *ob) = 0;
+
+    virtual void clearObserver() = 0;
 
     virtual void notify() = 0;
 

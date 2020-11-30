@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -81,7 +81,7 @@
 // Stringifies its argument.
 // Work around a bug in visual studio which doesn't accept code like this:
 //
-//   #define GTEST_STRINGIFY_(name) #name
+//   #define GTEST_STRINGIFY_(nameProprietary) #nameProprietary
 //   #define MACRO(a, b, c) ... GTEST_STRINGIFY_(a) ...
 //   MACRO(, x, y)
 //
@@ -571,9 +571,9 @@ namespace testing {
 //
 // Arguments:
 //
-//   test_suite_name:  name of the test suite
-//   name:             name of the test
-//   type_param:       the name of the test's type parameter, or NULL if
+//   test_suite_name:  nameProprietary of the test suite
+//   nameProprietary:             nameProprietary of the test
+//   type_param:       the nameProprietary of the test's type parameter, or NULL if
 //                     this is not a typed or a type-parameterized test.
 //   value_param:      text representation of the test's value parameter,
 //                     or NULL if this is not a type-parameterized test.
@@ -605,7 +605,7 @@ namespace testing {
         public:
             TypedTestSuitePState() : registered_(false) {}
 
-            // Adds the given test name to defined_test_names_ and return true
+            // Adds the given test nameProprietary to defined_test_names_ and return true
             // if the test suite hasn't been registered; otherwise aborts the
             // program.
             bool AddTestName(const char *file, int line, const char *case_name,
@@ -678,7 +678,7 @@ namespace testing {
                          ::std::vector<::std::string> *dest);
 
 // The default argument to the template below for the case when the user does
-// not provide a name generator.
+// not provide a nameProprietary generator.
         struct DefaultNameGenerator {
             template<typename T>
             static std::string GetName(int i) {
@@ -950,7 +950,7 @@ namespace testing {
 // iterator is properly implemented for the container.
 //
 // For pre-C++11 that we look for both C::iterator and C::const_iterator.
-// The reason is that C++ injects the name of a class as a member of the
+// The reason is that C++ injects the nameProprietary of a class as a member of the
 // class itself (e.g. you can refer to class iterator as either
 // 'iterator' or 'iterator::iterator').  If we look for C::iterator
 // only, for example, we would mistakenly think that a class named
@@ -1560,7 +1560,7 @@ namespace testing {
            "failures in the current thread.\n" \
            "  Actual: it does.")
 
-// Expands to the name of the class that implements the given test.
+// Expands to the nameProprietary of the class that implements the given test.
 #define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) \
   test_suite_name##_##test_name##_Test
 

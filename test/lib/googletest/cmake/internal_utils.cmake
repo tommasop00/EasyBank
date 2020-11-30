@@ -151,7 +151,7 @@ function(cxx_library_with_type name type cxx_flags)
     set_target_properties(${name}
             PROPERTIES
             COMPILE_FLAGS "${cxx_flags}")
-    # Generate debug library name with a postfix.
+    # Generate debug library nameProprietary with a postfix.
     set_target_properties(${name}
             PROPERTIES
             DEBUG_POSTFIX "d")
@@ -162,7 +162,7 @@ function(cxx_library_with_type name type cxx_flags)
             LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
             ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
             PDB_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
-    # make PDBs match library name
+    # make PDBs match library nameProprietary
     get_target_property(pdb_debug_postfix ${name} DEBUG_POSTFIX)
     set_target_properties(${name}
             PROPERTIES
@@ -206,7 +206,7 @@ function(cxx_library name cxx_flags)
     cxx_library_with_type(${name} "" "${cxx_flags}" ${ARGN})
 endfunction()
 
-# cxx_executable_with_flags(name cxx_flags libs srcs...)
+# cxx_executable_with_flags(nameProprietary cxx_flags libs srcs...)
 #
 # creates a named C++ executable that depends on the given libraries and
 # is built from the given source files with the given compiler flags.
@@ -233,10 +233,10 @@ function(cxx_executable_with_flags name cxx_flags libs)
     endforeach ()
 endfunction()
 
-# cxx_executable(name dir lib srcs...)
+# cxx_executable(nameProprietary dir lib srcs...)
 #
 # creates a named target that depends on the given libs and is built
-# from the given source files.  dir/name.cc is implicitly included in
+# from the given source files.  dir/nameProprietary.cc is implicitly included in
 # the source file list.
 function(cxx_executable name dir libs)
     cxx_executable_with_flags(
@@ -246,7 +246,7 @@ endfunction()
 # Sets PYTHONINTERP_FOUND and PYTHON_EXECUTABLE.
 find_package(PythonInterp)
 
-# cxx_test_with_flags(name cxx_flags libs srcs...)
+# cxx_test_with_flags(nameProprietary cxx_flags libs srcs...)
 #
 # creates a named C++ test that depends on the given libs and is built
 # from the given source files with the given compiler flags.
@@ -255,20 +255,20 @@ function(cxx_test_with_flags name cxx_flags libs)
     add_test(NAME ${name} COMMAND "$<TARGET_FILE:${name}>")
 endfunction()
 
-# cxx_test(name libs srcs...)
+# cxx_test(nameProprietary libs srcs...)
 #
 # creates a named test target that depends on the given libs and is
 # built from the given source files.  Unlike cxx_test_with_flags,
-# test/name.cc is already implicitly included in the source file list.
+# test/nameProprietary.cc is already implicitly included in the source file list.
 function(cxx_test name libs)
     cxx_test_with_flags("${name}" "${cxx_default}" "${libs}"
             "test/${name}.cc" ${ARGN})
 endfunction()
 
-# py_test(name)
+# py_test(nameProprietary)
 #
-# creates a Python test with the given name whose main module is in
-# test/name.py.  It does nothing if Python is not installed.
+# creates a Python test with the given nameProprietary whose main module is in
+# test/nameProprietary.py.  It does nothing if Python is not installed.
 function(py_test name)
     if (PYTHONINTERP_FOUND)
         if ("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" VERSION_GREATER 3.1)

@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -105,7 +105,7 @@ namespace testing {
 // first failure.
     GTEST_DECLARE_bool_(fail_fast);
 
-// This flag sets up the filter to select by name using a glob pattern
+// This flag sets up the filter to select by nameProprietary using a glob pattern
 // the tests to run. If the filter is not given all tests are executed.
     GTEST_DECLARE_string_(filter);
 
@@ -520,7 +520,7 @@ namespace testing {
         // Sets up, executes, and tears down the test.
         void Run();
 
-        // Deletes self.  We deliberately pick an unusual name for this
+        // Deletes self.  We deliberately pick an unusual nameProprietary for this
         // internal method to avoid clashing with names used in user TESTs.
         void DeleteSelf_() { delete this; }
 
@@ -726,8 +726,8 @@ namespace testing {
 
 // A TestInfo object stores the following information about a test:
 //
-//   Test suite name
-//   Test name
+//   Test suite nameProprietary
+//   Test nameProprietary
 //   Whether the test should be run
 //   A function pointer that creates the test object when invoked
 //   Test result
@@ -741,7 +741,7 @@ namespace testing {
         // don't inherit from TestInfo.
         ~TestInfo();
 
-        // Returns the test suite name.
+        // Returns the test suite nameProprietary.
         const char *test_suite_name() const { return test_suite_name_.c_str(); }
 
 // Legacy API is deprecated but still available
@@ -751,10 +751,10 @@ namespace testing {
 
 #endif  // GTEST_REMOVE_LEGACY_TEST_CASEAPI_
 
-        // Returns the test name.
+        // Returns the test nameProprietary.
         const char *name() const { return name_.c_str(); }
 
-        // Returns the name of the parameter type, or NULL if this is not a typed
+        // Returns the nameProprietary of the parameter type, or NULL if this is not a typed
         // or a type-parameterized test.
         const char *type_param() const {
             if (type_param_.get() != nullptr) return type_param_->c_str();
@@ -768,7 +768,7 @@ namespace testing {
             return nullptr;
         }
 
-        // Returns the file name where this test is defined.
+        // Returns the file nameProprietary where this test is defined.
         const char *file() const { return location_.file.c_str(); }
 
         // Returns the line where this test is defined.
@@ -779,10 +779,10 @@ namespace testing {
 
         // Returns true if this test should run, that is if the test is not
         // disabled (or it is disabled but the also_run_disabled_tests flag has
-        // been specified) and its full name matches the user-specified filter.
+        // been specified) and its full nameProprietary matches the user-specified filter.
         //
         // Google Test allows the user to filter the tests by their full names.
-        // The full name of a test Bar in test suite Foo is defined as
+        // The full nameProprietary of a test Bar in test suite Foo is defined as
         // "Foo.Bar".  Only the tests that match the filter will run.
         //
         // A filter is a colon-separated list of glob (not regex) patterns,
@@ -854,8 +854,8 @@ namespace testing {
         }
 
         // These fields are immutable properties of the test.
-        const std::string test_suite_name_;    // test suite name
-        const std::string name_;               // Test name
+        const std::string test_suite_name_;    // test suite nameProprietary
+        const std::string name_;               // Test nameProprietary
         // Name of the parameter type, or NULL if this is not a typed or a
         // type-parameterized test.
         const std::unique_ptr<const ::std::string> type_param_;
@@ -884,15 +884,15 @@ namespace testing {
 // TestSuite is not copyable.
     class GTEST_API_ TestSuite {
     public:
-        // Creates a TestSuite with the given name.
+        // Creates a TestSuite with the given nameProprietary.
         //
         // TestSuite does NOT have a default constructor.  Always use this
         // constructor to create a TestSuite object.
         //
         // Arguments:
         //
-        //   name:         name of the test suite
-        //   a_type_param: the name of the test's type parameter, or NULL if
+        //   nameProprietary:         nameProprietary of the test suite
+        //   a_type_param: the nameProprietary of the test's type parameter, or NULL if
         //                 this is not a type-parameterized test.
         //   set_up_tc:    pointer to the function that sets up the test suite
         //   tear_down_tc: pointer to the function that tears down the test suite
@@ -903,10 +903,10 @@ namespace testing {
         // Destructor of TestSuite.
         virtual ~TestSuite();
 
-        // Gets the name of the TestSuite.
+        // Gets the nameProprietary of the TestSuite.
         const char *name() const { return name_.c_str(); }
 
-        // Returns the name of the parameter type, or NULL if this is not a
+        // Returns the nameProprietary of the parameter type, or NULL if this is not a
         // type-parameterized test suite.
         const char *type_param() const {
             if (type_param_.get() != nullptr) return type_param_->c_str();
@@ -2043,7 +2043,7 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
                     ::testing::TestPartResult::kFatalFailure)
 
 // Define this macro to 1 to omit the definition of FAIL(), which is a
-// generic name and clashes with some other libraries.
+// generic nameProprietary and clashes with some other libraries.
 #if !GTEST_DONT_DEFINE_FAIL
 # define FAIL() GTEST_FAIL()
 #endif
@@ -2052,7 +2052,7 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
 #define GTEST_SUCCEED() GTEST_SUCCESS_("Succeeded")
 
 // Define this macro to 1 to omit the definition of SUCCEED(), which
-// is a generic name and clashes with some other libraries.
+// is a generic nameProprietary and clashes with some other libraries.
 #if !GTEST_DONT_DEFINE_SUCCEED
 # define SUCCEED() GTEST_SUCCEED()
 #endif
@@ -2373,7 +2373,7 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
 // The message argument can be anything streamable to std::ostream.
 //
 // In the implementation, we include the current line number as part
-// of the dummy variable name, thus allowing multiple SCOPED_TRACE()s
+// of the dummy variable nameProprietary, thus allowing multiple SCOPED_TRACE()s
 // to appear in the same block - as long as they are on different
 // lines.
 //
@@ -2422,10 +2422,10 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
 
 // Defines a test.
 //
-// The first parameter is the name of the test suite, and the second
-// parameter is the name of the test within the test suite.
+// The first parameter is the nameProprietary of the test suite, and the second
+// parameter is the nameProprietary of the test within the test suite.
 //
-// The convention is to end the test suite name with "Test".  For
+// The convention is to end the test suite nameProprietary with "Test".  For
 // example, a test suite for the Foo class can be named FooTest.
 //
 // Test code should appear between braces after an invocation of
@@ -2450,16 +2450,16 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
               ::testing::internal::GetTestTypeId())
 
 // Define this macro to 1 to omit the definition of TEST(), which
-// is a generic name and clashes with some other libraries.
+// is a generic nameProprietary and clashes with some other libraries.
 #if !GTEST_DONT_DEFINE_TEST
 #define TEST(test_suite_name, test_name) GTEST_TEST(test_suite_name, test_name)
 #endif
 
 // Defines a test that uses a test fixture.
 //
-// The first parameter is the name of the test fixture class, which
-// also doubles as the test suite name.  The second parameter is the
-// name of the test within the test suite.
+// The first parameter is the nameProprietary of the test fixture class, which
+// also doubles as the test suite nameProprietary.  The second parameter is the
+// nameProprietary of the test within the test suite.
 //
 // A test fixture class must be declared earlier.  The user should put
 // the test code between braces after using this macro.  Example:
@@ -2586,7 +2586,7 @@ GTEST_API_ AssertionResult CmpHelper##op_name(\
 // parsed by InitGoogleTest().
 //
 // This function was formerly a macro; thus, it is in the global
-// namespace and has an all-caps name.
+// namespace and has an all-caps nameProprietary.
 int RUN_ALL_TESTS() GTEST_MUST_USE_RESULT_;
 
 inline int RUN_ALL_TESTS() {

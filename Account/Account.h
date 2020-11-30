@@ -13,12 +13,11 @@ class Account {
 public:
     Account() {};
 
-    Account(std::string iban, float ammount, std::string FCVatNumber, std::string surnameBusinessName) : iban(iban),
-                                                                                                         ammount(ammount),
-                                                                                                         FCVatNumber(
-                                                                                                                 FCVatNumber),
-                                                                                                         surnameBusinessName(
-                                                                                                                 surnameBusinessName) {};
+    Account(int id, std::string iban, float ammount, std::string FC, std::string nameProprietary) : iban(iban),
+                                                                                                    ammount(ammount),
+                                                                                                    fc(fc),
+                                                                                                    nameProprietary(
+                                                                                                            nameProprietary) {};
 
     virtual ~Account() {};
 
@@ -26,8 +25,8 @@ public:
         return iban;
     }
 
-    const std::string &getFcVatNumber() const {
-        return FCVatNumber;
+    const std::string &getfc() const {
+        return fc;
     }
 
     float getAmmount() const {
@@ -35,14 +34,15 @@ public:
     }
 
     const std::string &getSurnameBusinessName() const {
-        return surnameBusinessName;
+        return nameProprietary;
     }
 
 protected:
+    int id;
     std::string iban;
-    std::string FCVatNumber;
+    std::string fc;
     float ammount;
-    std::string surnameBusinessName;
+    std::string nameProprietary;
 
 };
 

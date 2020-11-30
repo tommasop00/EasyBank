@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -143,12 +143,12 @@ namespace testing {
 
 // Constants.
 
-// A test whose test suite name or test name matches this filter is
+// A test whose test suite nameProprietary or test nameProprietary matches this filter is
 // disabled and not run.
     static const char kDisableTestFilter[] = "DISABLED_*:*/DISABLED_*";
 
-// A test suite whose name matches this filter is considered a death
-// test suite and will be run before test suites whose name doesn't
+// A test suite whose nameProprietary matches this filter is considered a death
+// test suite and will be run before test suites whose nameProprietary doesn't
 // match this filter.
     static const char kDeathTestSuiteFilter[] = "*DeathTest:*DeathTest/*";
 
@@ -160,11 +160,11 @@ namespace testing {
 // The default output file.
     static const char kDefaultOutputFile[] = "test_detail";
 
-// The environment variable name for the test shard index.
+// The environment variable nameProprietary for the test shard index.
     static const char kTestShardIndex[] = "GTEST_SHARD_INDEX";
-// The environment variable name for the total number of test shards.
+// The environment variable nameProprietary for the total number of test shards.
     static const char kTestTotalShards[] = "GTEST_TOTAL_SHARDS";
-// The environment variable name for the test shard status file.
+// The environment variable nameProprietary for the test shard status file.
     static const char kTestShardStatusFile[] = "GTEST_SHARD_STATUS_FILE";
 
     namespace internal {
@@ -268,17 +268,17 @@ namespace testing {
 //   XML_OUTPUT_FILE environment variable
 //   ''
     GTEST_DEFINE_string_(
-            output,
-            internal::StringFromGTestEnv("output",
+    output,
+    internal::StringFromGTestEnv("output",
                                          internal::OutputFlagAlsoCheckEnvVar().c_str()),
-            "A format (defaults to \"xml\" but can be specified to be \"json\"), "
-            "optionally followed by a colon and an output file name or directory. "
-            "A directory is indicated by a trailing pathname separator. "
+    "A format (defaults to \"xml\" but can be specified to be \"json\"), "
+    "optionally followed by a colon and an output file nameProprietary or directory. "
+    "A directory is indicated by a trailing pathname separator. "
             "Examples: \"xml:filename.xml\", \"xml::directoryname/\". "
             "If a directory is specified, output files will be created "
-            "within that directory, with file-names based on the test "
-            "executable's name and, if necessary, made unique by adding "
-            "digits.");
+    "within that directory, with file-names based on the test "
+    "executable's nameProprietary and, if necessary, made unique by adding "
+    "digits.");
 
     GTEST_DEFINE_bool_(
             brief, internal::BoolFromGTestEnv("brief", false),
@@ -320,10 +320,10 @@ namespace testing {
             "assertion fails.  The valid range is 0 through 100, inclusive.");
 
     GTEST_DEFINE_string_(
-            stream_result_to,
-            internal::StringFromGTestEnv("stream_result_to", ""),
-            "This flag specifies the host name and the port number on which to stream "
-            "test results. Example: \"localhost:555\". The flag is effective only on "
+    stream_result_to,
+    internal::StringFromGTestEnv("stream_result_to", ""),
+    "This flag specifies the host nameProprietary and the port number on which to stream "
+    "test results. Example: \"localhost:555\". The flag is effective only on "
             "Linux.");
 
     GTEST_DEFINE_bool_(
@@ -588,7 +588,7 @@ namespace testing {
 #endif  // defined(GTEST_CUSTOM_GET_ARGVS_)
         }
 
-// Returns the current application's name, removing directory path if that
+// Returns the current application's nameProprietary, removing directory path if that
 // is present.
         FilePath GetCurrentExecutableName() {
             FilePath result;
@@ -614,7 +614,7 @@ namespace testing {
                                  static_cast<size_t>(colon - gtest_output_flag));
         }
 
-// Returns the name of the requested output file, or the default if none
+// Returns the nameProprietary of the requested output file, or the default if none
 // was explicitly specified.
         std::string UnitTestOptions::GetAbsolutePathToOutputFile() {
             const char *const gtest_output_flag = GTEST_FLAG(output).c_str();
@@ -690,7 +690,7 @@ namespace testing {
         }
 
 // Returns true if and only if the user-specified filter matches the test
-// suite name and the test name.
+// suite nameProprietary and the test nameProprietary.
         bool UnitTestOptions::FilterMatchesTest(const std::string &test_suite_name,
                                                 const std::string &test_name) {
             const std::string &full_name = test_suite_name + "." + test_name.c_str();
@@ -2260,7 +2260,7 @@ AssertionResult IsHRESULTFailure(const char* expr, long hr) {  // NOLINT
             "disabled",
             "errors",
             "failures",
-            "name",
+            "nameProprietary",
             "random_seed",
             "tests",
             "time",
@@ -2270,18 +2270,18 @@ AssertionResult IsHRESULTFailure(const char* expr, long hr) {  // NOLINT
 // The list of reserved attributes used in the <testsuite> element of XML
 // output.
     static const char *const kReservedTestSuiteAttributes[] = {
-            "disabled", "errors", "failures", "name",
+            "disabled", "errors", "failures", "nameProprietary",
             "tests", "time", "timestamp", "skipped"};
 
 // The list of reserved attributes used in the <testcase> element of XML output.
     static const char *const kReservedTestCaseAttributes[] = {
-            "classname", "name", "status", "time", "type_param",
+            "classname", "nameProprietary", "status", "time", "type_param",
             "value_param", "file", "line"};
 
 // Use a slightly different set for allowed output to ensure existing tests can
 // still RecordProperty("result") or "RecordProperty(timestamp")
     static const char *const kReservedOutputTestCaseAttributes[] = {
-            "classname", "name", "status", "time", "type_param",
+            "classname", "nameProprietary", "status", "time", "type_param",
             "value_param", "file", "line", "result", "timestamp"};
 
     template<size_t kSize>
@@ -2497,7 +2497,7 @@ AssertionResult IsHRESULTFailure(const char* expr, long hr) {  // NOLINT
                 // Both TEST and TEST_F appear in same test suite, which is incorrect.
                 // Tell the user how to fix this.
 
-                // Gets the name of the TEST and the name of the TEST_F.  Note
+                // Gets the nameProprietary of the TEST and the nameProprietary of the TEST_F.  Note
                 // that first_is_TEST and this_is_TEST cannot both be true, as
                 // the fixture IDs are different for the two tests.
                 const char *const TEST_name =
@@ -2515,7 +2515,7 @@ AssertionResult IsHRESULTFailure(const char* expr, long hr) {  // NOLINT
                         << "want to change the TEST to TEST_F or move it to another test\n"
                         << "case.";
             } else {
-                // Two fixture classes with the same name appear in two different
+                // Two fixture classes with the same nameProprietary appear in two different
                 // namespaces, which is not allowed. Tell the user how to fix this.
                 ADD_FAILURE()
                         << "All tests in the same test suite must use the same test fixture\n"
@@ -2525,7 +2525,7 @@ AssertionResult IsHRESULTFailure(const char* expr, long hr) {  // NOLINT
                         << this_test_name << "\n"
                         << "using two different test fixture classes.  This can happen if\n"
                         << "the two classes are from different namespaces or translation\n"
-                        << "units and have the same name.  You should probably rename one\n"
+                        << "units and have the same nameProprietary.  You should probably rename one\n"
                         << "of the classes to put the tests into different test suites.";
             }
             return false;
@@ -2742,9 +2742,9 @@ static std::string* FormatSehExceptionMessage(DWORD exception_code,
 //
 // Arguments:
 //
-//   test_suite_name:  name of the test suite
-//   name:             name of the test
-//   type_param:       the name of the test's type parameter, or NULL if
+//   test_suite_name:  nameProprietary of the test suite
+//   nameProprietary:             nameProprietary of the test
+//   type_param:       the nameProprietary of the test's type parameter, or NULL if
 //                     this is not a typed or a type-parameterized test.
 //   value_param:      text representation of the test's value parameter,
 //                     or NULL if this is not a value-parameterized test.
@@ -2776,7 +2776,7 @@ static std::string* FormatSehExceptionMessage(DWORD exception_code,
                     << "class.  However, in test suite " << test_suite_name << ", you tried\n"
                     << "to define a test using a fixture class different from the one\n"
                     << "used earlier. This can happen if the two fixture classes are\n"
-                    << "from different namespaces and have the same name. You should\n"
+                    << "from different namespaces and have the same nameProprietary. You should\n"
                     << "probably rename one of the classes to put the tests into different\n"
                     << "test suites.";
 
@@ -2788,7 +2788,7 @@ static std::string* FormatSehExceptionMessage(DWORD exception_code,
 
     namespace {
 
-// A predicate that checks the test name of a TestInfo against a known
+// A predicate that checks the test nameProprietary of a TestInfo against a known
 // value.
 //
 // This is used for implementation of the TestSuite class only.  We put
@@ -2804,7 +2804,7 @@ static std::string* FormatSehExceptionMessage(DWORD exception_code,
             explicit TestNameIs(const char *name)
                     : name_(name) {}
 
-            // Returns true if and only if the test name of test_info matches name_.
+            // Returns true if and only if the test nameProprietary of test_info matches name_.
             bool operator()(const TestInfo *test_info) const {
                 return test_info && test_info->name() == name_;
             }
@@ -2944,12 +2944,12 @@ static std::string* FormatSehExceptionMessage(DWORD exception_code,
         return static_cast<int>(test_info_list_.size());
     }
 
-// Creates a TestSuite with the given name.
+// Creates a TestSuite with the given nameProprietary.
 //
 // Arguments:
 //
-//   a_name:       name of the test suite
-//   a_type_param: the name of the test suite's type parameter, or NULL if
+//   a_name:       nameProprietary of the test suite
+//   a_type_param: the nameProprietary of the test suite's type parameter, or NULL if
 //                 this is not a typed or a type-parameterized test suite.
 //   set_up_tc:    pointer to the function that sets up the test suite
 //   tear_down_tc: pointer to the function that tears down the test suite
@@ -3464,7 +3464,7 @@ static WORD GetNewColor(GTestColor color, WORD old_color_attrs) {
   const std::string counts =
       FormatCountableNoun(test_suite.test_to_run_count(), "test", "tests");
   ColoredPrintf(GTestColor::kGreen, "[----------] ");
-  printf("%s from %s", counts.c_str(), test_suite.name());
+  printf("%s from %s", counts.c_str(), test_suite.nameProprietary());
   if (test_suite.type_param() == nullptr) {
     printf("\n");
   } else {
@@ -3536,7 +3536,7 @@ static WORD GetNewColor(GTestColor color, WORD old_color_attrs) {
   const std::string counts =
       FormatCountableNoun(test_suite.test_to_run_count(), "test", "tests");
   ColoredPrintf(GTestColor::kGreen, "[----------] ");
-  printf("%s from %s (%s ms total)\n\n", counts.c_str(), test_suite.name(),
+  printf("%s from %s (%s ms total)\n\n", counts.c_str(), test_suite.nameProprietary(),
          internal::StreamableToString(test_suite.elapsed_time()).c_str());
   fflush(stdout);
 }
@@ -4127,9 +4127,9 @@ void TestEventRepeater::Name(const Type& parameter) { \
 //
 // This is how Google Test concepts map to the DTD:
 //
-// <testsuites name="AllTests">        <-- corresponds to a UnitTest object
-//   <testsuite name="testcase-name">  <-- corresponds to a TestSuite object
-//     <testcase name="test-name">     <-- corresponds to a TestInfo object
+// <testsuites nameProprietary="AllTests">        <-- corresponds to a UnitTest object
+//   <testsuite nameProprietary="testcase-nameProprietary">  <-- corresponds to a TestSuite object
+//     <testcase nameProprietary="test-nameProprietary">     <-- corresponds to a TestInfo object
 //       <failure message="...">...</failure>
 //       <failure message="...">...</failure>
 //       <failure message="...">...</failure>
@@ -4224,7 +4224,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
 
             *stream << "    <testcase";
-            OutputXmlAttribute(stream, kTestsuite, "name", test_info.name());
+            OutputXmlAttribute(stream, kTestsuite, "nameProprietary", test_info.name());
 
             if (test_info.value_param() != nullptr) {
                 OutputXmlAttribute(stream, kTestsuite, "value_param",
@@ -4305,7 +4305,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                                                          const TestSuite &test_suite) {
             const std::string kTestsuite = "testsuite";
             *stream << "  <" << kTestsuite;
-            OutputXmlAttribute(stream, kTestsuite, "name", test_suite.name());
+            OutputXmlAttribute(stream, kTestsuite, "nameProprietary", test_suite.name());
             OutputXmlAttribute(stream, kTestsuite, "tests",
                                StreamableToString(test_suite.reportable_test_count()));
             if (!GTEST_FLAG(list_tests)) {
@@ -4362,7 +4362,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
             *stream << TestPropertiesAsXmlAttributes(unit_test.ad_hoc_test_result());
 
-            OutputXmlAttribute(stream, kTestsuites, "name", "AllTests");
+            OutputXmlAttribute(stream, kTestsuites, "nameProprietary", "AllTests");
             *stream << ">\n";
 
             for (int i = 0; i < unit_test.total_test_suite_count(); ++i) {
@@ -4385,7 +4385,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
             OutputXmlAttribute(stream, kTestsuites, "tests",
                                StreamableToString(total_tests));
-            OutputXmlAttribute(stream, kTestsuites, "name", "AllTests");
+            OutputXmlAttribute(stream, kTestsuites, "nameProprietary", "AllTests");
             *stream << ">\n";
 
             for (auto test_suite : test_suites) {
@@ -4420,7 +4420,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             for (int i = 0; i < result.test_property_count(); ++i) {
                 const TestProperty &property = result.GetTestProperty(i);
                 *stream << "<" << kProperty;
-                *stream << " name=\"" << EscapeXmlAttribute(property.key()) << "\"";
+                *stream << " nameProprietary=\"" << EscapeXmlAttribute(property.key()) << "\"";
                 *stream << " value=\"" << EscapeXmlAttribute(property.value()) << "\"";
                 *stream << "/>\n";
             }
@@ -4619,7 +4619,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             const std::string kIndent = Indent(10);
 
             *stream << Indent(8) << "{\n";
-            OutputJsonKey(stream, kTestsuite, "name", test_info.name(), kIndent);
+            OutputJsonKey(stream, kTestsuite, "nameProprietary", test_info.name(), kIndent);
 
             if (test_info.value_param() != nullptr) {
                 OutputJsonKey(stream, kTestsuite, "value_param", test_info.value_param(),
@@ -4683,7 +4683,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             const std::string kIndent = Indent(6);
 
             *stream << Indent(4) << "{\n";
-            OutputJsonKey(stream, kTestsuite, "name", test_suite.name(), kIndent);
+            OutputJsonKey(stream, kTestsuite, "nameProprietary", test_suite.name(), kIndent);
             OutputJsonKey(stream, kTestsuite, "tests", test_suite.reportable_test_count(),
                           kIndent);
             if (!GTEST_FLAG(list_tests)) {
@@ -4747,7 +4747,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             *stream << TestPropertiesAsJson(unit_test.ad_hoc_test_result(), kIndent)
                     << ",\n";
 
-            OutputJsonKey(stream, kTestsuites, "name", "AllTests", kIndent);
+            OutputJsonKey(stream, kTestsuites, "nameProprietary", "AllTests", kIndent);
             *stream << kIndent << "\"" << kTestsuites << "\": [\n";
 
             bool comma = false;
@@ -4776,7 +4776,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
             OutputJsonKey(stream, kTestsuites, "tests", total_tests, kIndent);
 
-            OutputJsonKey(stream, kTestsuites, "name", "AllTests", kIndent);
+            OutputJsonKey(stream, kTestsuites, "nameProprietary", "AllTests", kIndent);
             *stream << kIndent << "\"" << kTestsuites << "\": [\n";
 
             for (size_t i = 0; i < test_suites.size(); ++i) {
@@ -4843,7 +4843,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             addrinfo *servinfo = nullptr;
 
             // Use the getaddrinfo() to get a linked list of IP addresses for
-            // the given host name.
+            // the given host nameProprietary.
             const int error_num = getaddrinfo(
                     host_name_.c_str(), port_num_.c_str(), &hints, &servinfo);
             if (error_num != 0) {
@@ -5612,7 +5612,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
         }
 
-// A predicate that checks the name of a TestSuite against a known
+// A predicate that checks the nameProprietary of a TestSuite against a known
 // value.
 //
 // This is used for implementation of the UnitTest class only.  We put
@@ -5625,7 +5625,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             // Constructor.
             explicit TestSuiteNameIs(const std::string &name) : name_(name) {}
 
-            // Returns true if and only if the name of test_suite matches name_.
+            // Returns true if and only if the nameProprietary of test_suite matches name_.
             bool operator()(const TestSuite *test_suite) const {
                 return test_suite != nullptr &&
                        strcmp(test_suite->name(), name_.c_str()) == 0;
@@ -5635,15 +5635,15 @@ void TestEventRepeater::Name(const Type& parameter) { \
             std::string name_;
         };
 
-// Finds and returns a TestSuite with the given name.  If one doesn't
+// Finds and returns a TestSuite with the given nameProprietary.  If one doesn't
 // exist, creates one and returns it.  It's the CALLER'S
 // RESPONSIBILITY to ensure that this function is only called WHEN THE
 // TESTS ARE NOT SHUFFLED.
 //
 // Arguments:
 //
-//   test_suite_name: name of the test suite
-//   type_param:      the name of the test suite's type parameter, or NULL if
+//   test_suite_name: nameProprietary of the test suite
+//   type_param:      the nameProprietary of the test suite's type parameter, or NULL if
 //                    this is not a typed or a type-parameterized test suite.
 //   set_up_tc:       pointer to the function that sets up the test suite
 //   tear_down_tc:    pointer to the function that tears down the test suite
@@ -5651,7 +5651,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 const char *test_suite_name, const char *type_param,
                 internal::SetUpTestSuiteFunc set_up_tc,
                 internal::TearDownTestSuiteFunc tear_down_tc) {
-            // Can we find a TestSuite with the given name?
+            // Can we find a TestSuite with the given nameProprietary?
             const auto test_suite =
                     std::find_if(test_suites_.rbegin(), test_suites_.rend(),
                                  TestSuiteNameIs(test_suite_name));
@@ -5959,7 +5959,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             return (test_id % total_shards) == shard_index;
         }
 
-// Compares the name of each test with the user-specified filter to
+// Compares the nameProprietary of each test with the user-specified filter to
 // decide whether the test should be run, then records the result in
 // each TestSuite and TestInfo object.
 // If shard_tests == true, further filters tests based on sharding
@@ -5985,7 +5985,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 for (size_t j = 0; j < test_suite->test_info_list().size(); j++) {
                     TestInfo *const test_info = test_suite->test_info_list()[j];
                     const std::string test_name(test_info->name());
-                    // A test is disabled if test suite name or test name matches
+                    // A test is disabled if test suite nameProprietary or test nameProprietary matches
                     // kDisableTestFilter.
                     const bool is_disabled = internal::UnitTestOptions::MatchesFilter(
                             test_suite_name, kDisableTestFilter) ||
@@ -6220,7 +6220,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             const size_t flag_len = flag_str.length();
             if (strncmp(str, flag_str.c_str(), flag_len) != 0) return nullptr;
 
-            // Skips the flag name.
+            // Skips the flag nameProprietary.
             const char *flag_end = str + flag_len;
 
             // When def_optional is true, it's OK to not have a "=value" part.
@@ -6229,8 +6229,8 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
 
             // If def_optional is true and there are more characters after the
-            // flag name, or if def_optional is false, there must be a '=' after
-            // the flag name.
+            // flag nameProprietary, or if def_optional is false, there must be a '=' after
+            // the flag nameProprietary.
             if (flag_end[0] != '=') return nullptr;
 
             // Returns the string after "=".
@@ -6358,12 +6358,12 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 "Test Selection:\n"
                 "  @G--" GTEST_FLAG_PREFIX_
                 "list_tests@D\n"
-                "      List the names of all tests instead of running them. The name of\n"
+                "      List the names of all tests instead of running them. The nameProprietary of\n"
                 "      TEST(Foo, Bar) is \"Foo.Bar\".\n"
                 "  @G--" GTEST_FLAG_PREFIX_
                 "filter=@YPOSTIVE_PATTERNS"
                 "[@G-@YNEGATIVE_PATTERNS]@D\n"
-                "      Run only the tests whose name matches one of the positive patterns "
+                "      Run only the tests whose nameProprietary matches one of the positive patterns "
                 "but\n"
                 "      none of the negative patterns. '?' matches any single character; "
                 "'*'\n"
@@ -6399,7 +6399,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 "@Y|@G:@YFILE_PATH]@D\n"
                 "      Generate a JSON or XML report in the given directory or with the "
                 "given\n"
-                "      file name. @YFILE_PATH@D defaults to @Gtest_detail.xml@D.\n"
+                "      file nameProprietary. @YFILE_PATH@D defaults to @Gtest_detail.xml@D.\n"
                 # if GTEST_CAN_STREAM_RESULTS_
                 "  @G--" GTEST_FLAG_PREFIX_
                 "stream_result_to=@YHOST@G:@YPORT@D\n"

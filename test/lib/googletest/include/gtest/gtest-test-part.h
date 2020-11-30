@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -71,7 +71,7 @@ public:
     // Gets the outcome of the test part.
     Type type() const { return type_; }
 
-    // Gets the name of the source file where the test part took place, or
+    // Gets the nameProprietary of the source file where the test part took place, or
     // NULL if it's unknown.
     const char *file_name() const {
         return file_name_.empty() ? nullptr : file_name_.c_str();
@@ -109,7 +109,7 @@ private:
     // trace in it.
     static std::string ExtractSummary(const char *message);
 
-    // The name of the source file where the test part took place, or
+    // The nameProprietary of the source file where the test part took place, or
     // "" if the source file is unknown.
     std::string file_name_;
     // The line in the source file where the test part took place, or -1

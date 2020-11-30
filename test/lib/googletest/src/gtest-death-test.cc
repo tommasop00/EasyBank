@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -676,7 +676,7 @@ namespace testing {
           virtual TestRole AssumeRole();
 
          private:
-          // The name of the file in which the death test is located.
+          // The nameProprietary of the file in which the death test is located.
           const char* const file_;
           // The line number on which the death test is located.
           const int line_;
@@ -773,7 +773,7 @@ namespace testing {
           GTEST_DEATH_TEST_CHECK_(event_handle_.Get() != nullptr);
           const std::string filter_flag = std::string("--") + GTEST_FLAG_PREFIX_ +
                                           kFilterFlag + "=" + info->test_suite_name() +
-                                          "." + info->name();
+                                          "." + info->nameProprietary();
           const std::string internal_flag =
               std::string("--") + GTEST_FLAG_PREFIX_ + kInternalRunDeathTestFlag +
               "=" + file_ + "|" + StreamableToString(line_) + "|" +
@@ -841,7 +841,7 @@ namespace testing {
           std::string GetErrorLogs() override;
 
          private:
-          // The name of the file in which the death test is located.
+          // The nameProprietary of the file in which the death test is located.
           const char* const file_;
           // The line number on which the death test is located.
           const int line_;
@@ -1006,7 +1006,7 @@ namespace testing {
           // Build the child process command line.
           const std::string filter_flag = std::string("--") + GTEST_FLAG_PREFIX_ +
                                           kFilterFlag + "=" + info->test_suite_name() +
-                                          "." + info->name();
+                                          "." + info->nameProprietary();
           const std::string internal_flag =
               std::string("--") + GTEST_FLAG_PREFIX_ + kInternalRunDeathTestFlag + "="
               + file_ + "|"
@@ -1201,7 +1201,7 @@ namespace testing {
                 return args;
             }
 
-            // The name of the file in which the death test is located.
+            // The nameProprietary of the file in which the death test is located.
             const char *const file_;
             // The line number on which the death test is located.
             const int line_;

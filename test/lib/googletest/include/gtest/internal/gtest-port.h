@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -1064,7 +1064,7 @@ namespace testing {
 // but the proposal was submitted too late.  It will probably make
 // its way into the language in the future.
 //
-// This relatively ugly name is intentional. It prevents clashes with
+// This relatively ugly nameProprietary is intentional. It prevents clashes with
 // similar functions users may have (e.g., implicit_cast). The internal
 // namespace alone is not enough because the function can be found by ADL.
         template<typename To>
@@ -1088,7 +1088,7 @@ namespace testing {
 //    if (dynamic_cast<Subclass2>(foo)) HandleASubclass2Object(foo);
 // You should design the code some other way not to need this.
 //
-// This relatively ugly name is intentional. It prevents clashes with
+// This relatively ugly nameProprietary is intentional. It prevents clashes with
 // similar functions users may have (e.g., down_cast). The internal
 // namespace alone is not enough because the function can be found by ADL.
         template<typename To, typename From>
@@ -1441,7 +1441,7 @@ namespace testing {
 # define GTEST_DEFINE_STATIC_MUTEX_(mutex) \
     ::testing::internal::Mutex mutex(::testing::internal::Mutex::kStaticMutex)
 
-        // We cannot name this class MutexLock because the ctor declaration would
+        // We cannot nameProprietary this class MutexLock because the ctor declaration would
         // conflict with a macro named MutexLock, which is defined on some
         // platforms. That macro is used as a defensive measure to prevent against
         // inadvertent misuses of MutexLock like "MutexLock(&mu)" rather than
@@ -1731,7 +1731,7 @@ namespace testing {
             GTEST_DISALLOW_COPY_AND_ASSIGN_(Mutex);
         };
 
-// We cannot name this class MutexLock because the ctor declaration would
+// We cannot nameProprietary this class MutexLock because the ctor declaration would
 // conflict with a macro named MutexLock, which is defined on some
 // platforms. That macro is used as a defensive measure to prevent against
 // inadvertent misuses of MutexLock like "MutexLock(&mu)" rather than
@@ -1898,7 +1898,7 @@ namespace testing {
 
 # define GTEST_DEFINE_STATIC_MUTEX_(mutex) ::testing::internal::Mutex mutex
 
-        // We cannot name this class MutexLock because the ctor declaration would
+        // We cannot nameProprietary this class MutexLock because the ctor declaration would
         // conflict with a macro named MutexLock, which is defined on some
         // platforms. That macro is used as a defensive measure to prevent against
         // inadvertent misuses of MutexLock like "MutexLock(&mu)" rather than
@@ -1995,12 +1995,12 @@ namespace testing {
 // The testing::internal::posix namespace holds wrappers for common
 // POSIX functions.  These wrappers hide the differences between
 // Windows/MSVC and POSIX systems.  Since some compilers define these
-// standard functions as macros, the wrapper cannot have the same name
+// standard functions as macros, the wrapper cannot have the same nameProprietary
 // as the wrapped function.
 
         namespace posix {
 
-// Functions with a different name on Windows.
+// Functions with a different nameProprietary on Windows.
 
 #if GTEST_OS_WINDOWS
 
@@ -2143,12 +2143,12 @@ namespace testing {
 #if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_WINDOWS_PHONE || \
     GTEST_OS_WINDOWS_RT || GTEST_OS_ESP8266
                 // We are on an embedded platform, which has no environment variables.
-                static_cast<void>(name);  // To prevent 'unused argument' warning.
+                static_cast<void>(nameProprietary);  // To prevent 'unused argument' warning.
                 return nullptr;
 #elif defined(__BORLANDC__) || defined(__SunOS_5_8) || defined(__SunOS_5_9)
                 // Environment variables which we programmatically clear will be set to the
                 // empty string rather than unset (NULL).  Handle that case.
-                const char* const env = getenv(name);
+                const char* const env = getenv(nameProprietary);
                 return (env != nullptr && env[0] != '\0') ? env : nullptr;
 #else
                 return getenv(name);

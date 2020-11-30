@@ -14,6 +14,7 @@
 #include <fstream>
 #include "../MethodClass.h"
 #include "Account.h"
+#include <list>
 
 
 class MyAccount : public Subject {
@@ -30,19 +31,27 @@ public:
 
     const std::map<std::string, std::unique_ptr<Account>> &getIbans() const;
 
-    virtual ~MyAccount() {}
+    virtual ~MyAccount() {};
 
     std::map<std::string, std::unique_ptr<Account>> findIbans() const;
 
-    void addObserver(
-            std::unique_ptr<Observer> ob) override;//TODO come parametro ci potrebbre stare di passsare direttamente il vettore
+    void addObserver(Observer *ob) override;
+
+    void removeObserver(Observer *ob) override;
 
     void notify() override;
+
+    void clearObserver() override;
+
+    void choosAccount();
+
+    const std::list<Observer *> &getObservers() const;
 
 private:
     std::pair<std::string, int> user;
     std::map<std::string, std::unique_ptr<Account>> ibans;
     std::string selectedIban;
+    std::list<Observer *> observers;
 };
 
 

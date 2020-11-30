@@ -26,12 +26,13 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
         std::map<std::string, std::unique_ptr<Account>> ibans;
         bool find = false;
         std::vector<std::string> splitArray;
+        int count = 0;
         while (getline(file, sLine)) {
             splitArray = split(sLine, ' ');
             if (std::stoi(splitArray[0]) == this->user.second) {
                 find = true;
                 std::unique_ptr<Account> tempAccount(
-                        new Account(splitArray[1], std::stof(splitArray[2]), splitArray[3], splitArray[4]));
+                        new Account(count++, splitArray[1], std::stof(splitArray[2]), splitArray[3], splitArray[4]));
                 ibans.insert(std::make_pair(splitArray[1], std::move(tempAccount)));
             }
         }
@@ -48,7 +49,7 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
         } else {
             //TODO add conto
             file.close();
-            throw std::runtime_error("Non trovato alcuna riga");
+            //throw std::runtime_error("Non trovato alcuna riga");
         }
 
     } else {
@@ -63,9 +64,37 @@ void MyAccount::notify() {
 
 }
 
-void MyAccount::addObserver(std::unique_ptr<Observer> ob) {
-
+void MyAccount::addObserver(Observer *ob) {
+    observers.push_back(ob);
 }
+
+void MyAccount::removeObserver(Observer *ob) {
+    observers.remove(ob);
+}
+
+void MyAccount::clearObserver() {
+    observers.clear();
+}
+
+const std::list<Observer *> &MyAccount::getObservers() const {
+    return observers;
+}
+
+void MyAccount::choosAccount() {
+    std::cout << "Scegli quale iban utilizzare : " << std::endl;
+
+    std::map<int, std::string> IdIban;
+    int count = 1;
+    for (const auto &iban : getIbans()) {
+        std::cout << "Digita " << count << " per selezionare il Conto di " << iban.second->getSurnameBusinessName()
+                  << " Iban : " << iban.first << std::endl;
+        IdIban.insert(std::make_pair(count++, iban.first));
+    }
+    int valSelected;
+    std::cin >> valSelected;
+    selectedIban = (IdIban[valSelected]);
+}
+
 
 
 

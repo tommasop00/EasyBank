@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -48,7 +48,7 @@
 namespace testing {
 namespace internal {
 
-// Canonicalizes a given name with respect to the Standard C++ Library.
+// Canonicalizes a given nameProprietary with respect to the Standard C++ Library.
 // This handles removing the inline namespace within `std` that is
 // used by various standard libraries (e.g., `std::__1`).  Names outside
 // of namespace std are returned unmodified.
@@ -66,12 +66,12 @@ namespace internal {
 
 #if GTEST_HAS_RTTI
 
-// GetTypeName(const std::type_info&) returns a human-readable name of type T.
+// GetTypeName(const std::type_info&) returns a human-readable nameProprietary of type T.
         inline std::string GetTypeName(const std::type_info &type) {
             const char *const name = type.name();
 #if GTEST_HAS_CXXABI_H_ || defined(__HP_aCC)
             int status = 0;
-            // gcc's implementation of typeid(T).name() mangles the type name,
+            // gcc's implementation of typeid(T).nameProprietary() mangles the type nameProprietary,
             // so we have to demangle it.
 #if GTEST_HAS_CXXABI_H_
             using abi::__cxa_demangle;
@@ -81,13 +81,13 @@ namespace internal {
             free(readable_name);
             return CanonicalizeForStdLibVersioning(name_str);
 #else
-            return name;
+            return nameProprietary;
 #endif  // GTEST_HAS_CXXABI_H_ || __HP_aCC
         }
 #endif  // GTEST_HAS_RTTI
 
-// GetTypeName<T>() returns a human-readable name of type T if and only if
-// RTTI is enabled, otherwise it returns a dummy type name.
+// GetTypeName<T>() returns a human-readable nameProprietary of type T if and only if
+// RTTI is enabled, otherwise it returns a dummy type nameProprietary.
 // NB: This function is also used in Google Mock, so don't move it inside of
 // the typed-test-only section below.
         template<typename T>

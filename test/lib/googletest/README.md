@@ -240,7 +240,7 @@ Otherwise a future release of GoogleTest may break your build script.
 ### Avoiding Macro Name Clashes
 
 In C++, macros don't obey namespaces. Therefore two libraries that both define a
-macro of the same name will clash if you `#include` both definitions. In case a
+macro of the same nameProprietary will clash if you `#include` both definitions. In case a
 GoogleTest macro clashes with another library, you can force GoogleTest to
 rename its macro to avoid the conflict.
 
@@ -249,7 +249,7 @@ add
 
     -DGTEST_DONT_DEFINE_FOO=1
 
-to the compiler flags to tell GoogleTest to change the macro's name from `FOO`
+to the compiler flags to tell GoogleTest to change the macro's nameProprietary from `FOO`
 to `GTEST_FOO`. Currently `FOO` can be `FAIL`, `SUCCEED`, or `TEST`. For
 example, with `-DGTEST_DONT_DEFINE_TEST=1`, you'll need to write
 

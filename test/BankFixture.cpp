@@ -3,19 +3,29 @@
 //
 
 #include "gtest/gtest.h"
+#include <memory>
+#include "../Account/MyAccount.h"
+#include "../Account/OtherAccount.h"
 
-class BankSuite : public ::testing::Test {
+class AccountSuite : public ::testing::Test {
 protected:
     virtual void SetUp() {
-        /*c.setXPos(10);
-        c.setYPos(10);
-        c.setFighting(true);*/
+        a.addObserver(&b);
+        a.addObserver(&b);
+
     }
+
     //GameCharacter c;
+    MyAccount a(
+
+    "",10);
+    OtherAccount b;
 };
 
-TEST_F(BankSuite, TestMove) {
-
-    EXPECT_EQ(10, 11) << "Non Uguali 1";
-    EXPECT_EQ(24, 12) << "NOn Ugauli 2";
+TEST_F(AccountSuite, TestMove) {
+    a.clearObserver();
+    std::list<Observer *> list;
+    list.clear();
+    EXPECT_EQ(a.getObservers(), list) << "Non Uguali 1";
+    //EXPECT_EQ(24, 12) << "NOn Ugauli 2";
 }

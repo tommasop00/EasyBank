@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -64,7 +64,7 @@ TYPED_TEST_SUITE(FooTest, MyTypes);
 // Then, use TYPED_TEST() instead of TEST_F() to define as many typed
 // tests for this test suite as you want.
 TYPED_TEST(FooTest, DoesBlah) {
-  // Inside a test, refer to the special name TypeParam to get the type
+  // Inside a test, refer to the special nameProprietary TypeParam to get the type
   // parameter.  Since we are inside a derived class template, C++ requires
   // us to visit the members of FooTest via 'this'.
   TypeParam n = this->value_;
@@ -83,7 +83,7 @@ TYPED_TEST(FooTest, DoesBlah) {
 TYPED_TEST(FooTest, HasPropertyA) { ... }
 
 // TYPED_TEST_SUITE takes an optional third argument which allows to specify a
-// class that generates custom test name suffixes based on the type. This should
+// class that generates custom test nameProprietary suffixes based on the type. This should
 // be a class which has a static template function GetName(int index) returning
 // a string for each type. The provided integer index equals the index of the
 // type in the provided type list. In many cases the index can be ignored.
@@ -142,7 +142,7 @@ TYPED_TEST_P(FooTest, HasPropertyA) { ... }
 
 // Now the tricky part: you need to register all test patterns before
 // you can instantiate them.  The first argument of the macro is the
-// test suite name; the rest are the names of the tests in this test
+// test suite nameProprietary; the rest are the names of the tests in this test
 // case.
 REGISTER_TYPED_TEST_SUITE_P(FooTest,
                             DoesBlah, HasPropertyA);
@@ -153,7 +153,7 @@ REGISTER_TYPED_TEST_SUITE_P(FooTest,
 //
 // To distinguish different instances of the pattern, the first
 // argument to the INSTANTIATE_* macro is a prefix that will be added
-// to the actual test suite name.  Remember to pick unique prefixes for
+// to the actual test suite nameProprietary.  Remember to pick unique prefixes for
 // different instances.
 typedef testing::Types<char, int, unsigned int> MyTypes;
 INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
@@ -179,12 +179,12 @@ INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
-// Expands to the name of the typedef for the type parameters of the
+// Expands to the nameProprietary of the typedef for the type parameters of the
 // given test suite.
 #define GTEST_TYPE_PARAMS_(TestSuiteName) gtest_type_params_##TestSuiteName##_
 
-// Expands to the name of the typedef for the NameGenerator, responsible for
-// creating the suffixes of the name.
+// Expands to the nameProprietary of the typedef for the NameGenerator, responsible for
+// creating the suffixes of the nameProprietary.
 #define GTEST_NAME_GENERATOR_(TestSuiteName) \
   gtest_type_params_##TestSuiteName##_NameGenerator
 
@@ -196,7 +196,7 @@ INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
 
 #define TYPED_TEST(CaseName, TestName)                                        \
   static_assert(sizeof(GTEST_STRINGIFY_(TestName)) > 1,                       \
-                "test-name must not be empty");                               \
+                "test-nameProprietary must not be empty");                               \
   template <typename gtest_TypeParam_>                                        \
   class GTEST_TEST_CLASS_NAME_(CaseName, TestName)                            \
       : public CaseName<gtest_TypeParam_> {                                   \
@@ -238,21 +238,21 @@ INSTANTIATE_TYPED_TEST_SUITE_P(My, FooTest, MyTypes);
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
-// Expands to the namespace name that the type-parameterized tests for
+// Expands to the namespace nameProprietary that the type-parameterized tests for
 // the given type-parameterized test suite are defined in.  The exact
-// name of the namespace is subject to change without notice.
+// nameProprietary of the namespace is subject to change without notice.
 #define GTEST_SUITE_NAMESPACE_(TestSuiteName) gtest_suite_##TestSuiteName##_
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE.
 //
-// Expands to the name of the variable used to remember the names of
+// Expands to the nameProprietary of the variable used to remember the names of
 // the defined tests in the given test suite.
 #define GTEST_TYPED_TEST_SUITE_P_STATE_(TestSuiteName) \
   gtest_typed_test_suite_p_state_##TestSuiteName##_
 
 // INTERNAL IMPLEMENTATION - DO NOT USE IN USER CODE DIRECTLY.
 //
-// Expands to the name of the variable used to remember the names of
+// Expands to the nameProprietary of the variable used to remember the names of
 // the registered tests in the given test suite.
 #define GTEST_REGISTERED_TEST_NAMES_(TestSuiteName) \
   gtest_registered_test_names_##TestSuiteName##_

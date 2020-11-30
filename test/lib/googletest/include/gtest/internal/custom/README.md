@@ -6,7 +6,7 @@ The custom directory is an injection point for custom user configurations.
 
 ### The following macros can be defined:
 
-*   `GTEST_OS_STACK_TRACE_GETTER_` - The name of an implementation of
+*   `GTEST_OS_STACK_TRACE_GETTER_` - The nameProprietary of an implementation of
     `OsStackTraceGetterInterface`.
 *   `GTEST_CUSTOM_TEMPDIR_FUNCTION_` - An override for `testing::TempDir()`. See
     `testing::TempDir` for semantics and signature.
@@ -20,12 +20,12 @@ The following macros can be defined:
 *   `GTEST_FLAG(flag_name)`
 *   `GTEST_USE_OWN_FLAGFILE_FLAG_` - Define to 0 when the system provides its
     own flagfile flag parsing.
-*   `GTEST_DECLARE_bool_(name)`
-*   `GTEST_DECLARE_int32_(name)`
-*   `GTEST_DECLARE_string_(name)`
-*   `GTEST_DEFINE_bool_(name, default_val, doc)`
-*   `GTEST_DEFINE_int32_(name, default_val, doc)`
-*   `GTEST_DEFINE_string_(name, default_val, doc)`
+*   `GTEST_DECLARE_bool_(nameProprietary)`
+*   `GTEST_DECLARE_int32_(nameProprietary)`
+*   `GTEST_DECLARE_string_(nameProprietary)`
+*   `GTEST_DEFINE_bool_(nameProprietary, default_val, doc)`
+*   `GTEST_DEFINE_int32_(nameProprietary, default_val, doc)`
+*   `GTEST_DEFINE_string_(nameProprietary, default_val, doc)`
 
 ### Logging:
 

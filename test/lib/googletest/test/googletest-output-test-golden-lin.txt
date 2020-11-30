@@ -405,7 +405,7 @@ class.  However, in test suite MixedUpTestSuiteTest,
 you defined test FirstTestFromNamespaceFoo and test ThisShouldFail
 using two different test fixture classes.  This can happen if
 the two classes are from different namespaces or translation
-units and have the same name.  You should probably rename one
+units and have the same nameProprietary.  You should probably rename one
 of the classes to put the tests into different test suites.
 Stack trace: (omitted)
 
@@ -418,7 +418,7 @@ class.  However, in test suite MixedUpTestSuiteTest,
 you defined test FirstTestFromNamespaceFoo and test ThisShouldFailToo
 using two different test fixture classes.  This can happen if
 the two classes are from different namespaces or translation
-units and have the same name.  You should probably rename one
+units and have the same nameProprietary.  You should probably rename one
 of the classes to put the tests into different test suites.
 Stack trace: (omitted)
 
@@ -434,7 +434,7 @@ class.  However, in test suite MixedUpTestSuiteWithSameTestNameTest,
 you defined test TheSecondTestWithThisNameShouldFail and test TheSecondTestWithThisNameShouldFail
 using two different test fixture classes.  This can happen if
 the two classes are from different namespaces or translation
-units and have the same name.  You should probably rename one
+units and have the same nameProprietary.  You should probably rename one
 of the classes to put the tests into different test suites.
 Stack trace: (omitted)
 
@@ -949,7 +949,7 @@ class.  However, in test suite BadDynamicFixture2,
 you defined test FixtureBase and test Derived
 using two different test fixture classes.  This can happen if
 the two classes are from different namespaces or translation
-units and have the same name.  You should probably rename one
+units and have the same nameProprietary.  You should probably rename one
 of the classes to put the tests into different test suites.
 Stack trace: (omitted)
 

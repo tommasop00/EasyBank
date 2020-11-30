@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -361,7 +361,7 @@ namespace testing {
             // TestPropertyKeyIs has NO default constructor.
             explicit TestPropertyKeyIs(const std::string &key) : key_(key) {}
 
-            // Returns true if and only if the test name of test property matches on key_.
+            // Returns true if and only if the test nameProprietary of test property matches on key_.
             bool operator()(const TestProperty &test_property) const {
                 return test_property.key() == key_;
             }
@@ -402,7 +402,7 @@ namespace testing {
             static bool PatternMatchesString(const char *pattern, const char *str);
 
             // Returns true if and only if the user-specified filter matches the test
-            // suite name and the test name.
+            // suite nameProprietary and the test nameProprietary.
             static bool FilterMatchesTest(const std::string &test_suite_name,
                                           const std::string &test_name);
 
@@ -415,12 +415,12 @@ namespace testing {
             static int GTestShouldProcessSEH(DWORD exception_code);
 #endif  // GTEST_OS_WINDOWS
 
-            // Returns true if "name" matches the ':' separated list of glob-style
+            // Returns true if "nameProprietary" matches the ':' separated list of glob-style
             // filters in "filter".
             static bool MatchesFilter(const std::string &name, const char *filter);
         };
 
-// Returns the current application's name, removing directory path if that
+// Returns the current application's nameProprietary, removing directory path if that
 // is present.  Used by UnitTestOptions::GetOutputFile.
         GTEST_API_ FilePath GetCurrentExecutableName();
 
@@ -656,13 +656,13 @@ namespace testing {
             // trace but Bar() and CurrentOsStackTraceExceptTop() won't.
             std::string CurrentOsStackTraceExceptTop(int skip_count) GTEST_NO_INLINE_;
 
-            // Finds and returns a TestSuite with the given name.  If one doesn't
+            // Finds and returns a TestSuite with the given nameProprietary.  If one doesn't
             // exist, creates one and returns it.
             //
             // Arguments:
             //
-            //   test_suite_name: name of the test suite
-            //   type_param:      the name of the test's type parameter, or NULL if
+            //   test_suite_name: nameProprietary of the test suite
+            //   type_param:      the nameProprietary of the test's type parameter, or NULL if
             //                    this is not a typed or a type-parameterized test.
             //   set_up_tc:       pointer to the function that sets up the test suite
             //   tear_down_tc:    pointer to the function that tears down the test suite
@@ -775,7 +775,7 @@ namespace testing {
                 IGNORE_SHARDING_PROTOCOL
             };
 
-            // Matches the full name of each test against the user-specified
+            // Matches the full nameProprietary of each test against the user-specified
             // filter to decide whether the test should run, then records the
             // result in each TestSuite and TestInfo object.
             // If shard_tests == HONOR_SHARDING_PROTOCOL, further filters tests
@@ -915,7 +915,7 @@ namespace testing {
             internal::TypeParameterizedTestSuiteRegistry
                     type_parameterized_test_registry_;
 
-            // The set holding the name of parameterized
+            // The set holding the nameProprietary of parameterized
             // test suites that may go uninstantiated.
             std::set<std::string> ignored_parameterized_test_suites_;
 
@@ -1191,7 +1191,7 @@ namespace testing {
             // Note that "event=TestCaseStart" is a wire format and has to remain
             // "case" for compatibilty
             void OnTestCaseStart(const TestCase &test_case) override {
-                SendLn(std::string("event=TestCaseStart&name=") + test_case.name());
+                SendLn(std::string("event=TestCaseStart&nameProprietary=") + test_case.name());
             }
 
             // Note that "event=TestCaseEnd" is a wire format and has to remain
@@ -1203,7 +1203,7 @@ namespace testing {
             }
 
             void OnTestStart(const TestInfo &test_info) override {
-                SendLn(std::string("event=TestStart&name=") + test_info.name());
+                SendLn(std::string("event=TestStart&nameProprietary=") + test_info.name());
             }
 
             void OnTestEnd(const TestInfo &test_info) override {

@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -259,10 +259,10 @@ namespace internal {
             const char *const name = pathname_.c_str();
 #if GTEST_OS_WINDOWS
             return pathname_.length() >= 3 &&
-               ((name[0] >= 'a' && name[0] <= 'z') ||
-                (name[0] >= 'A' && name[0] <= 'Z')) &&
-               name[1] == ':' &&
-               IsPathSeparator(name[2]);
+               ((nameProprietary[0] >= 'a' && nameProprietary[0] <= 'z') ||
+                (nameProprietary[0] >= 'A' && nameProprietary[0] <= 'Z')) &&
+               nameProprietary[1] == ':' &&
+               IsPathSeparator(nameProprietary[2]);
 #else
             return IsPathSeparator(name[0]);
 #endif
@@ -336,8 +336,8 @@ namespace internal {
             return true;  // No error.
         }
 
-// If input name has a trailing separator character, remove it and return the
-// name, otherwise return the name string unmodified.
+// If input nameProprietary has a trailing separator character, remove it and return the
+// nameProprietary, otherwise return the nameProprietary string unmodified.
 // On Windows platform, uses \ as the separator, other platforms use /.
         FilePath FilePath::RemoveTrailingPathSeparator() const {
             return IsDirectory()

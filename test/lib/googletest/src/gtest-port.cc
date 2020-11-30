@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -1085,7 +1085,7 @@ namespace internal {
                 ::GetTempPathA(sizeof(temp_dir_path), temp_dir_path);
                 const UINT success = ::GetTempFileNameA(temp_dir_path,
                                                         "gtest_redir",
-                                                        0,  // Generate unique file name.
+                                                        0,  // Generate unique file nameProprietary.
                                                         temp_file_path);
                 GTEST_CHECK_(success != 0)
                     << "Unable to create a temporary file in " << temp_dir_path;
@@ -1270,7 +1270,7 @@ namespace internal {
         }  // namespace posix
 #endif  // GTEST_OS_WINDOWS_MOBILE
 
-// Returns the name of the environment variable corresponding to the
+// Returns the nameProprietary of the environment variable corresponding to the
 // given flag.  For example, FlagToEnvVar("foo") will return
 // "GTEST_FOO" in the open-source version.
         static std::string FlagToEnvVar(const char *flag) {

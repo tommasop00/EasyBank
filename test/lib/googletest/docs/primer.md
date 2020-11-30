@@ -231,7 +231,7 @@ two `string` objects, use `EXPECT_EQ`, `EXPECT_NE`, and etc instead.
 
 <!-- mdformat on-->
 
-Note that "CASE" in an assertion name means that case is ignored. A `NULL`
+Note that "CASE" in an assertion nameProprietary means that case is ignored. A `NULL`
 pointer and an empty string are considered *different*.
 
 `*STREQ*` and `*STRNE*` also accept wide C strings (`wchar_t*`). If a comparison
@@ -247,7 +247,7 @@ Advanced googletest Guide.
 
 To create a test:
 
-1.  Use the `TEST()` macro to define and name a test function. These are
+1.  Use the `TEST()` macro to define and nameProprietary a test function. These are
     ordinary C++ functions that don't return a value.
 2.  In this function, along with any valid C++ statements you want to include,
     use the various googletest assertions to check values.
@@ -261,12 +261,12 @@ TEST(TestSuiteName, TestName) {
 }
 ```
 
-`TEST()` arguments go from general to specific. The *first* argument is the name
-of the test suite, and the *second* argument is the test's name within the test
+`TEST()` arguments go from general to specific. The *first* argument is the nameProprietary
+of the test suite, and the *second* argument is the test's nameProprietary within the test
 suite. Both names must be valid C++ identifiers, and they should not contain
-any underscores (`_`). A test's *full name* consists of its containing test suite and
-its individual name. Tests from different test suites can have the same
-individual name.
+any underscores (`_`). A test's *full nameProprietary* consists of its containing test suite and
+its individual nameProprietary. Tests from different test suites can have the same
+individual nameProprietary.
 
 For example, let's take a simple integer function:
 
@@ -333,8 +333,8 @@ TEST_F(TestFixtureName, TestName) {
 }
 ```
 
-Like `TEST()`, the first argument is the test suite name, but for `TEST_F()`
-this must be the name of the test fixture class. You've probably guessed: `_F`
+Like `TEST()`, the first argument is the test suite nameProprietary, but for `TEST_F()`
+this must be the nameProprietary of the test fixture class. You've probably guessed: `_F`
 is for fixture.
 
 Unfortunately, the C++ macro system does not allow us to create a single macro
@@ -368,7 +368,7 @@ class Queue {
 };
 ```
 
-First, define a fixture class. By convention, you should give it the name
+First, define a fixture class. By convention, you should give it the nameProprietary
 `FooTest` where `Foo` is the class being tested.
 
 ```c++

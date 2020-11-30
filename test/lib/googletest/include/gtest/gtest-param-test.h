@@ -11,7 +11,7 @@
 // copyright notice, this list of conditions and the following disclaimer
 // in the documentation and/or other materials provided with the
 // distribution.
-//     * Neither the name of Google Inc. nor the names of its
+//     * Neither the nameProprietary of Google Inc. nor the names of its
 // contributors may be used to endorse or promote products derived from
 // this software without specific prior written permission.
 //
@@ -102,7 +102,7 @@ INSTANTIATE_TEST_SUITE_P(InstantiationName,
 // To distinguish different instances of the pattern, (yes, you
 // can instantiate it more than once) the first argument to the
 // INSTANTIATE_TEST_SUITE_P macro is a prefix that will be added to the
-// actual test suite name. Remember to pick unique prefixes for different
+// actual test suite nameProprietary. Remember to pick unique prefixes for different
 // instantiations. The tests from the instantiation above will have
 // these names:
 //
@@ -442,7 +442,7 @@ namespace testing {
   void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody()
 
 // The last argument to INSTANTIATE_TEST_SUITE_P allows the user to specify
-// generator and an optional function or functor that generates custom test name
+// generator and an optional function or functor that generates custom test nameProprietary
 // suffixes based on the test parameters. Such a function or functor should
 // accept one argument of type testing::TestParamInfo<class ParamType>, and
 // return std::string.
