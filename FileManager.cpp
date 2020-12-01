@@ -1,0 +1,34 @@
+//
+// Created by tommaso on 01/12/20.
+//
+
+#include "FileManager.h"
+
+void FileManager::write(const char *str) {
+    if (EOF == std::fputs(str, file_handle))
+        throw std::runtime_error("File Write Failure");
+}
+
+const char *FileManager::read() {
+    fseek(file_handle, 0L, SEEK_END);
+    int size = ftell(file_handle);
+    rewind(file_handle);
+
+    char *str = new char[size + 1];
+    fread(str, sizeof(char), size, file_handle);
+
+    str[size] = '\0';
+
+    return str;
+
+
+}
+
+
+void FileManager::close() {
+    std::fclose(file_handle);
+}
+
+bool FileManager::is_open() {
+    return file_handle;
+}
