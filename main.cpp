@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Account/MyAccount.h"
+#include "FileManager.h"
 
 
 bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
 
-void chooseAccount(MyAccount *personalAccount);
+bool chooseAccount(MyAccount *personalAccount);
 
 char presentMenu(const char liv);
 
@@ -16,18 +17,19 @@ int main() {
 
     std::cout << "LOGIN" << std::endl;
 
-    const char *fileName = "/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/loginFile.txt";
+    const char *fileName = "./fileTXT/loginFile.txt";
+    FileManager fileManager("/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/loginFile.txt");
+    std::cout << fileManager.read() << std::endl;
 
     //std::ifstream iFile(fileName);
-    std::fstream iFile(fileName, std::ios::in | std::ios::app);
 
     //char c = iFile.get();
-    if (iFile.is_open()) {
+    if (fileManager.is_open()) {
         char input;
         int count;
         MyAccount *personalAccount;
         bool res = false;
-        std::string line;
+        //std::string line;
         std::vector<std::string> arraySplit;
 
         while (input != 'e') {
@@ -38,6 +40,7 @@ int main() {
                 switch (input) {
                     case 'l':
                         while (!res) {
+                            count = 0;
                             std::cout << "Inserisci Username o digita e per uscire dal login ";
                             std::cin >> username;
                             if (username == "e") {
@@ -48,8 +51,7 @@ int main() {
                             std::cin >> passsword;
                             std::cout << std::endl;
 
-
-                            while (getline(iFile, line)) { //getLine <string> function
+                            for (auto line : fileManager.getRowFile()) {
                                 count++;
                                 arraySplit = split(line, ' ');
                                 res = login(arraySplit, username, passsword);
@@ -73,51 +75,56 @@ int main() {
                             break;
                         }
                         bool found = false;
-/*                        while (getline(iFile, line)) { //getLine <string> function
-                            count++;
+                        for (auto line : fileManager.getRowFile()) { //getLine <string> function
                             arraySplit = split(line, ' ');
-                            if (arraySplit[0] ==  username){
+                            if (arraySplit[0] == username) {
                                 found = true;
                                 break;
                             }
-                        }*/
+                        }
                         if (!found) {
+
                             std::cout << std::endl;
                             std::cout << "Inserisci nuova Password ";
                             std::cin >> passsword;
                             std::cout << std::endl;
-                            iFile << username << " " << passsword << std::endl;
+                            fileManager.write("username + \" \" + passsword");
                         } else {
                             std::cout << "Username già usato, verrai rimandato al menù principale" << std::endl
                                       << std::endl;
-                            iFile.clear();
-                            iFile.seekg(0, std::ios::beg);
                         }
 
                         break;
                 }
             }
             input = (input != 'e') ? ' ' : input;
-
-            while (input != 'e') {
-
-                if (res) {
-
-                    chooseAccount(personalAccount);
+            if (input != 'e') {
+                if (chooseAccount(personalAccount)) {
                     std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
                             personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
 
-
-                    while (input != 'e') {
-                        input = presentMenu(1);
+                } else {
+                    //TODO crea un nuovo _iban;
+                }
+                while (input != 'e') {
+                    input = presentMenu(2);
+                    switch (input) {
+                        case 'l':
+                            chooseAccount(personalAccount);
+                            std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
+                                    personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
+                            break;
+                        case 'e':
+                            break;
                     }
-                    if (input == 'e') {
-                        std::cout << "Sei Uscito";
-                    }
-
-                    iFile.close();
                 }
             }
+            if (input == 'e') {
+                std::cout << fileManager.read() << std::endl;
+                std::cout << "Sei Uscito";
+                //fileManager.close();
+            }
+
         }
     }else
         throw std::runtime_error("Errore , file non aperto");
@@ -138,8 +145,8 @@ bool login(const std::vector<std::string> &s, const std::string &username, const
     return false;
 }
 
-void chooseAccount(MyAccount *personalAccount) {
-    std::cout << "Scegli quale iban utilizzare : " << std::endl;
+bool chooseAccount(MyAccount *personalAccount) {
+    std::cout << "Scegli quale _iban utilizzare : " << std::endl;
     std::map<int, std::string> IdIban;
     int count = 1;
     for (const auto &iban : personalAccount->getIbans()) {
@@ -147,9 +154,15 @@ void chooseAccount(MyAccount *personalAccount) {
                   << " Iban : " << iban.first << std::endl;
         IdIban.insert(std::make_pair(count++, iban.first));
     }
-    int valSelected;
-    std::cin >> valSelected;
-    personalAccount->setSelectedIban(IdIban[valSelected]);
+    if (count == 1) {
+        std::cout << "Nessun Conto Presente per questo Account";
+        return false;
+    } else {
+        int valSelected;
+        std::cin >> valSelected;
+        personalAccount->setSelectedIban(IdIban[valSelected]);
+        return true;
+    }
 
 }
 
@@ -165,7 +178,7 @@ char presentMenu(const char liv) {
             break;
         case 2:
             std::cout << "Premi b per effettuare un bonifico" << std::endl;
-            std::cout << "Primi l per selezionare l'iban per effettuare le operazioni" << std::endl;
+            std::cout << "Primi l per selezionare l'_iban per effettuare le operazioni" << std::endl;
             std::cout << "Premi c per creare un nuovo conto Corrente all'interno del tuo Account" << std::endl;
             std::cout << "Primi e per uscire dall'account" << std::endl;
             break;

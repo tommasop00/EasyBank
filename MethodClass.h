@@ -9,14 +9,14 @@
 #include <vector>
 
 
-inline std::vector<std::string> split(std::string &data, const char &demilimiter, int elem = 1) {
+inline std::vector<std::string> split(std::string &data, const char demilimiter, int elem = 1) {
     size_t pos = 0;
     std::vector<std::string> splitArray;
 
     int count = 0;
-    while ((pos = data.find(' ')) != std::string::npos && ((elem == 1) ? true : (count < elem - 1))) {
+    while ((pos = data.find(demilimiter)) != std::string::npos && ((elem == 1) ? true : (count < elem - 1))) {
         splitArray.push_back(data.substr(0, pos));
-        data.erase(0, pos + 1); //pos + demilimiter(' ').length
+        data.erase(0, pos + 1); //pos + demilimiter(<-char).length
         count++;
     }
 

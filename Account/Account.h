@@ -13,24 +13,33 @@ class Account {
 public:
     Account() {};
 
-    Account(int id, std::string iban, float ammount, std::string FC, std::string nameProprietary) : iban(iban),
-                                                                                                    ammount(ammount),
-                                                                                                    fc(fc),
-                                                                                                    nameProprietary(
-                                                                                                            nameProprietary) {};
+    Account(int id, const std::string &iban, float ammount, std::string &FC, std::string &nameProprietary) : _iban(
+            iban),
+                                                                                                             _ammount(
+                                                                                                                     ammount),
+                                                                                                             _fc(FC),
+                                                                                                             nameProprietary(
+                                                                                                                     nameProprietary) {
+        this->_id = id;
+        this->_iban = iban;
+        this->_ammount = ammount;
+        this->_fc = _fc;
+        this->nameProprietary = nameProprietary;
+
+    };
 
     virtual ~Account() {};
 
     const std::string &getIban() const {
-        return iban;
+        return _iban;
     }
 
     const std::string &getfc() const {
-        return fc;
+        return _fc;
     }
 
     float getAmmount() const {
-        return ammount;
+        return _ammount;
     }
 
     const std::string &getSurnameBusinessName() const {
@@ -38,10 +47,10 @@ public:
     }
 
 protected:
-    int id;
-    std::string iban;
-    std::string fc;
-    float ammount;
+    int _id;
+    std::string _iban;
+    std::string _fc;
+    float _ammount;
     std::string nameProprietary;
 
 };

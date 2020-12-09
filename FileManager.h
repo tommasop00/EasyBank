@@ -7,6 +7,8 @@
 
 #include <cstdio>
 #include <stdexcept>
+#include <vector>
+#include "MethodClass.h"
 
 class FileManager {
 public:
@@ -17,18 +19,22 @@ public:
     };
 
     ~FileManager() {
-        if (std::fclose(file_handle)) {
-            //TODO se abbiamo da fare qualcoas prima del falimento lo si scrive qui
+        if (file_handle) {
+            if (std::fclose(file_handle)) {
+                //TODO se abbiamo da fare qualcoas prima del falimento lo si scrive qui
+            }
         }
     }
 
-    void write(const char *str);
+    void write(const std::string &str);
 
-    const char *read();
+    char *read();
 
-    void close();
+    //void close();
 
     bool is_open();
+
+    std::vector<std::string> getRowFile();
 
     FileManager(const FileManager &) = delete;
 

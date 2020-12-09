@@ -4,12 +4,14 @@
 
 #include "FileManager.h"
 
-void FileManager::write(const char *str) {
-    if (EOF == std::fputs(str, file_handle))
+void FileManager::write(const std::string &str) {
+
+    const char *cstr = str.c_str();
+    if (EOF == std::fputs(cstr, file_handle))
         throw std::runtime_error("File Write Failure");
 }
 
-const char *FileManager::read() {
+char *FileManager::read() {
     fseek(file_handle, 0L, SEEK_END);
     int size = ftell(file_handle);
     rewind(file_handle);
@@ -25,10 +27,18 @@ const char *FileManager::read() {
 }
 
 
-void FileManager::close() {
+/*void FileManager::close() {
     std::fclose(file_handle);
-}
+}*/
 
 bool FileManager::is_open() {
     return file_handle;
+}
+
+std::vector<std::string> FileManager::getRowFile() {
+    std::vector<std::string> tempVector;
+    char *stempChar = this->read();
+    std::string str(stempChar);
+    tempVector = split(str, '\n');
+    return tempVector;
 }

@@ -497,7 +497,7 @@ namespace testing {
             // Base part of test suite nameProprietary for display purposes.
             virtual const std::string &GetTestSuiteName() const = 0;
 
-            // Test suite id to verify identity.
+            // Test suite _id to verify identity.
             virtual TypeId GetTestSuiteTypeId() const = 0;
 
             // UnitTest class invokes this method to register tests in this
@@ -553,7 +553,7 @@ namespace testing {
                 return test_suite_name_;
             }
 
-            // Test suite id to verify identity.
+            // Test suite _id to verify identity.
             TypeId GetTestSuiteTypeId() const override { return GetTypeId<TestSuite>(); }
 
             // TEST_P macro uses AddTestPattern() to record information
