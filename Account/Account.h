@@ -19,14 +19,12 @@ public:
                                                                                                                      ammount),
                                                                                                              _fc(FC),
                                                                                                              nameProprietary(
-                                                                                                                     nameProprietary) {
-        this->_id = id;
-        this->_iban = iban;
-        this->_ammount = ammount;
-        this->_fc = _fc;
-        this->nameProprietary = nameProprietary;
+                                                                                                                     nameProprietary) {};
 
-    };
+
+    void generateNewIBanAndId() {
+
+    }
 
     virtual ~Account() {};
 

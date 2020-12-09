@@ -21,6 +21,9 @@ int main() {
     FileManager fileManager("/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/loginFile.txt");
     std::cout << fileManager.read() << std::endl;
 
+    fileManager.countRowFile();
+    std::cout << FileManager::numRow << std::endl;
+
     //std::ifstream iFile(fileName);
 
     //char c = iFile.get();
@@ -88,7 +91,8 @@ int main() {
                             std::cout << "Inserisci nuova Password ";
                             std::cin >> passsword;
                             std::cout << std::endl;
-                            fileManager.write("username + \" \" + passsword");
+                            const std::string tempString = "\n" + username + " " + passsword;
+                            fileManager.write(tempString);
                         } else {
                             std::cout << "Username già usato, verrai rimandato al menù principale" << std::endl
                                       << std::endl;
@@ -113,6 +117,9 @@ int main() {
                             chooseAccount(personalAccount);
                             std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
                                     personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
+                            break;
+                        case 'c':
+
                             break;
                         case 'e':
                             break;
@@ -155,7 +162,7 @@ bool chooseAccount(MyAccount *personalAccount) {
         IdIban.insert(std::make_pair(count++, iban.first));
     }
     if (count == 1) {
-        std::cout << "Nessun Conto Presente per questo Account";
+        std::cout << "Nessun Conto Presente per questo Account" << std::endl;
         return false;
     } else {
         int valSelected;
@@ -163,7 +170,6 @@ bool chooseAccount(MyAccount *personalAccount) {
         personalAccount->setSelectedIban(IdIban[valSelected]);
         return true;
     }
-
 }
 
 char presentMenu(const char liv) {

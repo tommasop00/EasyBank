@@ -14,7 +14,9 @@ class OtherAccount : public Account, public Observer {
 public:
 
     OtherAccount(int id, std::string iban, float ammount, std::string FC, std::string nameProprietary, MyAccount *sub)
-            : Account(id, iban, ammount, _fc, nameProprietary), Observer(), sub(sub) {};
+            : Account(id, iban, ammount, _fc, nameProprietary), Observer(), sub(sub) {
+        this->attach();
+    };
 
     void update(float ammount) override;
 

@@ -11,7 +11,6 @@
 #include <vector>
 #include <map>
 #include <stdexcept>
-#include <fstream>
 #include "../MethodClass.h"
 #include "Account.h"
 #include <list>
@@ -42,6 +41,9 @@ public:
     void notify() override;
 
     void clearObserver() override;
+
+    void createNewCurrentAccount();
+
 
     void choosAccount();
 

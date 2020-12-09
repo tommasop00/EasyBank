@@ -4,6 +4,8 @@
 
 #include "FileManager.h"
 
+int FileManager::numRow = 0;
+
 void FileManager::write(const std::string &str) {
 
     const char *cstr = str.c_str();
@@ -22,8 +24,6 @@ char *FileManager::read() {
     str[size] = '\0';
 
     return str;
-
-
 }
 
 
@@ -40,5 +40,13 @@ std::vector<std::string> FileManager::getRowFile() {
     char *stempChar = this->read();
     std::string str(stempChar);
     tempVector = split(str, '\n');
+    delete stempChar;
     return tempVector;
+}
+
+void FileManager::countRowFile() {
+    int tempCount = 0;
+    for (auto t : getRowFile())
+        tempCount++;
+    FileManager::numRow = tempCount;
 }

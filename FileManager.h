@@ -36,9 +36,14 @@ public:
 
     std::vector<std::string> getRowFile();
 
+    void countRowFile();
+
+
     FileManager(const FileManager &) = delete;
 
     FileManager &operator=(const FileManager &) = delete;
+
+    static int numRow;
 
 private:
     std::FILE *file_handle;

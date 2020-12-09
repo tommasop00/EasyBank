@@ -30,13 +30,15 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
         int count = 0;
         for (auto sLine : file.getRowFile()) {
             if (sLine != "") {
-                splitArray = split(sLine, ' ');
+                splitArray = split(sLine, ' ', 5);
+                std::unique_ptr<Account> tempAccount(
+                        new Account(count++, splitArray[1], std::stof(splitArray[2]), splitArray[3],
+                                    splitArray[4]));
                 if (std::stoi(splitArray[0]) == this->user.second) {
                     find = true;
-                    std::unique_ptr<Account> tempAccount(
-                            new Account(count++, splitArray[1], std::stof(splitArray[2]), splitArray[3],
-                                        splitArray[4]));
                     ibans.insert(std::make_pair(splitArray[1], std::move(tempAccount)));
+                } else {
+
                 }
             }
         }
@@ -86,6 +88,11 @@ void MyAccount::choosAccount() {
     int valSelected;
     std::cin >> valSelected;
     selectedIban = (IdIban[valSelected]);
+}
+
+void MyAccount::createNewCurrentAccount() {
+    std::cout << "Inserisci ";
+
 }
 
 
