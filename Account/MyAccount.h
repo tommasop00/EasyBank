@@ -45,7 +45,7 @@ public:
     void createNewCurrentAccount();
 
 
-    void choosAccount();
+    void chooseAccount();
 
     const std::list<Observer *> &getObservers() const;
 

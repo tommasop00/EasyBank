@@ -31,9 +31,10 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
         for (auto sLine : file.getRowFile()) {
             if (sLine != "") {
                 splitArray = split(sLine, ' ', 5);
+                count++;
+                float ammount = std::stof(splitArray[2]);
                 std::unique_ptr<Account> tempAccount(
-                        new Account(count++, splitArray[1], std::stof(splitArray[2]), splitArray[3],
-                                    splitArray[4]));
+                        new Account(count, splitArray[1], ammount, splitArray[3], splitArray[4]));
                 if (std::stoi(splitArray[0]) == this->user.second) {
                     find = true;
                     ibans.insert(std::make_pair(splitArray[1], std::move(tempAccount)));
@@ -75,9 +76,8 @@ const std::list<Observer *> &MyAccount::getObservers() const {
     return observers;
 }
 
-void MyAccount::choosAccount() {
+void MyAccount::chooseAccount() {
     std::cout << "Scegli quale _iban utilizzare : " << std::endl;
-
     std::map<int, std::string> IdIban;
     int count = 1;
     for (const auto &iban : getIbans()) {
@@ -91,8 +91,17 @@ void MyAccount::choosAccount() {
 }
 
 void MyAccount::createNewCurrentAccount() {
-    std::cout << "Inserisci ";
+    std::string ammount, fc, name;
+    std::cout << "Inserisca valore conto iniziale" << std::endl;
+    std::cin >> ammount;
+    std::cout << "Inserisca il suo codice fiscale" << std::endl;
+    std::cin >> fc;
+    std::cout << "Inserisca il suo nome" << std::endl;
+    std::cin >> name;
 
+
+
+//TODO finire
 }
 
 

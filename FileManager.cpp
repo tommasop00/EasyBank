@@ -7,23 +7,27 @@
 int FileManager::numRow = 0;
 
 void FileManager::write(const std::string &str) {
+    if (this->is_open()) {
+        const char *cstr = str.c_str();
+        if (EOF == std::fputs(cstr, file_handle))
+            throw std::runtime_error("File Write Failure");
+    }
 
-    const char *cstr = str.c_str();
-    if (EOF == std::fputs(cstr, file_handle))
-        throw std::runtime_error("File Write Failure");
 }
 
 char *FileManager::read() {
-    fseek(file_handle, 0L, SEEK_END);
-    int size = ftell(file_handle);
-    rewind(file_handle);
+    if (this->is_open()) {
+        fseek(file_handle, 0L, SEEK_END);
+        int size = ftell(file_handle);
+        rewind(file_handle);
 
-    char *str = new char[size + 1];
-    fread(str, sizeof(char), size, file_handle);
+        char *str = new char[size + 1];
+        fread(str, sizeof(char), size, file_handle);
 
-    str[size] = '\0';
+        str[size] = '\0';
 
-    return str;
+        return str;
+    }
 }
 
 
@@ -32,7 +36,10 @@ char *FileManager::read() {
 }*/
 
 bool FileManager::is_open() {
-    return file_handle;
+    if (file_handle)
+        return true;
+    else
+        throw new std::runtime_error("File is not Opened");
 }
 
 std::vector<std::string> FileManager::getRowFile() {

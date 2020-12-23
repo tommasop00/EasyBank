@@ -5,7 +5,7 @@
 
 bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
 
-bool chooseAccount(MyAccount *personalAccount);
+void chooseAccount(MyAccount *personalAccount);
 
 char presentMenu(const char liv);
 
@@ -17,7 +17,6 @@ int main() {
 
     std::cout << "LOGIN" << std::endl;
 
-    const char *fileName = "./fileTXT/loginFile.txt";
     FileManager fileManager("/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/loginFile.txt");
     std::cout << fileManager.read() << std::endl;
 
@@ -103,13 +102,7 @@ int main() {
             }
             input = (input != 'e') ? ' ' : input;
             if (input != 'e') {
-                if (chooseAccount(personalAccount)) {
-                    std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
-                            personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
-
-                } else {
-                    //TODO crea un nuovo _iban;
-                }
+                chooseAccount(personalAccount);
                 while (input != 'e') {
                     input = presentMenu(2);
                     switch (input) {
@@ -152,7 +145,7 @@ bool login(const std::vector<std::string> &s, const std::string &username, const
     return false;
 }
 
-bool chooseAccount(MyAccount *personalAccount) {
+void chooseAccount(MyAccount *personalAccount) {
     std::cout << "Scegli quale _iban utilizzare : " << std::endl;
     std::map<int, std::string> IdIban;
     int count = 1;
@@ -163,12 +156,22 @@ bool chooseAccount(MyAccount *personalAccount) {
     }
     if (count == 1) {
         std::cout << "Nessun Conto Presente per questo Account" << std::endl;
-        return false;
+
+        //TODO crea nuovo conto
     } else {
+        std::cout << "Digita 0 per creare un nuovo Conto" << std::endl;
         int valSelected;
         std::cin >> valSelected;
-        personalAccount->setSelectedIban(IdIban[valSelected]);
-        return true;
+        if (valSelected >= 0) {
+            if (valSelected == 0) {
+                //TODO crea nuovo conto
+            } else {
+                personalAccount->setSelectedIban(IdIban[(valSelected)]);
+                std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
+                        personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
+            }
+        }
+
     }
 }
 
