@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g   CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o  -o runEasyBankTest  ../../lib/libgtestd.a ../../lib/libgtest_maind.a ../../libcore.a ../../lib/libgtestd.a -lpthread 

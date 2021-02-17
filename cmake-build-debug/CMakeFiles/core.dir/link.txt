@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore.a  CMakeFiles/core.dir/Account/Account.cpp.o CMakeFiles/core.dir/Account/MyAccount.cpp.o CMakeFiles/core.dir/Account/Transaction.cpp.o CMakeFiles/core.dir/FileManager.cpp.o
+/usr/bin/ranlib libcore.a

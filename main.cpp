@@ -148,8 +148,8 @@ int main() {
                             }
                             break;
                         case 'm':
-                            std::cout << "Il saldo è di € " << personalAccount->getIbans().find(
-                                    personalAccount->getSelectedIban())->second->getAmmount() << std::endl;
+                                std::cout << "Il saldo è di € " << personalAccount->getIbans().find(
+                                        personalAccount->getSelectedIban())->second->getAmmount() << std::endl;
                             break;
                         case 'e':
                             break;
