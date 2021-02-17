@@ -9,7 +9,7 @@
 #include "../Observer.h"
 #include "Account.h"
 #include "MyAccount.h"
-#include "TransferError.h"
+#include "TransactionError.h"
 #include <cmath>
 
 class Transition : public Observer {
@@ -19,7 +19,7 @@ public:
         attach();
     };
 
-    virtual ~Transition();
+    virtual ~Transition() {};
 
     void update(float ammount, Account *acc) override;
 

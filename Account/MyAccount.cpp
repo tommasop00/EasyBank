@@ -3,6 +3,7 @@
 //
 
 #include "MyAccount.h"
+#include "TransactionError.h"
 #include <iostream>
 #include <memory>
 
@@ -56,12 +57,17 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
 }
 
 void MyAccount::notify(std::string iban, float ammount) { //TODO upgrade accountOBJ
-    Account *acc = this->getIbans().find(iban)->second.get();
-    for (auto itr : this->getObservers()) {
-        itr->update(ammount, acc);
+    Account *acc;
+    auto it = this->getIbans().find(iban);
+    if (it != this->getIbans().end()) {
+        acc = this->getIbans().find(iban)->second.get();
+        for (auto itr : this->getObservers()) {
+            itr->update(ammount, acc);
+        }
+        std::cout << "OK" << std::endl;
+    } else {
+        throw TransactionError("Iban non esistente");
     }
-    std::cout << acc->getAmmount() << std::endl;
-    delete acc;
 
 }
 
@@ -98,6 +104,7 @@ void MyAccount::chooseAccount() {
     }
     if (count == 1) {
         std::cout << "Nessun Conto Presente per questo Account" << std::endl;
+        std::cout << "Crea un nuovo Conto" << std::endl;
 
         this->createNewCurrentAccount();
     } else {

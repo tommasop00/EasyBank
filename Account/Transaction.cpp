@@ -27,8 +27,6 @@ void Transition::update(float ammount, Account *accOther) {
     std::string log;
     std::string ibanOther = accOther->getIban();
 
-    bool find = this->checkifIbanOtherExist(fileManager, ibanOther);
-    if (find == true) {
         //region extern
         if (ibanOther != this->acc->getIban()) {
             if (ammount < 0) {
@@ -41,12 +39,14 @@ void Transition::update(float ammount, Account *accOther) {
                             std::string tempIban = this->acc->getIban();
                             this->doTransferExtern(fileManager, fileManager2, tempIban, ibanOther, ammount);
                             log = this->acc->getIban() + " >> " + std::to_string(ammount) + " >> " + ibanOther;
+                            this->acc->setAmmount(this->acc->getAmmount() - ammount);
+                            accOther->setAmmount(accOther->getAmmount() + ammount);
                             fileManagerLog.write(log);
                         } else {
                             if (remove(path2) != 0) {
                                 throw std::runtime_error("Errore nella cancellazione");
                             }
-                            throw TransferError("Il bonifico è maggiore del valore del conto");
+                            throw TransactionError("Il bonifico è maggiore del valore del conto");
                         }
 
                         break;
@@ -61,12 +61,14 @@ void Transition::update(float ammount, Account *accOther) {
                             std::string tempIban = this->acc->getIban();
                             this->doTransferExtern(fileManager, fileManager2, ibanOther, tempIban, ammount);
                             log = this->acc->getIban() + " << " + std::to_string(ammount) + " << " + ibanOther;
+                            this->acc->setAmmount(this->acc->getAmmount() + ammount);
+                            accOther->setAmmount(accOther->getAmmount() - ammount);
                             fileManagerLog.write(log);
                         } else {
                             if (remove(path2) != 0) {
                                 throw std::runtime_error("Errore nella cancellazione");
                             }
-                            throw TransferError("Il prelievo è maggiore del valore del conto");
+                            throw TransactionError("Il prelievo è maggiore del valore del conto");
                         }
 
                         break;
@@ -76,7 +78,7 @@ void Transition::update(float ammount, Account *accOther) {
                 if (remove(path2) != 0) {
                     throw std::runtime_error("Errore nella cancellazione");
                 }
-                throw TransferError("Non è possibile fare un tranferimento pari a 0");
+                throw TransactionError("Non è possibile fare un tranferimento pari a 0");
             }
         }
             //endregion
@@ -91,12 +93,14 @@ void Transition::update(float ammount, Account *accOther) {
                         if (t > absAmmount) {
                             this->doTransferIntern(fileManager, fileManager2, ammount);
                             log = this->acc->getIban() + " >> " + std::to_string(absAmmount);
+                            this->acc->setAmmount(this->acc->getAmmount() - ammount);
+
                             fileManagerLog.write(log);
                         } else {
                             if (remove(path2) != 0) {
                                 throw std::runtime_error("Errore nella cancellazione");
                             }
-                            throw TransferError("Il bonifico è maggiore del valore del conto");
+                            throw TransactionError("Il bonifico è maggiore del valore del conto");
                         }
 
                         break;
@@ -106,13 +110,14 @@ void Transition::update(float ammount, Account *accOther) {
             } else if (ammount > 0) {
                 doTransferIntern(fileManager, fileManager2, ammount);
                 log = this->acc->getIban() + " << " + std::to_string(ammount);
+                this->acc->setAmmount(this->acc->getAmmount() + ammount);
                 fileManagerLog.write(log);
 
             } else {
                 if (remove(path2) != 0) {
                     throw std::runtime_error("Errore nella cancellazione");
                 }
-                throw TransferError("Non è possibile fare un tranferimento pari a 0");
+                throw TransactionError("Non è possibile fare un tranferimento pari a 0");
             }
         }
         //endregion
@@ -125,9 +130,6 @@ void Transition::update(float ammount, Account *accOther) {
         if (remove(path3) != 0) {
             throw std::runtime_error("Errore nella cancellazione");
         }
-    } else {
-        throw TransferError("Iban non trovato");
-    }
 
 
 }
@@ -204,10 +206,6 @@ void Transition::doTransferIntern(FileManager &fileOriginal, FileManager &fileUp
 
         }
     }
-}
-
-Transition::~Transition() {
-    delete acc;
 }
 
 

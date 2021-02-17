@@ -2,7 +2,7 @@
 #include "Account/MyAccount.h"
 #include "FileManager.h"
 #include "Account/Transaction.h"
-#include "Account/TransferError.h"
+#include "Account/TransactionError.h"
 
 
 bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
@@ -110,7 +110,7 @@ int main() {
                         case 'b':
                             try {
                                 doTransfer(*personalAccount.get(), input);
-                            } catch (TransferError &e) {
+                            } catch (TransactionError &e) {
                                 std::cerr << e.what() << std::endl;
                             }
                             catch (std::invalid_argument &e) {
@@ -120,7 +120,7 @@ int main() {
                         case 'o':
                             try {
                                 doTransfer(*personalAccount.get(), input);
-                            } catch (TransferError &e) {
+                            } catch (TransactionError &e) {
                                 std::cerr << e.what() << std::endl;
                             }
                             catch (std::invalid_argument &e) {
@@ -130,7 +130,7 @@ int main() {
                         case 'p':
                             try {
                                 doTransfer(*personalAccount.get(), input);
-                            } catch (TransferError &e) {
+                            } catch (TransactionError &e) {
                                 std::cerr << e.what() << std::endl;
                             }
                             catch (std::invalid_argument &e) {
@@ -140,15 +140,16 @@ int main() {
                         case 'v':
                             try {
                                 doTransfer(*personalAccount.get(), input);
-                            } catch (TransferError &e) {
+                            } catch (TransactionError &e) {
                                 std::cerr << e.what() << std::endl;
                             }
                             catch (std::invalid_argument &e) {
-                                std::cerr << "Valore inserito errat" << std::endl;
+                                std::cerr << "Valore inserito errato" << std::endl;
                             }
                             break;
                         case 'm':
-
+                            std::cout << "Il saldo è di € " << personalAccount->getIbans().find(
+                                    personalAccount->getSelectedIban())->second->getAmmount() << std::endl;
                             break;
                         case 'e':
                             break;
@@ -197,7 +198,7 @@ char presentMenu(const char liv) {
             std::cout << "Premi o per effettuare un prelievo in un altro conto" << std::endl;
             std::cout << "Premi v per effettuare un versamento" << std::endl;
             std::cout << "Premi p per effettuare un prelevamento" << std::endl;
-            std::cout << "Premi m per informazioni sul patrimonio" << std::endl;
+            std::cout << "Premi m per informazioni sul saldo" << std::endl;
             std::cout << "Primi l per selezionare l'_iban per effettuare le operazioni" << std::endl;
             std::cout << "Premi c per creare un nuovo conto Corrente all'interno del tuo Account" << std::endl;
             std::cout << "Primi e per uscire dall'account" << std::endl;

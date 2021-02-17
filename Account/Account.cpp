@@ -7,7 +7,6 @@
 #include <iostream>
 
 const std::string Account::generateNewIban() {
-    try {
         FileManager fileManager("./fileTXT/accountFile.txt");
         auto lines = fileManager.getRowFile();
         std::string line = lines[lines.size() - 1];
@@ -20,7 +19,5 @@ const std::string Account::generateNewIban() {
 
         std::string ibanReturn = "IT00A" + cod;
         return ibanReturn;
-    } catch (std::runtime_error e) {
-        std::cout << "Errore" << e.what() << std::endl;
-    }
+
 }
