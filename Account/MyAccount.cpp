@@ -3,8 +3,8 @@
 //
 
 #include "MyAccount.h"
-#include "../FileManager.h"
 #include <iostream>
+#include <memory>
 
 
 const std::map<std::string, std::unique_ptr<Account>> &MyAccount::getIbans() const {
@@ -15,12 +15,13 @@ const std::string &MyAccount::getSelectedIban() const {
     return selectedIban;
 }
 
-void MyAccount::setSelectedIban(const std::string &selectedIban) {
-    MyAccount::selectedIban = selectedIban;
+void MyAccount::setSelectedIban(const std::string &selectedIbanmain) {
+    selectedIban = selectedIbanmain;
+    this->notify2();
 }
 
 std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
-    const char *fileName = "/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/accountFile.txt";
+    const char *fileName = "./fileTXT/accountFile.txt";
     FileManager file(fileName);
     if (file.is_open()) {
         std::string sLine;
@@ -32,19 +33,16 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
             if (sLine != "") {
                 splitArray = split(sLine, ' ', 5);
                 count++;
-                float ammount = std::stof(splitArray[2]);
-                std::unique_ptr<Account> tempAccount(
-                        new Account(count, splitArray[1], ammount, splitArray[3], splitArray[4]));
                 if (std::stoi(splitArray[0]) == this->user.second) {
+                    float ammount = std::stof(splitArray[2]);
+                    std::unique_ptr<Account> tempAccount(
+                            new Account(ammount, splitArray[3], splitArray[4], count, splitArray[1]));
                     find = true;
                     ibans.insert(std::make_pair(splitArray[1], std::move(tempAccount)));
-                } else {
-
                 }
             }
         }
         if (find) {
-            //file.close();
             return ibans;
         }
 
@@ -52,12 +50,25 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
         //file.close();
         throw std::runtime_error("Errore , file non aperto");
     }
+    return std::map<std::string, std::unique_ptr<Account>>();
 
 
 }
 
-void MyAccount::notify() {
+void MyAccount::notify(std::string iban, float ammount) { //TODO upgrade accountOBJ
+    Account *acc = this->getIbans().find(iban)->second.get();
+    for (auto itr : this->getObservers()) {
+        itr->update(ammount, acc);
+    }
+    std::cout << acc->getAmmount() << std::endl;
+    delete acc;
 
+}
+
+void MyAccount::notify2() {
+    for (auto itr : this->getObservers()) {
+        itr->update2();
+    }
 }
 
 void MyAccount::addObserver(Observer *ob) {
@@ -80,29 +91,71 @@ void MyAccount::chooseAccount() {
     std::cout << "Scegli quale _iban utilizzare : " << std::endl;
     std::map<int, std::string> IdIban;
     int count = 1;
-    for (const auto &iban : getIbans()) {
+    for (const auto &iban : this->getIbans()) {
         std::cout << "Digita " << count << " per selezionare il Conto di " << iban.second->getSurnameBusinessName()
                   << " Iban : " << iban.first << std::endl;
         IdIban.insert(std::make_pair(count++, iban.first));
     }
-    int valSelected;
-    std::cin >> valSelected;
-    selectedIban = (IdIban[valSelected]);
+    if (count == 1) {
+        std::cout << "Nessun Conto Presente per questo Account" << std::endl;
+
+        this->createNewCurrentAccount();
+    } else {
+        std::cout << "Digita 0 per creare un nuovo Conto" << std::endl;
+        int valSelected;
+        do {
+            std::cin >> valSelected;
+            if (valSelected == 0) {
+                this->createNewCurrentAccount();
+            } else if (this->getIbans().size() >= valSelected && valSelected > 0) {
+                this->setSelectedIban(IdIban[(valSelected)]);
+                std::cout << "Sei Entrato con il conto di " << this->getIbans().find(
+                        this->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
+            } else {
+                std::cout << "Carattere non valido, inserire un valore valido" << std::endl;
+            }
+        } while (valSelected < 0 || valSelected > this->getSelectedIban().size());
+    }
 }
 
 void MyAccount::createNewCurrentAccount() {
-    std::string ammount, fc, name;
-    std::cout << "Inserisca valore conto iniziale" << std::endl;
-    std::cin >> ammount;
-    std::cout << "Inserisca il suo codice fiscale" << std::endl;
-    std::cin >> fc;
-    std::cout << "Inserisca il suo nome" << std::endl;
-    std::cin >> name;
+    bool correctValue = false;
+    while (!correctValue) {
+        std::string ammount, fc, name;
+        std::cout << "Inserisca valore conto iniziale" << std::endl;
+        std::cin >> ammount;
+        std::cout << "Inserisca il suo codice fiscale" << std::endl;
+        std::cin >> fc;
+        std::cout << "Inserisca il suo nome" << std::endl;
+        std::cin >> name;
+        float ammountFloat;
+        try {
+            ammountFloat = std::stof(ammount);
+            if (ammountFloat != 0) {
+                correctValue = true;
+                std::unique_ptr<Account> a(new Account(ammountFloat, fc, name, this->user.second));
+                ibans.insert(std::make_pair(a->getIban(), std::move(a)));
+
+            } else {
+                correctValue = false;
+                std::cout << "Valori non validi" << std::endl;
+            }
+
+        } catch (std::invalid_argument e) {
+            std::cerr << "caratteri non validi" << std::endl;
+            correctValue = false;
+
+        }
+
+    }
 
 
-
-//TODO finire
 }
+
+
+
+
+
 
 
 

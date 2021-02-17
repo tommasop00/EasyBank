@@ -20,7 +20,9 @@ class MyAccount : public Subject {
 
 public:
 
-    MyAccount(const std::string username, const int id) : Subject(), user(std::make_pair(username, id)) {
+    MyAccount() {};//ONLY FOR TEST
+
+    MyAccount(const std::string username, int id) : Subject(), user(std::make_pair(username, id)) {
         this->ibans = this->findIbans();
     }
 
@@ -38,7 +40,9 @@ public:
 
     void removeObserver(Observer *ob) override;
 
-    void notify() override;
+    void notify(std::string iban, float ammount) override;
+
+    void notify2() override;
 
     void clearObserver() override;
 

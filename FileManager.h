@@ -9,10 +9,11 @@
 #include <stdexcept>
 #include <vector>
 #include "MethodClass.h"
+#include <string>
 
 class FileManager {
 public:
-    FileManager(const char *filename) : file_handle(std::fopen(filename, "r+")) {
+    FileManager(const char *filename, const char *type = "a+") : file_handle(std::fopen(filename, type)) {
         if (!file_handle) {
             throw std::runtime_error("File open Failure");
         }
@@ -21,22 +22,23 @@ public:
     ~FileManager() {
         if (file_handle) {
             if (std::fclose(file_handle)) {
-                //TODO se abbiamo da fare qualcoas prima del falimento lo si scrive qui
             }
         }
     }
 
-    void write(const std::string &str);
+    void write(std::string &str, bool firstelement = false);
 
     char *read();
 
     //void close();
 
+    void renameFile();
+
     bool is_open();
 
     std::vector<std::string> getRowFile();
 
-    void countRowFile();
+    int countRowFile();
 
 
     FileManager(const FileManager &) = delete;
@@ -47,6 +49,8 @@ public:
 
 private:
     std::FILE *file_handle;
+    const char *filename;
+    const char *defaultPath = "home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/";
 
 };
 

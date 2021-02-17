@@ -1,42 +1,35 @@
 #include <iostream>
 #include "Account/MyAccount.h"
 #include "FileManager.h"
+#include "Account/Transaction.h"
+#include "Account/TransferError.h"
 
 
 bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
 
-void chooseAccount(MyAccount *personalAccount);
+char presentMenu(char liv);
 
-char presentMenu(const char liv);
+void doTransfer(MyAccount &pa, char type);
 
 int main() {
-
 
     std::string username;
     std::string passsword;
 
     std::cout << "LOGIN" << std::endl;
 
-    FileManager fileManager("/home/tommaso/Scrivania/CLionProject/EasyBank/fileTXT/loginFile.txt");
-    std::cout << fileManager.read() << std::endl;
-
-    fileManager.countRowFile();
-    std::cout << FileManager::numRow << std::endl;
-
-    //std::ifstream iFile(fileName);
-
-    //char c = iFile.get();
+    FileManager fileManager("./fileTXT/loginFile.txt");
     if (fileManager.is_open()) {
         char input;
         int count;
-        MyAccount *personalAccount;
+        std::unique_ptr<MyAccount> personalAccount;
+        std::unique_ptr<Transition> observerAccount;
+
         bool res = false;
-        //std::string line;
         std::vector<std::string> arraySplit;
 
         while (input != 'e') {
             while (!res && input != 'e') {
-                count = 0;
                 input = presentMenu(1);
                 arraySplit.clear();
                 switch (input) {
@@ -62,7 +55,8 @@ int main() {
                                 }
                             }
                             if (res) {
-                                personalAccount = std::move(new MyAccount(username, count));
+                                personalAccount = std::unique_ptr<MyAccount>(new MyAccount(username, count));
+                                observerAccount = std::unique_ptr<Transition>(new Transition(personalAccount.get()));
                                 std::cout << "Benvenuto " << username << std::endl;
                             } else {
                                 std::cout << "Credenziali Errate" << std::endl;
@@ -90,39 +84,80 @@ int main() {
                             std::cout << "Inserisci nuova Password ";
                             std::cin >> passsword;
                             std::cout << std::endl;
-                            const std::string tempString = "\n" + username + " " + passsword;
+                            std::string tempString = username + " " + passsword;
                             fileManager.write(tempString);
                         } else {
-                            std::cout << "Username già usato, verrai rimandato al menù principale" << std::endl
+                            std::cerr << "Username già usato, verrai rimandato al menù principale" << std::endl
                                       << std::endl;
                         }
 
                         break;
                 }
+
             }
             input = (input != 'e') ? ' ' : input;
             if (input != 'e') {
-                chooseAccount(personalAccount);
+                personalAccount->chooseAccount();
                 while (input != 'e') {
                     input = presentMenu(2);
                     switch (input) {
                         case 'l':
-                            chooseAccount(personalAccount);
-                            std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
-                                    personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
+                            personalAccount->chooseAccount();
                             break;
                         case 'c':
+                            personalAccount->createNewCurrentAccount();
+                            break;
+                        case 'b':
+                            try {
+                                doTransfer(*personalAccount.get(), input);
+                            } catch (TransferError &e) {
+                                std::cerr << e.what() << std::endl;
+                            }
+                            catch (std::invalid_argument &e) {
+                                std::cerr << "Valore inserito errat" << std::endl;
+                            }
+                            break;
+                        case 'o':
+                            try {
+                                doTransfer(*personalAccount.get(), input);
+                            } catch (TransferError &e) {
+                                std::cerr << e.what() << std::endl;
+                            }
+                            catch (std::invalid_argument &e) {
+                                std::cerr << "Valore inserito errat" << std::endl;
+                            }
+                            break;
+                        case 'p':
+                            try {
+                                doTransfer(*personalAccount.get(), input);
+                            } catch (TransferError &e) {
+                                std::cerr << e.what() << std::endl;
+                            }
+                            catch (std::invalid_argument &e) {
+                                std::cerr << "Valore inserito errat" << std::endl;
+                            }
+                            break;
+                        case 'v':
+                            try {
+                                doTransfer(*personalAccount.get(), input);
+                            } catch (TransferError &e) {
+                                std::cerr << e.what() << std::endl;
+                            }
+                            catch (std::invalid_argument &e) {
+                                std::cerr << "Valore inserito errat" << std::endl;
+                            }
+                            break;
+                        case 'm':
 
                             break;
                         case 'e':
                             break;
+
                     }
                 }
             }
             if (input == 'e') {
-                std::cout << fileManager.read() << std::endl;
                 std::cout << "Sei Uscito";
-                //fileManager.close();
             }
 
         }
@@ -145,35 +180,7 @@ bool login(const std::vector<std::string> &s, const std::string &username, const
     return false;
 }
 
-void chooseAccount(MyAccount *personalAccount) {
-    std::cout << "Scegli quale _iban utilizzare : " << std::endl;
-    std::map<int, std::string> IdIban;
-    int count = 1;
-    for (const auto &iban : personalAccount->getIbans()) {
-        std::cout << "Digita " << count << " per selezionare il Conto di " << iban.second->getSurnameBusinessName()
-                  << " Iban : " << iban.first << std::endl;
-        IdIban.insert(std::make_pair(count++, iban.first));
-    }
-    if (count == 1) {
-        std::cout << "Nessun Conto Presente per questo Account" << std::endl;
 
-        //TODO crea nuovo conto
-    } else {
-        std::cout << "Digita 0 per creare un nuovo Conto" << std::endl;
-        int valSelected;
-        std::cin >> valSelected;
-        if (valSelected >= 0) {
-            if (valSelected == 0) {
-                //TODO crea nuovo conto
-            } else {
-                personalAccount->setSelectedIban(IdIban[(valSelected)]);
-                std::cout << "Sei Entrato con il conto di " << personalAccount->getIbans().find(
-                        personalAccount->getSelectedIban())->second->getSurnameBusinessName() << std::endl;
-            }
-        }
-
-    }
-}
 
 char presentMenu(const char liv) {
 
@@ -187,6 +194,10 @@ char presentMenu(const char liv) {
             break;
         case 2:
             std::cout << "Premi b per effettuare un bonifico" << std::endl;
+            std::cout << "Premi o per effettuare un prelievo in un altro conto" << std::endl;
+            std::cout << "Premi v per effettuare un versamento" << std::endl;
+            std::cout << "Premi p per effettuare un prelevamento" << std::endl;
+            std::cout << "Premi m per informazioni sul patrimonio" << std::endl;
             std::cout << "Primi l per selezionare l'_iban per effettuare le operazioni" << std::endl;
             std::cout << "Premi c per creare un nuovo conto Corrente all'interno del tuo Account" << std::endl;
             std::cout << "Primi e per uscire dall'account" << std::endl;
@@ -199,9 +210,28 @@ char presentMenu(const char liv) {
 
 }
 
-bool makeATransfer(MyAccount &personalAccount) {
-    return true;
+void doTransfer(MyAccount &pa, char type) {
+    std::string ibanOther;
+    std::string temp;
+    float ammount;
+    std::cout << "Inserire valore movimento" << std::endl;
+    std::cin >> temp;
+    ammount = std::stof(temp);
+
+    if (type == 'b' || type == 'o') {
+        std::cout << "Inserire iban con cui fare il movimento" << std::endl;
+        std::cin >> ibanOther;
+
+    } else if (type == 'v' || type == 'p') {
+        ibanOther = pa.getSelectedIban();
+    }
+    if (type == 'b' || type == 'p') {
+        ammount = -ammount;
+    }
+    pa.notify(ibanOther, ammount);
+
 }
+
 
 
 

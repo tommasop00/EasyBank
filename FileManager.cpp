@@ -6,8 +6,13 @@
 
 int FileManager::numRow = 0;
 
-void FileManager::write(const std::string &str) {
+void FileManager::write(std::string &str, bool firstelement) {
     if (this->is_open()) {
+        if (firstelement == true) {
+            str = str;
+        } else {
+            str = "\n" + str;
+        }
         const char *cstr = str.c_str();
         if (EOF == std::fputs(cstr, file_handle))
             throw std::runtime_error("File Write Failure");
@@ -51,9 +56,16 @@ std::vector<std::string> FileManager::getRowFile() {
     return tempVector;
 }
 
-void FileManager::countRowFile() {
+int FileManager::countRowFile() {
     int tempCount = 0;
     for (auto t : getRowFile())
         tempCount++;
     FileManager::numRow = tempCount;
+    return tempCount;
+}
+
+void FileManager::renameFile() {
+    if (remove(filename) != 0) {
+        throw std::runtime_error("Errore nella cancellazione");
+    }
 }
