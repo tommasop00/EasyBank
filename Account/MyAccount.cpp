@@ -57,19 +57,12 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
 }
 
 void MyAccount::notify(std::string iban, float ammount) { //TODO upgrade accountOBJ
-    Account *acc;
-    auto it = this->getIbans().find(iban);
-    if (it != this->getIbans().end()) {
-        acc = this->getIbans().find(iban)->second.get();
         for (auto itr : this->getObservers()) {
-            itr->update(ammount, acc);
+            itr->update(ammount, iban);
         }
         std::cout << "OK" << std::endl;
-    } else {
-        throw TransactionError("Iban non esistente");
-    }
-
 }
+
 
 void MyAccount::notify2() {
     for (auto itr : this->getObservers()) {
@@ -141,7 +134,9 @@ void MyAccount::createNewCurrentAccount() {
             if (ammountFloat != 0) {
                 correctValue = true;
                 std::unique_ptr<Account> a(new Account(ammountFloat, fc, name, this->user.second));
-                ibans.insert(std::make_pair(a->getIban(), std::move(a)));
+                this->selectedIban = a->getIban();
+                this->ibans.insert(std::make_pair(a->getIban(), std::move(a)));
+                this->notify2();
 
             } else {
                 correctValue = false;
@@ -157,6 +152,20 @@ void MyAccount::createNewCurrentAccount() {
     }
 
 
+}
+
+void MyAccount::getAmount() const {
+    FileManager fileManager("./fileTXT/accountFile.txt");
+
+    std::vector<std::string> arraySplit;
+    for (auto line : fileManager.getRowFile()) {
+        arraySplit = split(line, ' ', 4);
+        if (arraySplit[1] == this->getSelectedIban()) {
+            std::cout << "Il saldo è di € " << this->getIbans().find(
+                    this->getSelectedIban())->second->getAmmount() << std::endl;
+            break;
+        }
+    }
 }
 
 

@@ -19,9 +19,11 @@ public:
         attach();
     };
 
-    virtual ~Transition() {};
+    virtual ~Transition() {
+        this->detach();
+    };
 
-    void update(float ammount, Account *acc) override;
+    void update(float ammount, std::string ibanOther) override;
 
     void update2() override;
 

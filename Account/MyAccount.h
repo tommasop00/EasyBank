@@ -53,6 +53,8 @@ public:
 
     const std::list<Observer *> &getObservers() const;
 
+    void getAmount() const;
+
 private:
     std::pair<std::string, int> user;
     std::map<std::string, std::unique_ptr<Account>> ibans;
