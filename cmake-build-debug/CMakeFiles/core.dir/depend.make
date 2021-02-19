@@ -4,28 +4,28 @@
 CMakeFiles/core.dir/Account/Account.cpp.o: ../Account/Account.cpp
 CMakeFiles/core.dir/Account/Account.cpp.o: ../Account/Account.h
 CMakeFiles/core.dir/Account/Account.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/Account.cpp.o: ../MethodClass.h
+CMakeFiles/core.dir/Account/Account.cpp.o: ../Utility.h
 
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/Account.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/MyAccount.cpp
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/MyAccount.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/TransactionError.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../MethodClass.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Observer.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/Account.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/TransactionError.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/Transition.cpp
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/Transition.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/User.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../FileManager.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Observer.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Utility.h
 
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Account.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/MyAccount.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.cpp
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/TransactionError.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../MethodClass.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Observer.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/Account.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/TransactionError.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.cpp
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../FileManager.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Observer.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Utility.h
 
 CMakeFiles/core.dir/FileManager.cpp.o: ../FileManager.cpp
 CMakeFiles/core.dir/FileManager.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/FileManager.cpp.o: ../MethodClass.h
+CMakeFiles/core.dir/FileManager.cpp.o: ../Utility.h
 

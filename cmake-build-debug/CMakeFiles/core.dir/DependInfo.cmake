@@ -5,8 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/Account/Account.cpp.o"
-  "/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/Account/MyAccount.cpp.o"
-  "/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/Account/Transaction.cpp.o"
+  "/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/Account/Transition.cpp.o"
+  "/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/Account/User.cpp.o"
   "/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/FileManager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

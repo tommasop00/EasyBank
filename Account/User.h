@@ -2,8 +2,8 @@
 // Created by tommaso on 26/11/20.
 //
 
-#ifndef EASYBANK_MYACCOUNT_H
-#define EASYBANK_MYACCOUNT_H
+#ifndef EASYBANK_USER_H
+#define EASYBANK_USER_H
 
 #include <string>
 #include "../Subject.h"
@@ -11,18 +11,16 @@
 #include <vector>
 #include <map>
 #include <stdexcept>
-#include "../MethodClass.h"
+#include "../Utility.h"
 #include "Account.h"
 #include <list>
 
 
-class MyAccount : public Subject {
+class User : public Subject {
 
 public:
 
-    MyAccount() {};//ONLY FOR TEST
-
-    MyAccount(const std::string username, int id) : Subject(), user(std::make_pair(username, id)) {
+    User(const std::string username, int id) : Subject(), user(std::make_pair(username, id)) {
         this->ibans = this->findIbans();
     }
 
@@ -32,7 +30,9 @@ public:
 
     const std::map<std::string, std::unique_ptr<Account>> &getIbans() const;
 
-    virtual ~MyAccount() {};
+    void pushIban(std::unique_ptr<Account> a);
+
+    virtual ~User() {};
 
     std::map<std::string, std::unique_ptr<Account>> findIbans() const;
 
@@ -46,7 +46,7 @@ public:
 
     void clearObserver() override;
 
-    void createNewCurrentAccount();
+    //void createNewCurrentAccount();
 
 
     void chooseAccount();
@@ -54,6 +54,8 @@ public:
     const std::list<Observer *> &getObservers() const;
 
     void getAmount() const;
+
+    const std::pair<std::string, int> &getUser() const;
 
 private:
     std::pair<std::string, int> user;
@@ -63,4 +65,4 @@ private:
 };
 
 
-#endif //EASYBANK_MYACCOUNT_H
+#endif //EASYBANK_USER_H

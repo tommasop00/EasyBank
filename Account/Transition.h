@@ -2,20 +2,20 @@
 // Created by tommaso on 29/11/20.
 //
 
-#ifndef EASYBANK_TRANSACTION_H
-#define EASYBANK_TRANSACTION_H
+#ifndef EASYBANK_TRANSITION_H
+#define EASYBANK_TRANSITION_H
 
 
 #include "../Observer.h"
 #include "Account.h"
-#include "MyAccount.h"
+#include "User.h"
 #include "TransactionError.h"
 #include <cmath>
 
 class Transition : public Observer {
 public:
 
-    Transition(MyAccount *sub) : sub(sub) {
+    Transition(User *sub) : sub(sub) {
         attach();
     };
 
@@ -41,10 +41,10 @@ public:
 
 
 private:
-    MyAccount *sub;
+    User *sub;
     Account *acc;
 
 };
 
 
-#endif //EASYBANK_TRANSACTION_H
+#endif //EASYBANK_TRANSITION_H

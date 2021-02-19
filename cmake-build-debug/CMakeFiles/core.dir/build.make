@@ -90,31 +90,31 @@ CMakeFiles/core.dir/Account/Account.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Account.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp -o CMakeFiles/core.dir/Account/Account.cpp.s
 
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: CMakeFiles/core.dir/flags.make
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/MyAccount.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/Account/MyAccount.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/MyAccount.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp
+CMakeFiles/core.dir/Account/User.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/Account/User.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/User.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp
 
-CMakeFiles/core.dir/Account/MyAccount.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/MyAccount.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp > CMakeFiles/core.dir/Account/MyAccount.cpp.i
+CMakeFiles/core.dir/Account/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/User.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp > CMakeFiles/core.dir/Account/User.cpp.i
 
-CMakeFiles/core.dir/Account/MyAccount.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/MyAccount.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp -o CMakeFiles/core.dir/Account/MyAccount.cpp.s
+CMakeFiles/core.dir/Account/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/User.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp -o CMakeFiles/core.dir/Account/User.cpp.s
 
-CMakeFiles/core.dir/Account/Transaction.cpp.o: CMakeFiles/core.dir/flags.make
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/Account/Transaction.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Transaction.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp
+CMakeFiles/core.dir/Account/Transition.cpp.o: CMakeFiles/core.dir/flags.make
+CMakeFiles/core.dir/Account/Transition.cpp.o: ../Account/Transition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/Account/Transition.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Transition.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp
 
-CMakeFiles/core.dir/Account/Transaction.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/Transaction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp > CMakeFiles/core.dir/Account/Transaction.cpp.i
+CMakeFiles/core.dir/Account/Transition.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/Transition.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp > CMakeFiles/core.dir/Account/Transition.cpp.i
 
-CMakeFiles/core.dir/Account/Transaction.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Transaction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp -o CMakeFiles/core.dir/Account/Transaction.cpp.s
+CMakeFiles/core.dir/Account/Transition.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Transition.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp -o CMakeFiles/core.dir/Account/Transition.cpp.s
 
 CMakeFiles/core.dir/FileManager.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/FileManager.cpp.o: ../FileManager.cpp
@@ -132,16 +132,16 @@ CMakeFiles/core.dir/FileManager.cpp.s: cmake_force
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/Account/Account.cpp.o" \
-"CMakeFiles/core.dir/Account/MyAccount.cpp.o" \
-"CMakeFiles/core.dir/Account/Transaction.cpp.o" \
+"CMakeFiles/core.dir/Account/User.cpp.o" \
+"CMakeFiles/core.dir/Account/Transition.cpp.o" \
 "CMakeFiles/core.dir/FileManager.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
 
 libcore.a: CMakeFiles/core.dir/Account/Account.cpp.o
-libcore.a: CMakeFiles/core.dir/Account/MyAccount.cpp.o
-libcore.a: CMakeFiles/core.dir/Account/Transaction.cpp.o
+libcore.a: CMakeFiles/core.dir/Account/User.cpp.o
+libcore.a: CMakeFiles/core.dir/Account/Transition.cpp.o
 libcore.a: CMakeFiles/core.dir/FileManager.cpp.o
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt

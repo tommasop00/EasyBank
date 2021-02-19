@@ -276,19 +276,19 @@
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp">
-			<Option target="core"/>
-		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h">
-			<Option target="core"/>
-		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp">
-			<Option target="core"/>
-		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h">
-			<Option target="core"/>
-		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h">
 			<Option target="core"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.cpp">
@@ -297,14 +297,14 @@
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h">
-			<Option target="EasyBank"/>
-		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h">
 			<Option target="core"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h">
 			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h">
+			<Option target="EasyBank"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp">
 			<Option target="runEasyBankTest"/>

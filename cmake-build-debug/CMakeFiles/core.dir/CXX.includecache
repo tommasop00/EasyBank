@@ -16,9 +16,15 @@ vector
 ../FileManager.h
 /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp
-MyAccount.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h
+/home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
+exception
+-
+stdexcept
+-
+
+/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp
+User.h
+/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
 TransactionError.h
 /home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
 iostream
@@ -26,7 +32,7 @@ iostream
 memory
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h
+/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
 string
 -
 ../Subject.h
@@ -39,33 +45,11 @@ map
 -
 stdexcept
 -
-../MethodClass.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
+../Utility.h
+/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
 Account.h
 /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
 list
--
-
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp
-Transaction.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
-
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
-../Observer.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
-Account.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
-MyAccount.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h
-TransactionError.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
-cmath
--
-
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
-exception
--
-stdexcept
 -
 
 /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
@@ -75,15 +59,9 @@ stdexcept
 -
 vector
 -
-MethodClass.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
+Utility.h
+/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
 string
--
-
-/home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
-string
--
-vector
 -
 
 /home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
@@ -98,5 +76,11 @@ vector
 Observer.h
 /home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
 memory
+-
+
+/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+string
+-
+vector
 -
 

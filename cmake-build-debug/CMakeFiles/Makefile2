@@ -189,9 +189,9 @@ CMakeFiles/EasyBank.dir/clean:
 # Target rules for target cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir
 
 # All Build rule for target.
+cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/all: CMakeFiles/core.dir/all
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/all: cmake-build-debug/test/lib/googletest/CMakeFiles/gtest_main.dir/all
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/all: cmake-build-debug/test/lib/googletest/CMakeFiles/gtest.dir/all
-cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/all: CMakeFiles/core.dir/all
 	$(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=12,13,14 "Built target runEasyBankTest"

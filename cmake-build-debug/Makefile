@@ -222,59 +222,59 @@ Account/Account.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Account.cpp.s
 .PHONY : Account/Account.cpp.s
 
-Account/MyAccount.o: Account/MyAccount.cpp.o
+Account/Transition.o: Account/Transition.cpp.o
 
-.PHONY : Account/MyAccount.o
-
-# target to build an object file
-Account/MyAccount.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.o
-.PHONY : Account/MyAccount.cpp.o
-
-Account/MyAccount.i: Account/MyAccount.cpp.i
-
-.PHONY : Account/MyAccount.i
-
-# target to preprocess a source file
-Account/MyAccount.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.i
-.PHONY : Account/MyAccount.cpp.i
-
-Account/MyAccount.s: Account/MyAccount.cpp.s
-
-.PHONY : Account/MyAccount.s
-
-# target to generate assembly for a file
-Account/MyAccount.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.s
-.PHONY : Account/MyAccount.cpp.s
-
-Account/Transaction.o: Account/Transaction.cpp.o
-
-.PHONY : Account/Transaction.o
+.PHONY : Account/Transition.o
 
 # target to build an object file
-Account/Transaction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transaction.cpp.o
-.PHONY : Account/Transaction.cpp.o
+Account/Transition.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transition.cpp.o
+.PHONY : Account/Transition.cpp.o
 
-Account/Transaction.i: Account/Transaction.cpp.i
+Account/Transition.i: Account/Transition.cpp.i
 
-.PHONY : Account/Transaction.i
+.PHONY : Account/Transition.i
 
 # target to preprocess a source file
-Account/Transaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transaction.cpp.i
-.PHONY : Account/Transaction.cpp.i
+Account/Transition.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transition.cpp.i
+.PHONY : Account/Transition.cpp.i
 
-Account/Transaction.s: Account/Transaction.cpp.s
+Account/Transition.s: Account/Transition.cpp.s
 
-.PHONY : Account/Transaction.s
+.PHONY : Account/Transition.s
 
 # target to generate assembly for a file
-Account/Transaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transaction.cpp.s
-.PHONY : Account/Transaction.cpp.s
+Account/Transition.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transition.cpp.s
+.PHONY : Account/Transition.cpp.s
+
+Account/User.o: Account/User.cpp.o
+
+.PHONY : Account/User.o
+
+# target to build an object file
+Account/User.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.o
+.PHONY : Account/User.cpp.o
+
+Account/User.i: Account/User.cpp.i
+
+.PHONY : Account/User.i
+
+# target to preprocess a source file
+Account/User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.i
+.PHONY : Account/User.cpp.i
+
+Account/User.s: Account/User.cpp.s
+
+.PHONY : Account/User.s
+
+# target to generate assembly for a file
+Account/User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.s
+.PHONY : Account/User.cpp.s
 
 FileManager.o: FileManager.cpp.o
 
@@ -346,12 +346,12 @@ help:
 	@echo "... Account/Account.o"
 	@echo "... Account/Account.i"
 	@echo "... Account/Account.s"
-	@echo "... Account/MyAccount.o"
-	@echo "... Account/MyAccount.i"
-	@echo "... Account/MyAccount.s"
-	@echo "... Account/Transaction.o"
-	@echo "... Account/Transaction.i"
-	@echo "... Account/Transaction.s"
+	@echo "... Account/Transition.o"
+	@echo "... Account/Transition.i"
+	@echo "... Account/Transition.s"
+	@echo "... Account/User.o"
+	@echo "... Account/User.i"
+	@echo "... Account/User.s"
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"

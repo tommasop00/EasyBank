@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/core.dir/Account/Account.cpp.o"
-  "CMakeFiles/core.dir/Account/MyAccount.cpp.o"
-  "CMakeFiles/core.dir/Account/Transaction.cpp.o"
+  "CMakeFiles/core.dir/Account/Transition.cpp.o"
+  "CMakeFiles/core.dir/Account/User.cpp.o"
   "CMakeFiles/core.dir/FileManager.cpp.o"
   "libcore.a"
   "libcore.pdb"

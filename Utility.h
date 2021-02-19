@@ -2,8 +2,8 @@
 // Created by tommaso on 27/11/20.
 //
 
-#ifndef EASYBANK_METHODCLASS_H
-#define EASYBANK_METHODCLASS_H
+#ifndef EASYBANK_UTILITY_H
+#define EASYBANK_UTILITY_H
 
 #include <string>
 #include <vector>
@@ -26,4 +26,4 @@ inline std::vector<std::string> split(std::string &data, const char demilimiter,
     return splitArray;
 }
 
-#endif //EASYBANK_METHODCLASS_H
+#endif //EASYBANK_UTILITY_H

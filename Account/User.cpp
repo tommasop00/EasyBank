@@ -2,26 +2,26 @@
 // Created by tommaso on 26/11/20.
 //
 
-#include "MyAccount.h"
+#include "User.h"
 #include "TransactionError.h"
 #include <iostream>
 #include <memory>
 
 
-const std::map<std::string, std::unique_ptr<Account>> &MyAccount::getIbans() const {
+const std::map<std::string, std::unique_ptr<Account>> &User::getIbans() const {
     return ibans;
 }
 
-const std::string &MyAccount::getSelectedIban() const {
+const std::string &User::getSelectedIban() const {
     return selectedIban;
 }
 
-void MyAccount::setSelectedIban(const std::string &selectedIbanmain) {
+void User::setSelectedIban(const std::string &selectedIbanmain) {
     selectedIban = selectedIbanmain;
     this->notify2();
 }
 
-std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
+std::map<std::string, std::unique_ptr<Account>> User::findIbans() const {
     const char *fileName = "./fileTXT/accountFile.txt";
     FileManager file(fileName);
     if (file.is_open()) {
@@ -56,38 +56,38 @@ std::map<std::string, std::unique_ptr<Account>> MyAccount::findIbans() const {
 
 }
 
-void MyAccount::notify(std::string iban, float ammount) { //TODO upgrade accountOBJ
-        for (auto itr : this->getObservers()) {
-            itr->update(ammount, iban);
-        }
-        std::cout << "OK" << std::endl;
+void User::notify(std::string iban, float ammount) { //TODO upgrade accountOBJ
+    for (auto itr : this->getObservers()) {
+        itr->update(ammount, iban);
+    }
+    std::cout << "OK" << std::endl;
 }
 
 
-void MyAccount::notify2() {
+void User::notify2() {
     for (auto itr : this->getObservers()) {
         itr->update2();
     }
 }
 
-void MyAccount::addObserver(Observer *ob) {
+void User::addObserver(Observer *ob) {
     observers.push_back(ob);
 }
 
-void MyAccount::removeObserver(Observer *ob) {
+void User::removeObserver(Observer *ob) {
     observers.remove(ob);
 }
 
-void MyAccount::clearObserver() {
+void User::clearObserver() {
     observers.clear();
 }
 
-const std::list<Observer *> &MyAccount::getObservers() const {
+const std::list<Observer *> &User::getObservers() const {
     return observers;
 }
 
-void MyAccount::chooseAccount() {
-    std::cout << "Scegli quale _iban utilizzare : " << std::endl;
+/*void User::chooseAccount() {
+    std::cout << "Scegli quale iban utilizzare : " << std::endl;
     std::map<int, std::string> IdIban;
     int count = 1;
     for (const auto &iban : this->getIbans()) {
@@ -99,7 +99,7 @@ void MyAccount::chooseAccount() {
         std::cout << "Nessun Conto Presente per questo Account" << std::endl;
         std::cout << "Crea un nuovo Conto" << std::endl;
 
-        this->createNewCurrentAccount();
+        createNewCurrentAccount();
     } else {
         std::cout << "Digita 0 per creare un nuovo Conto" << std::endl;
         int valSelected;
@@ -116,9 +116,9 @@ void MyAccount::chooseAccount() {
             }
         } while (valSelected < 0 || valSelected > this->getSelectedIban().size());
     }
-}
+}*/
 
-void MyAccount::createNewCurrentAccount() {
+/*void User::createNewCurrentAccount() {
     bool correctValue = false;
     while (!correctValue) {
         std::string ammount, fc, name;
@@ -143,7 +143,7 @@ void MyAccount::createNewCurrentAccount() {
                 std::cout << "Valori non validi" << std::endl;
             }
 
-        } catch (std::invalid_argument e) {
+        } catch (std::invalid_argument &e) {
             std::cerr << "caratteri non validi" << std::endl;
             correctValue = false;
 
@@ -152,9 +152,9 @@ void MyAccount::createNewCurrentAccount() {
     }
 
 
-}
+}*/
 
-void MyAccount::getAmount() const {
+void User::getAmount() const {
     FileManager fileManager("./fileTXT/accountFile.txt");
 
     std::vector<std::string> arraySplit;
@@ -166,6 +166,15 @@ void MyAccount::getAmount() const {
             break;
         }
     }
+}
+
+const std::pair<std::string, int> &User::getUser() const {
+    return user;
+}
+
+void User::pushIban(std::unique_ptr<Account> a) {
+    ibans.insert(std::make_pair(a->getIban(), std::move(a)));
+    this->notify2();
 }
 
 

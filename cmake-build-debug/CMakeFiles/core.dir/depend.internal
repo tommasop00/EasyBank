@@ -5,27 +5,27 @@ CMakeFiles/core.dir/Account/Account.cpp.o
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+CMakeFiles/core.dir/Account/Transition.cpp.o
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.cpp
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+CMakeFiles/core.dir/Account/User.cpp.o
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MyAccount.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
 CMakeFiles/core.dir/FileManager.cpp.o
  /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.cpp
  /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/MethodClass.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h

@@ -4,8 +4,8 @@
 
 #include "gtest/gtest.h"
 #include <memory>
-#include "../..//Account/MyAccount.h"
-#include "../../Account/Transaction.h"
+#include "../..//Account/User.h"
+#include "../../Account/Transition.h"
 
 class AccountSuite : public ::testing::Test {
 protected:
