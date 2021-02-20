@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_subdirectory(cmake-build-debug/test)
 
-set(SOURCE_FILES Observer.h Subject.h Account/Account.cpp Account/Account.h Account/User.cpp Account/User.h Account/Transition.cpp Account/Transition.h FileManager.cpp FileManager.h Account/TransactionError.h)
+set(SOURCE_FILES Observer.h Subject.h Account/Account.cpp Account/Account.h Account/User.cpp Account/User.h Account/Movements.cpp Account/Movements.h FileManager/FileManager.cpp FileManager/FileManager.h Account/MovementError.h FileManager/AccountFileManager.cpp FileManager/AccountFileManager.h FileManager/UserFileManager.cpp FileManager/UserFileManager.h FileManager/LogFileManager.cpp FileManager/LogFileManager.h Account/Transaction.cpp Account/Transaction.h)
 
 add_executable(EasyBank main.cpp Utility.h)
 add_library(core ${SOURCE_FILES})

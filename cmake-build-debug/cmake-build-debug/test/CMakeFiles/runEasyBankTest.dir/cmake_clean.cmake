@@ -7,5 +7,5 @@ file(REMOVE_RECURSE
 
 # Per-language clean rules from dependency scanning.
 foreach (lang CXX)
-  include(CMakeFiles/runEasyBankTest.dir/cmake_clean_${lang}.cmake OPTIONAL)
+    include(CMakeFiles/runEasyBankTest.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach ()

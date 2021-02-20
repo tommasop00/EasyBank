@@ -13,8 +13,7 @@ class Observer {
 public:
     virtual ~Observer() {};
 
-    virtual void update(float ammount, std::string ibanOther) = 0; //make transfer
-    virtual void update2() = 0; // change accountUse
+    virtual void update() = 0; // change accountUse
 
 
     virtual void detach() = 0;

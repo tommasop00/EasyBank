@@ -40,20 +40,15 @@ public:
 
     void removeObserver(Observer *ob) override;
 
-    void notify(std::string iban, float ammount) override;
-
-    void notify2() override;
+    void notify() override;
 
     void clearObserver() override;
 
     //void createNewCurrentAccount();
 
-
-    void chooseAccount();
-
     const std::list<Observer *> &getObservers() const;
 
-    void getAmount() const;
+    float getAmount() const;
 
     const std::pair<std::string, int> &getUser() const;
 

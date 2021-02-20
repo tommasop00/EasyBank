@@ -8,11 +8,20 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "../FileManager.h"
+#include "../FileManager/FileManager.h"
 
 class Account {
 
 public:
+
+    Account(float ammount, std::string &FC, std::string &nameProprietary, int &id, std::string &iban) : id(id),
+                                                                                                        iban(iban),
+                                                                                                        ammount(
+                                                                                                                ammount),
+                                                                                                        fc(FC),
+                                                                                                        nameProprietary(
+                                                                                                                nameProprietary) {}
+
     Account(float ammount, std::string &FC, std::string &nameProprietary, int id) : ammount(ammount),
                                                                                     fc(FC),
                                                                                     nameProprietary(nameProprietary),
@@ -26,16 +35,6 @@ public:
         fileManager.write(accountString);
     };
 
-    Account(float &ammount, std::string &FC, std::string &nameProprietary, int &id, std::string &iban) : id(id),
-                                                                                                         iban(iban),
-                                                                                                         ammount(
-                                                                                                                 ammount),
-                                                                                                         fc(FC),
-                                                                                                         nameProprietary(
-                                                                                                                 nameProprietary) {};
-
-
-    ~Account() {};
 
 
     const std::string &getIban() const {
@@ -51,7 +50,11 @@ public:
     }
 
     void setAmmount(float ammount) {
-        ammount = ammount;
+        this->ammount = ammount;
+    }
+
+    int getId() const {
+        return id;
     }
 
     const std::string &getSurnameBusinessName() const {
@@ -59,6 +62,8 @@ public:
     }
 
     const std::string generateNewIban();
+
+    std::string print() const;
 
 protected:
     int id;

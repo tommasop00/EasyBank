@@ -3,10 +3,13 @@
 
 CMakeFiles/EasyBank.dir/main.cpp.o
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
- /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.h
+ /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h
  /home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h

@@ -276,13 +276,19 @@
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/TransactionError.h">
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.cpp">
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transition.h">
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h">
 			<Option target="core"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp">
@@ -291,10 +297,28 @@
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.cpp">
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager.h">
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.h">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.cpp">
+			<Option target="core"/>
+		</Unit>
+		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.h">
 			<Option target="core"/>
 		</Unit>
 		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h">
