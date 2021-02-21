@@ -8,51 +8,53 @@
 #include <string>
 #include <utility>
 #include <vector>
-#include "../FileManager.h"
+#include "../FileManager/FileManager.h"
 
 class Account {
 
 public:
-    Account(float &ammount, std::string &FC, std::string &nameProprietary, int &id) : _ammount(ammount),
-                                                                                      _fc(FC),
-                                                                                      nameProprietary(nameProprietary),
-                                                                                      _id(id) {
+
+    Account(float ammount, std::string &FC, std::string &nameProprietary, int &id, std::string &iban) : id(id),
+                                                                                                        iban(iban),
+                                                                                                        ammount(
+                                                                                                                ammount),
+                                                                                                        fc(FC),
+                                                                                                        nameProprietary(
+                                                                                                                nameProprietary) {}
+
+    Account(float ammount, std::string &FC, std::string &nameProprietary, int id) : ammount(ammount),
+                                                                                    fc(FC),
+                                                                                    nameProprietary(nameProprietary),
+                                                                                    id(id) {
         auto ibanRet = this->generateNewIban();
-        this->_iban = ibanRet;
+        this->iban = ibanRet;
         FileManager fileManager("./fileTXT/accountFile.txt");
         std::string accountString =
-                std::to_string(this->_id) + " " + this->_iban + " " + std::to_string(this->_ammount) + " " + this->_fc +
+                std::to_string(this->id) + " " + this->iban + " " + std::to_string(this->ammount) + " " + this->fc +
                 " " + this->nameProprietary;
         fileManager.write(accountString);
     };
 
-    Account(float &ammount, std::string &FC, std::string &nameProprietary, int &id, std::string &iban) : _id(id),
-                                                                                                         _iban(iban),
-                                                                                                         _ammount(
-                                                                                                                 ammount),
-                                                                                                         _fc(FC),
-                                                                                                         nameProprietary(
-                                                                                                                 nameProprietary) {};
-
-    Account() {};
-
-    virtual ~Account() {};
 
 
     const std::string &getIban() const {
-        return _iban;
+        return iban;
     }
 
     const std::string &getfc() const {
-        return _fc;
+        return fc;
     }
 
     float getAmmount() const {
-        return _ammount;
+        return ammount;
     }
 
     void setAmmount(float ammount) {
-        _ammount = ammount;
+        this->ammount = ammount;
+    }
+
+    int getId() const {
+        return id;
     }
 
     const std::string &getSurnameBusinessName() const {
@@ -61,11 +63,13 @@ public:
 
     const std::string generateNewIban();
 
+    std::string print() const;
+
 protected:
-    int _id;
-    std::string _iban;
-    std::string _fc;
-    float _ammount;
+    int id;
+    std::string iban;
+    std::string fc;
+    float ammount;
     std::string nameProprietary;
 
 };

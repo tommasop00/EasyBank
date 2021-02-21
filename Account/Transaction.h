@@ -1,49 +1,37 @@
 //
-// Created by tommaso on 29/11/20.
+// Created by tommaso on 20/02/21.
 //
 
 #ifndef EASYBANK_TRANSACTION_H
 #define EASYBANK_TRANSACTION_H
 
+#include <string>
 
-#include "../Observer.h"
-#include "Account.h"
-#include "MyAccount.h"
-#include "TransactionError.h"
-#include <cmath>
 
-class Transition : public Observer {
+class Transaction {
 public:
+    Transaction(const std::string &from, float ammount, const std::string &to = "") : from(from), to(to),
+                                                                                      ammount(ammount) {}
 
-    Transition(MyAccount *sub) : sub(sub) {
-        attach();
-    };
+    const std::string &getFrom() const {
+        return from;
+    }
 
-    virtual ~Transition() {
-        this->detach();
-    };
+    const std::string &getTo() const {
+        return to;
+    }
 
-    void update(float ammount, std::string ibanOther) override;
+    float getAmmount() const {
+        return ammount;
+    }
 
-    void update2() override;
-
-    void detach() override;
-
-    void attach() override;
-
-    void doTransferExtern(FileManager &fileOriginal, FileManager &fileUpdate, std::string &iban1, std::string &iban2,
-                          float ammount);
-
-    void doTransferIntern(FileManager &fileOriginal, FileManager &fileUpdate, float ammount);
-
-
-    bool checkifIbanOtherExist(FileManager &fileOriginal, std::string &iban);
+    std::string print() const;
 
 
 private:
-    MyAccount *sub;
-    Account *acc;
-
+    std::string from;
+    std::string to;
+    float ammount;
 };
 
 

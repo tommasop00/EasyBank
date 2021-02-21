@@ -20,9 +20,7 @@ public:
 
     virtual void clearObserver() = 0;
 
-    virtual void notify(std::string iban, float ammount) = 0; //make transfer
-
-    virtual void notify2() = 0; // change iban
+    virtual void notify() = 0; // change iban
 
 
 protected:

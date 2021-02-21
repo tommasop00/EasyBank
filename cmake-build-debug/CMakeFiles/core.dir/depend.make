@@ -3,29 +3,53 @@
 
 CMakeFiles/core.dir/Account/Account.cpp.o: ../Account/Account.cpp
 CMakeFiles/core.dir/Account/Account.cpp.o: ../Account/Account.h
-CMakeFiles/core.dir/Account/Account.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/Account.cpp.o: ../MethodClass.h
+CMakeFiles/core.dir/Account/Account.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/Account/Account.cpp.o: ../Utility.h
 
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/Account.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/MyAccount.cpp
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/MyAccount.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Account/TransactionError.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../MethodClass.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Observer.h
-CMakeFiles/core.dir/Account/MyAccount.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/Account.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/MovementError.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/Movements.cpp
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/Movements.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/Transaction.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/User.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../FileManager/AccountFileManager.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../FileManager/LogFileManager.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Observer.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/Movements.cpp.o: ../Utility.h
 
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Account.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/MyAccount.h
 CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.cpp
 CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/TransactionError.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../MethodClass.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Observer.h
-CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Subject.h
 
-CMakeFiles/core.dir/FileManager.cpp.o: ../FileManager.cpp
-CMakeFiles/core.dir/FileManager.cpp.o: ../FileManager.h
-CMakeFiles/core.dir/FileManager.cpp.o: ../MethodClass.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/Account.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/MovementError.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.cpp
+CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../FileManager/AccountFileManager.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Observer.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Subject.h
+CMakeFiles/core.dir/Account/User.cpp.o: ../Utility.h
+
+CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../Account/Account.h
+CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../FileManager/AccountFileManager.cpp
+CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../FileManager/AccountFileManager.h
+CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../Utility.h
+
+CMakeFiles/core.dir/FileManager/FileManager.cpp.o: ../FileManager/FileManager.cpp
+CMakeFiles/core.dir/FileManager/FileManager.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/FileManager/FileManager.cpp.o: ../Utility.h
+
+CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../Account/Transaction.h
+CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../FileManager/LogFileManager.cpp
+CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../FileManager/LogFileManager.h
+CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../Utility.h
+
+CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: ../FileManager/FileManager.h
+CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: ../FileManager/UserFileManager.cpp
+CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: ../FileManager/UserFileManager.h
+CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: ../Utility.h
 

@@ -222,32 +222,32 @@ Account/Account.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Account.cpp.s
 .PHONY : Account/Account.cpp.s
 
-Account/MyAccount.o: Account/MyAccount.cpp.o
+Account/Movements.o: Account/Movements.cpp.o
 
-.PHONY : Account/MyAccount.o
+.PHONY : Account/Movements.o
 
 # target to build an object file
-Account/MyAccount.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.o
-.PHONY : Account/MyAccount.cpp.o
+Account/Movements.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Movements.cpp.o
+.PHONY : Account/Movements.cpp.o
 
-Account/MyAccount.i: Account/MyAccount.cpp.i
+Account/Movements.i: Account/Movements.cpp.i
 
-.PHONY : Account/MyAccount.i
+.PHONY : Account/Movements.i
 
 # target to preprocess a source file
-Account/MyAccount.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.i
-.PHONY : Account/MyAccount.cpp.i
+Account/Movements.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Movements.cpp.i
+.PHONY : Account/Movements.cpp.i
 
-Account/MyAccount.s: Account/MyAccount.cpp.s
+Account/Movements.s: Account/Movements.cpp.s
 
-.PHONY : Account/MyAccount.s
+.PHONY : Account/Movements.s
 
 # target to generate assembly for a file
-Account/MyAccount.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/MyAccount.cpp.s
-.PHONY : Account/MyAccount.cpp.s
+Account/Movements.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Movements.cpp.s
+.PHONY : Account/Movements.cpp.s
 
 Account/Transaction.o: Account/Transaction.cpp.o
 
@@ -276,32 +276,140 @@ Account/Transaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/Transaction.cpp.s
 .PHONY : Account/Transaction.cpp.s
 
-FileManager.o: FileManager.cpp.o
+Account/User.o: Account/User.cpp.o
 
-.PHONY : FileManager.o
+.PHONY : Account/User.o
 
 # target to build an object file
-FileManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager.cpp.o
-.PHONY : FileManager.cpp.o
+Account/User.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.o
+.PHONY : Account/User.cpp.o
 
-FileManager.i: FileManager.cpp.i
+Account/User.i: Account/User.cpp.i
 
-.PHONY : FileManager.i
+.PHONY : Account/User.i
 
 # target to preprocess a source file
-FileManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager.cpp.i
-.PHONY : FileManager.cpp.i
+Account/User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.i
+.PHONY : Account/User.cpp.i
 
-FileManager.s: FileManager.cpp.s
+Account/User.s: Account/User.cpp.s
 
-.PHONY : FileManager.s
+.PHONY : Account/User.s
 
 # target to generate assembly for a file
-FileManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager.cpp.s
-.PHONY : FileManager.cpp.s
+Account/User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/Account/User.cpp.s
+.PHONY : Account/User.cpp.s
+
+FileManager/AccountFileManager.o: FileManager/AccountFileManager.cpp.o
+
+.PHONY : FileManager/AccountFileManager.o
+
+# target to build an object file
+FileManager/AccountFileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o
+.PHONY : FileManager/AccountFileManager.cpp.o
+
+FileManager/AccountFileManager.i: FileManager/AccountFileManager.cpp.i
+
+.PHONY : FileManager/AccountFileManager.i
+
+# target to preprocess a source file
+FileManager/AccountFileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.i
+.PHONY : FileManager/AccountFileManager.cpp.i
+
+FileManager/AccountFileManager.s: FileManager/AccountFileManager.cpp.s
+
+.PHONY : FileManager/AccountFileManager.s
+
+# target to generate assembly for a file
+FileManager/AccountFileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.s
+.PHONY : FileManager/AccountFileManager.cpp.s
+
+FileManager/FileManager.o: FileManager/FileManager.cpp.o
+
+.PHONY : FileManager/FileManager.o
+
+# target to build an object file
+FileManager/FileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/FileManager.cpp.o
+.PHONY : FileManager/FileManager.cpp.o
+
+FileManager/FileManager.i: FileManager/FileManager.cpp.i
+
+.PHONY : FileManager/FileManager.i
+
+# target to preprocess a source file
+FileManager/FileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/FileManager.cpp.i
+.PHONY : FileManager/FileManager.cpp.i
+
+FileManager/FileManager.s: FileManager/FileManager.cpp.s
+
+.PHONY : FileManager/FileManager.s
+
+# target to generate assembly for a file
+FileManager/FileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/FileManager.cpp.s
+.PHONY : FileManager/FileManager.cpp.s
+
+FileManager/LogFileManager.o: FileManager/LogFileManager.cpp.o
+
+.PHONY : FileManager/LogFileManager.o
+
+# target to build an object file
+FileManager/LogFileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o
+.PHONY : FileManager/LogFileManager.cpp.o
+
+FileManager/LogFileManager.i: FileManager/LogFileManager.cpp.i
+
+.PHONY : FileManager/LogFileManager.i
+
+# target to preprocess a source file
+FileManager/LogFileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/LogFileManager.cpp.i
+.PHONY : FileManager/LogFileManager.cpp.i
+
+FileManager/LogFileManager.s: FileManager/LogFileManager.cpp.s
+
+.PHONY : FileManager/LogFileManager.s
+
+# target to generate assembly for a file
+FileManager/LogFileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/LogFileManager.cpp.s
+.PHONY : FileManager/LogFileManager.cpp.s
+
+FileManager/UserFileManager.o: FileManager/UserFileManager.cpp.o
+
+.PHONY : FileManager/UserFileManager.o
+
+# target to build an object file
+FileManager/UserFileManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o
+.PHONY : FileManager/UserFileManager.cpp.o
+
+FileManager/UserFileManager.i: FileManager/UserFileManager.cpp.i
+
+.PHONY : FileManager/UserFileManager.i
+
+# target to preprocess a source file
+FileManager/UserFileManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/UserFileManager.cpp.i
+.PHONY : FileManager/UserFileManager.cpp.i
+
+FileManager/UserFileManager.s: FileManager/UserFileManager.cpp.s
+
+.PHONY : FileManager/UserFileManager.s
+
+# target to generate assembly for a file
+FileManager/UserFileManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/core.dir/build.make CMakeFiles/core.dir/FileManager/UserFileManager.cpp.s
+.PHONY : FileManager/UserFileManager.cpp.s
 
 main.o: main.cpp.o
 
@@ -346,15 +454,27 @@ help:
 	@echo "... Account/Account.o"
 	@echo "... Account/Account.i"
 	@echo "... Account/Account.s"
-	@echo "... Account/MyAccount.o"
-	@echo "... Account/MyAccount.i"
-	@echo "... Account/MyAccount.s"
+	@echo "... Account/Movements.o"
+	@echo "... Account/Movements.i"
+	@echo "... Account/Movements.s"
 	@echo "... Account/Transaction.o"
 	@echo "... Account/Transaction.i"
 	@echo "... Account/Transaction.s"
-	@echo "... FileManager.o"
-	@echo "... FileManager.i"
-	@echo "... FileManager.s"
+	@echo "... Account/User.o"
+	@echo "... Account/User.i"
+	@echo "... Account/User.s"
+	@echo "... FileManager/AccountFileManager.o"
+	@echo "... FileManager/AccountFileManager.i"
+	@echo "... FileManager/AccountFileManager.s"
+	@echo "... FileManager/FileManager.o"
+	@echo "... FileManager/FileManager.i"
+	@echo "... FileManager/FileManager.s"
+	@echo "... FileManager/LogFileManager.o"
+	@echo "... FileManager/LogFileManager.i"
+	@echo "... FileManager/LogFileManager.s"
+	@echo "... FileManager/UserFileManager.o"
+	@echo "... FileManager/UserFileManager.i"
+	@echo "... FileManager/UserFileManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
