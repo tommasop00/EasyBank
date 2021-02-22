@@ -44,7 +44,7 @@ public:
 
     void clearObserver() override;
 
-    //void createNewCurrentAccount();
+    void createNewCurrentAccount(float ammount, std::string fc, std::string name, int id);
 
     const std::list<Observer *> &getObservers() const;
 

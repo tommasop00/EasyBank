@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\test\;CMake Files\cmake-build-debug\test\lib\;CMake Files\cmake-build-debug\test\lib\googletest\;CMake Files\cmake-build-debug\test\lib\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="core">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/libcore.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 core"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 core"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="core/fast">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/libcore.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/libcore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -75,15 +75,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 core/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 core/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EasyBank">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/EasyBank" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/EasyBank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -97,15 +97,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 EasyBank"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 EasyBank"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="EasyBank/fast">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/EasyBank" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/EasyBank" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -119,21 +119,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 EasyBank/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 EasyBank/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="runEasyBankTest">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/runEasyBankTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/runEasyBankTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -143,21 +143,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runEasyBankTest"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runEasyBankTest"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="runEasyBankTest/fast">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/runEasyBankTest" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/runEasyBankTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -167,21 +167,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runEasyBankTest/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runEasyBankTest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -191,21 +191,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest_main/fast">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/lib/libgtest_maind.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -215,21 +215,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -239,21 +239,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtest/fast">
-				<Option output="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
+				<Option output="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/lib/libgtestd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
-					<Add directory="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include"/>
+					<Add directory="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest"/>
 					<Add directory="/usr/include/c++/10"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
 					<Add directory="/usr/include/c++/10/backward"/>
@@ -263,98 +263,98 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
-					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Account.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Account.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/MovementError.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Movements.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Movements.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Transaction.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/Transaction.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/User.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Account/User.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/AccountFileManager.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/AccountFileManager.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.cpp">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Observer.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Subject.h">
 			<Option target="core"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/Utility.h">
 			<Option target="EasyBank"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp">
 			<Option target="runEasyBankTest"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/src/gtest-all.cc">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/src/gtest_main.cc">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp">
 			<Option target="runEasyBankTest"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/main.cpp">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/main.cpp">
 			<Option target="EasyBank"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/CMakeLists.txt">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/CMakeLists.txt">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cmake-build-debug\test\"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/CMakeLists.txt">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cmake-build-debug\test\lib\googletest\"/>
 		</Unit>
-		<Unit filename="/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/cmake/internal_utils.cmake">
+		<Unit filename="/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\test\lib\googletest\cmake\"/>
 		</Unit>
 	</Project>

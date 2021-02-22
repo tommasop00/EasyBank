@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DG
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest/include -I/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest 
+CXX_INCLUDES = -I/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest/include -I/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest 
 

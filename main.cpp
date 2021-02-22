@@ -6,16 +6,13 @@
 #include "FileManager/UserFileManager.h"
 #include "FileManager/LogFileManager.h"
 
-
-bool login(const std::vector<std::string> &s, const std::string &username, const std::string &password);
-
 char presentMenu(char liv);
 
 void doTransfer(User *pa, Movements *movementObj, char type);
 
-void createNewCurrentAccount(User *userAccount, Movements *movements);
+void createNewCurrentAccount(User *userAccount);
 
-void chooseAccount(User *userAccount, Movements *movements);
+void chooseAccount(User *userAccount);
 
 
 int main() {
@@ -92,15 +89,15 @@ int main() {
                 }
                 input = (input != 'e') ? ' ' : input;
                 if (input != 'e') {
-                    chooseAccount(userAccount.get(), movementObj.get());
+                    chooseAccount(userAccount.get());
                     while (input != 'e') {
                         input = presentMenu(2);
                         switch (input) {
                             case 'l':
-                                chooseAccount(userAccount.get(), movementObj.get());
+                                chooseAccount(userAccount.get());
                                 break;
                             case 'c':
-                                createNewCurrentAccount(userAccount.get(), movementObj.get());
+                                createNewCurrentAccount(userAccount.get());
                                 break;
                             case 'b':
                             case 'o':
@@ -154,7 +151,7 @@ int main() {
     return 0;
 }
 
-void chooseAccount(User *userAccount, Movements *movements) {
+void chooseAccount(User *userAccount) {
     auto &ibans = userAccount->getIbans();
     int count = 1;
     std::map<int, std::string> IdIban;
@@ -172,7 +169,7 @@ void chooseAccount(User *userAccount, Movements *movements) {
         do {
             std::cin >> valSelected;
             if (valSelected == 0) {
-                createNewCurrentAccount(userAccount, movements);
+                createNewCurrentAccount(userAccount);
             } else if (ibans.size() >= valSelected && valSelected > 0) {
                 userAccount->setSelectedIban(IdIban[(valSelected)]);
                 std::cout << "Sei Entrato con il conto di " << userAccount->getIbans().find(
@@ -185,7 +182,7 @@ void chooseAccount(User *userAccount, Movements *movements) {
     } else {
         std::cout << "Nessun Conto Presente per questo Account" << std::endl;
         std::cout << "Crea un nuovo Conto" << std::endl;
-        createNewCurrentAccount(userAccount, movements);
+        createNewCurrentAccount(userAccount);
     }
 }
 
@@ -238,37 +235,25 @@ void doTransfer(User *pa, Movements *movementObj, char type) {
     }
 }
 
-void createNewCurrentAccount(User *userAccount, Movements *movements) {
-    bool correctValue = false;
-    while (!correctValue) {
-        std::string ammount, fc, name;
-        std::cout << "Inserisca valore conto iniziale" << std::endl;
-        std::cin >> ammount;
-        std::cout << "Inserisca il suo codice fiscale" << std::endl;
-        std::cin >> fc;
-        std::cout << "Inserisca il suo nome" << std::endl;
-        std::cin >> name;
-        float ammountFloat;
-        try {
-            ammountFloat = std::stof(ammount);
-            if (ammountFloat != 0) {
-                correctValue = true;
-                std::unique_ptr<Account> a(new Account(ammountFloat, fc, name, userAccount->getUser().second));
-                userAccount->setSelectedIban(a->getIban());
-                userAccount->pushIban(std::move(a));
-            } else {
-                correctValue = false;
-                std::cout << "Valori non validi" << std::endl;
-            }
-
-        } catch (std::invalid_argument &e) {
-            std::cerr << "caratteri non validi" << std::endl;
-            correctValue = false;
-
-        }
-
+void createNewCurrentAccount(User *userAccount) {
+    std::string ammount, fc, name;
+    std::cout << "Inserisca valore conto iniziale" << std::endl;
+    std::cin >> ammount;
+    std::cout << "Inserisca il suo codice fiscale" << std::endl;
+    std::cin >> fc;
+    std::cout << "Inserisca il suo nome" << std::endl;
+    std::cin >> name;
+    float ammountFloat;
+    try {
+        ammountFloat = std::stof(ammount);
+        userAccount->createNewCurrentAccount(ammountFloat, fc, name, userAccount->getUser().second);
+    } catch (std::invalid_argument &e) {
+        std::cerr << "caratteri non validi : " << e.what() << std::endl;
+        chooseAccount(userAccount);
+    } catch (std::runtime_error &e) {
+        std::cerr << e.what() << std::endl;
+        chooseAccount(userAccount);
     }
-
 
 }
 

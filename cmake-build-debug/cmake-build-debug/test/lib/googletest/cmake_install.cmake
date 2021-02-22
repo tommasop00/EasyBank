@@ -1,4 +1,4 @@
-# Install script for directory: /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/lib/googletest
+# Install script for directory: /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/lib/googletest
 
 # Set the install prefix
 if (NOT DEFINED CMAKE_INSTALL_PREFIX)

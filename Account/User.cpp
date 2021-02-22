@@ -92,6 +92,18 @@ void User::pushIban(std::unique_ptr<Account> a) {
     this->notify();
 }
 
+void User::createNewCurrentAccount(float ammount, std::string fc, std::string name, int id) {
+    if (ammount >= 0) {
+        std::unique_ptr<Account> a(new Account(ammount, fc, name, id));
+        setSelectedIban(a->getIban());
+        pushIban(std::move(a));
+    } else {
+        throw std::runtime_error("Valori non validi");
+    }
+}
+
+
+
 
 
 

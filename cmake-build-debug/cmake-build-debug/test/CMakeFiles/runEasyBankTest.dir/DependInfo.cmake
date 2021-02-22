@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
         )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-        "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o"
-        "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp" "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o"
+        "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp" "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o"
+        "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp" "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o"
         )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,9 +17,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-        "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
-        "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-        "/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/DependInfo.cmake"
+        "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+        "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+        "/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/DependInfo.cmake"
         )
 
 # Fortran module output directory.

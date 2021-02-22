@@ -63,10 +63,10 @@ RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank
+CMAKE_SOURCE_DIR = /home/tommaso/ClionProject/EasyBank
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tommaso/ClionProject/EasyBank/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/core.dir/depend.make
@@ -79,107 +79,107 @@ include CMakeFiles/core.dir/flags.make
 
 CMakeFiles/core.dir/Account/Account.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/Account/Account.cpp.o: ../Account/Account.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core.dir/Account/Account.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Account.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/core.dir/Account/Account.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Account.cpp.o -c /home/tommaso/ClionProject/EasyBank/Account/Account.cpp
 
 CMakeFiles/core.dir/Account/Account.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/Account.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp > CMakeFiles/core.dir/Account/Account.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/Account/Account.cpp > CMakeFiles/core.dir/Account/Account.cpp.i
 
 CMakeFiles/core.dir/Account/Account.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Account.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.cpp -o CMakeFiles/core.dir/Account/Account.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/Account/Account.cpp -o CMakeFiles/core.dir/Account/Account.cpp.s
 
 CMakeFiles/core.dir/Account/User.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/Account/User.cpp.o: ../Account/User.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/Account/User.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/User.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/core.dir/Account/User.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/User.cpp.o -c /home/tommaso/ClionProject/EasyBank/Account/User.cpp
 
 CMakeFiles/core.dir/Account/User.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/User.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp > CMakeFiles/core.dir/Account/User.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/Account/User.cpp > CMakeFiles/core.dir/Account/User.cpp.i
 
 CMakeFiles/core.dir/Account/User.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/User.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.cpp -o CMakeFiles/core.dir/Account/User.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/Account/User.cpp -o CMakeFiles/core.dir/Account/User.cpp.s
 
 CMakeFiles/core.dir/Account/Movements.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/Account/Movements.cpp.o: ../Account/Movements.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/Account/Movements.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Movements.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/core.dir/Account/Movements.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Movements.cpp.o -c /home/tommaso/ClionProject/EasyBank/Account/Movements.cpp
 
 CMakeFiles/core.dir/Account/Movements.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/Movements.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.cpp > CMakeFiles/core.dir/Account/Movements.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/Account/Movements.cpp > CMakeFiles/core.dir/Account/Movements.cpp.i
 
 CMakeFiles/core.dir/Account/Movements.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Movements.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.cpp -o CMakeFiles/core.dir/Account/Movements.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/Account/Movements.cpp -o CMakeFiles/core.dir/Account/Movements.cpp.s
 
 CMakeFiles/core.dir/FileManager/FileManager.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/FileManager/FileManager.cpp.o: ../FileManager/FileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core.dir/FileManager/FileManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/FileManager.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/core.dir/FileManager/FileManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/FileManager.cpp.o -c /home/tommaso/ClionProject/EasyBank/FileManager/FileManager.cpp
 
 CMakeFiles/core.dir/FileManager/FileManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/FileManager/FileManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.cpp > CMakeFiles/core.dir/FileManager/FileManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/FileManager/FileManager.cpp > CMakeFiles/core.dir/FileManager/FileManager.cpp.i
 
 CMakeFiles/core.dir/FileManager/FileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/FileManager/FileManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.cpp -o CMakeFiles/core.dir/FileManager/FileManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/FileManager/FileManager.cpp -o CMakeFiles/core.dir/FileManager/FileManager.cpp.s
 
 CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o: ../FileManager/AccountFileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.o -c /home/tommaso/ClionProject/EasyBank/FileManager/AccountFileManager.cpp
 
 CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.cpp > CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/FileManager/AccountFileManager.cpp > CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.i
 
 CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/AccountFileManager.cpp -o CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/FileManager/AccountFileManager.cpp -o CMakeFiles/core.dir/FileManager/AccountFileManager.cpp.s
 
 CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o: ../FileManager/UserFileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/UserFileManager.cpp.o -c /home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.cpp
 
 CMakeFiles/core.dir/FileManager/UserFileManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/FileManager/UserFileManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.cpp > CMakeFiles/core.dir/FileManager/UserFileManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.cpp > CMakeFiles/core.dir/FileManager/UserFileManager.cpp.i
 
 CMakeFiles/core.dir/FileManager/UserFileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/FileManager/UserFileManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.cpp -o CMakeFiles/core.dir/FileManager/UserFileManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.cpp -o CMakeFiles/core.dir/FileManager/UserFileManager.cpp.s
 
 CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o: ../FileManager/LogFileManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o -c /home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.cpp
 
 CMakeFiles/core.dir/FileManager/LogFileManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/FileManager/LogFileManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.cpp > CMakeFiles/core.dir/FileManager/LogFileManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.cpp > CMakeFiles/core.dir/FileManager/LogFileManager.cpp.i
 
 CMakeFiles/core.dir/FileManager/LogFileManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/FileManager/LogFileManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.cpp -o CMakeFiles/core.dir/FileManager/LogFileManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.cpp -o CMakeFiles/core.dir/FileManager/LogFileManager.cpp.s
 
 CMakeFiles/core.dir/Account/Transaction.cpp.o: CMakeFiles/core.dir/flags.make
 CMakeFiles/core.dir/Account/Transaction.cpp.o: ../Account/Transaction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/core.dir/Account/Transaction.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Transaction.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/core.dir/Account/Transaction.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Account/Transaction.cpp.o -c /home/tommaso/ClionProject/EasyBank/Account/Transaction.cpp
 
 CMakeFiles/core.dir/Account/Transaction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/Account/Transaction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp > CMakeFiles/core.dir/Account/Transaction.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/Account/Transaction.cpp > CMakeFiles/core.dir/Account/Transaction.cpp.i
 
 CMakeFiles/core.dir/Account/Transaction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Account/Transaction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.cpp -o CMakeFiles/core.dir/Account/Transaction.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/Account/Transaction.cpp -o CMakeFiles/core.dir/Account/Transaction.cpp.s
 
 # Object files for target core
 core_OBJECTS = \
@@ -205,7 +205,7 @@ libcore.a: CMakeFiles/core.dir/FileManager/LogFileManager.cpp.o
 libcore.a: CMakeFiles/core.dir/Account/Transaction.cpp.o
 libcore.a: CMakeFiles/core.dir/build.make
 libcore.a: CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libcore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 
@@ -219,6 +219,6 @@ CMakeFiles/core.dir/clean:
 .PHONY : CMakeFiles/core.dir/clean
 
 CMakeFiles/core.dir/depend:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tommaso/Scrivania/CLionProject/EasyBank /home/tommaso/Scrivania/CLionProject/EasyBank /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tommaso/ClionProject/EasyBank /home/tommaso/ClionProject/EasyBank /home/tommaso/ClionProject/EasyBank/cmake-build-debug /home/tommaso/ClionProject/EasyBank/cmake-build-debug /home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles/core.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/core.dir/depend
 

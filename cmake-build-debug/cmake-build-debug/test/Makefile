@@ -68,10 +68,10 @@ RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank
+CMAKE_SOURCE_DIR = /home/tommaso/ClionProject/EasyBank
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tommaso/ClionProject/EasyBank/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,14 +100,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/progress.marks
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles 0
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/progress.marks
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/clean
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/preinstall
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/preinstall
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/rule:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/rule
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/rule
 .PHONY : cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/rule
 
 # Convenience name for target.
@@ -142,7 +142,7 @@ runEasyBankTest: cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/rule
 
 # fast build rule for target.
 runEasyBankTest/fast:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build
 .PHONY : runEasyBankTest/fast
 
 BankFixture.o: BankFixture.cpp.o
@@ -151,7 +151,7 @@ BankFixture.o: BankFixture.cpp.o
 
 # target to build an object file
 BankFixture.cpp.o:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o
 .PHONY : BankFixture.cpp.o
 
 BankFixture.i: BankFixture.cpp.i
@@ -160,7 +160,7 @@ BankFixture.i: BankFixture.cpp.i
 
 # target to preprocess a source file
 BankFixture.cpp.i:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i
 .PHONY : BankFixture.cpp.i
 
 BankFixture.s: BankFixture.cpp.s
@@ -169,7 +169,7 @@ BankFixture.s: BankFixture.cpp.s
 
 # target to generate assembly for a file
 BankFixture.cpp.s:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s
 .PHONY : BankFixture.cpp.s
 
 runAllTest.o: runAllTest.cpp.o
@@ -178,7 +178,7 @@ runAllTest.o: runAllTest.cpp.o
 
 # target to build an object file
 runAllTest.cpp.o:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o
 .PHONY : runAllTest.cpp.o
 
 runAllTest.i: runAllTest.cpp.i
@@ -187,7 +187,7 @@ runAllTest.i: runAllTest.cpp.i
 
 # target to preprocess a source file
 runAllTest.cpp.i:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i
 .PHONY : runAllTest.cpp.i
 
 runAllTest.s: runAllTest.cpp.s
@@ -196,7 +196,7 @@ runAllTest.s: runAllTest.cpp.s
 
 # target to generate assembly for a file
 runAllTest.cpp.s:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(MAKE) $(MAKESILENT) -f cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build.make cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s
 .PHONY : runAllTest.cpp.s
 
 # Help Target
@@ -225,6 +225,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

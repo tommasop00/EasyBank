@@ -63,10 +63,10 @@ RM = /snap/clion/139/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank
+CMAKE_SOURCE_DIR = /home/tommaso/ClionProject/EasyBank
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tommaso/ClionProject/EasyBank/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/depend.make
@@ -79,29 +79,29 @@ include cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/flags.make
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o: cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/flags.make
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o: test/BankFixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o"
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.o -c /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp > CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp > CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.i
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp -o CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/BankFixture.cpp -o CMakeFiles/runEasyBankTest.dir/BankFixture.cpp.s
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o: cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/flags.make
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o: test/runAllTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o -c /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o"
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.o -c /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp > CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp > CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.i
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp -o CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test/runAllTest.cpp -o CMakeFiles/runEasyBankTest.dir/runAllTest.cpp.s
 
 # Object files for target runEasyBankTest
 runEasyBankTest_OBJECTS = \
@@ -119,8 +119,8 @@ cmake-build-debug/test/runEasyBankTest: lib/libgtest_maind.a
 cmake-build-debug/test/runEasyBankTest: libcore.a
 cmake-build-debug/test/runEasyBankTest: lib/libgtestd.a
 cmake-build-debug/test/runEasyBankTest: cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runEasyBankTest"
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runEasyBankTest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tommaso/ClionProject/EasyBank/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable runEasyBankTest"
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runEasyBankTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build: cmake-build-debug/test/runEasyBankTest
@@ -128,10 +128,10 @@ cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build: cmake-build-debug/t
 .PHONY : cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/build
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/clean:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/runEasyBankTest.dir/cmake_clean.cmake
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/runEasyBankTest.dir/cmake_clean.cmake
 .PHONY : cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/clean
 
 cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/depend:
-	cd /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tommaso/Scrivania/CLionProject/EasyBank /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tommaso/ClionProject/EasyBank/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tommaso/ClionProject/EasyBank /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test /home/tommaso/ClionProject/EasyBank/cmake-build-debug /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test /home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cmake-build-debug/test/CMakeFiles/runEasyBankTest.dir/depend
 

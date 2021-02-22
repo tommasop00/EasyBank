@@ -1,4 +1,4 @@
-# Install script for directory: /home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/test
+# Install script for directory: /home/tommaso/ClionProject/EasyBank/cmake-build-debug/test
 
 # Set the install prefix
 if (NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif ()
 
 if (NOT CMAKE_INSTALL_LOCAL_ONLY)
     # Include the install script for each subdirectory.
-    include("/home/tommaso/Scrivania/CLionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/cmake_install.cmake")
+    include("/home/tommaso/ClionProject/EasyBank/cmake-build-debug/cmake-build-debug/test/lib/googletest/cmake_install.cmake")
 
 endif ()
 

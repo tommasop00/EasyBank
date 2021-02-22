@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
+/home/tommaso/ClionProject/EasyBank/Account/Account.h
 string
 -
 utility
@@ -14,35 +14,35 @@ utility
 vector
 -
 ../FileManager/FileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h
+/home/tommaso/ClionProject/EasyBank/Account/MovementError.h
 exception
 -
 stdexcept
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.h
+/home/tommaso/ClionProject/EasyBank/Account/Movements.h
 ../Observer.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
+/home/tommaso/ClionProject/EasyBank/Observer.h
 Account.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
+/home/tommaso/ClionProject/EasyBank/Account/Account.h
 User.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
+/home/tommaso/ClionProject/EasyBank/Account/User.h
 MovementError.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h
+/home/tommaso/ClionProject/EasyBank/Account/MovementError.h
 cmath
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
+/home/tommaso/ClionProject/EasyBank/Account/Transaction.h
 string
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
+/home/tommaso/ClionProject/EasyBank/Account/User.h
 string
 -
 ../Subject.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h
+/home/tommaso/ClionProject/EasyBank/Subject.h
 memory
 -
 vector
@@ -52,13 +52,13 @@ map
 stdexcept
 -
 ../Utility.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+/home/tommaso/ClionProject/EasyBank/Utility.h
 Account.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
+/home/tommaso/ClionProject/EasyBank/Account/Account.h
 list
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h
 cstdio
 -
 stdexcept
@@ -66,59 +66,59 @@ stdexcept
 vector
 -
 ../Utility.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+/home/tommaso/ClionProject/EasyBank/Utility.h
 string
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.h
 FileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h
 memory
 -
 ../Account/Transaction.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Transaction.h
+/home/tommaso/ClionProject/EasyBank/Account/Transaction.h
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.h
 string
 -
 vector
 -
 FileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
+/home/tommaso/ClionProject/EasyBank/Observer.h
 string
 -
 Account/Account.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Account.h
+/home/tommaso/ClionProject/EasyBank/Account/Account.h
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Subject.h
+/home/tommaso/ClionProject/EasyBank/Subject.h
 vector
 -
 Observer.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Observer.h
+/home/tommaso/ClionProject/EasyBank/Observer.h
 memory
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/Utility.h
+/home/tommaso/ClionProject/EasyBank/Utility.h
 string
 -
 vector
 -
 
-/home/tommaso/Scrivania/CLionProject/EasyBank/main.cpp
+/home/tommaso/ClionProject/EasyBank/main.cpp
 iostream
 -
 Account/User.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/User.h
+/home/tommaso/ClionProject/EasyBank/Account/User.h
 FileManager/FileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/FileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/FileManager.h
 Account/Movements.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/Movements.h
+/home/tommaso/ClionProject/EasyBank/Account/Movements.h
 Account/MovementError.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/Account/MovementError.h
+/home/tommaso/ClionProject/EasyBank/Account/MovementError.h
 FileManager/UserFileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/UserFileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/UserFileManager.h
 FileManager/LogFileManager.h
-/home/tommaso/Scrivania/CLionProject/EasyBank/FileManager/LogFileManager.h
+/home/tommaso/ClionProject/EasyBank/FileManager/LogFileManager.h
 
