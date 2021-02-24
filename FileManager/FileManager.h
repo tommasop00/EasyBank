@@ -19,7 +19,7 @@ public:
         }
     };
 
-    virtual ~FileManager() {
+    ~FileManager() {
         if (file_handle) {
             if (std::fclose(file_handle)) {
             }

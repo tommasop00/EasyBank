@@ -118,7 +118,7 @@ namespace testing {
     public:
         virtual ~MatcherDescriberInterface() {}
 
-        // Describes this matcher to an ostream.  The function should print
+        // Describes this matcher to an ostream.  The function should toString
         // a verb phrase that describes the property a value matching this
         // matcher should have.  The subject of the verb phrase is the value
         // being matched.  For example, the DescribeTo() method of the Gt(7)
@@ -152,9 +152,9 @@ namespace testing {
         // Implementations of MatchAndExplain() should add an explanation of
         // the match result *if and only if* they can provide additional
         // information that's not already present (or not obvious) in the
-        // print-out of x and the matcher's description.  Whether the match
+        // toString-out of x and the matcher's description.  Whether the match
         // succeeds is not a factor in deciding whether an explanation is
-        // needed, as sometimes the caller needs to print a failure message
+        // needed, as sometimes the caller needs to toString a failure message
         // when the match succeeds (e.g. when the matcher is used inside
         // Not()).
         //

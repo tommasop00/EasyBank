@@ -10,8 +10,8 @@
 
 class Transaction {
 public:
-    Transaction(const std::string &from, float ammount, const std::string &to = "") : from(from), to(to),
-                                                                                      ammount(ammount) {}
+    Transaction(const std::string &from, float amount, const std::string &to = "") : from(from), to(to),
+                                                                                     amount(amount) {}
 
     const std::string &getFrom() const {
         return from;
@@ -21,17 +21,14 @@ public:
         return to;
     }
 
-    float getAmmount() const {
-        return ammount;
-    }
 
-    std::string print() const;
+    std::string toString() const;
 
 
 private:
     std::string from;
     std::string to;
-    float ammount;
+    float amount;
 };
 
 

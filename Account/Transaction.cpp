@@ -4,6 +4,6 @@
 
 #include "Transaction.h"
 
-std::string Transaction::print() const {
-    return from + " " + std::to_string(ammount) + " " + to;
+std::string Transaction::toString() const {
+    return from + " " + std::to_string(amount) + " " + to;
 }

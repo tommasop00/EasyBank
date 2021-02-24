@@ -30,12 +30,12 @@
 
 // Google Test - The Google C++ Testing and Mocking Framework
 //
-// This file implements a universal value printer that can print a
+// This file implements a universal value printer that can toString a
 // value of any type T:
 //
 //   void ::testing::internal::UniversalPrinter<T>::Print(value, ostream_ptr);
 //
-// A user can teach this function how to print a class type T by
+// A user can teach this function how to toString a class type T by
 // defining either operator<<() or PrintTo() in the namespace that
 // defines T.  More specifically, the FIRST defined function in the
 // following list will be used (assuming T is defined in namespace
@@ -49,8 +49,8 @@
 // unless foo::PrintTo(const T&, ostream*) is defined. Note that
 // operator<<() is ignored for container types.
 //
-// If none of the above is defined, it will print the debug string of
-// the value if it is a protocol buffer, or print the raw bytes in the
+// If none of the above is defined, it will toString the debug string of
+// the value if it is a protocol buffer, or toString the raw bytes in the
 // value otherwise.
 //
 // To aid debugging: when T is a reference type, the address of the
@@ -84,11 +84,11 @@
 //
 // Known limitation:
 //
-// The print primitives print the elements of an STL-style container
+// The toString primitives toString the elements of an STL-style container
 // using the compiler-inferred type of *iter where iter is a
 // const_iterator of the container.  When const_iterator is an input
 // iterator but not a forward iterator, this inferred type may not
-// match value_type, and the print output may be incorrect.  In
+// match value_type, and the toString output may be incorrect.  In
 // practice, this is rarely a problem as for most containers
 // const_iterator is a forward iterator.  We'll fix this if there's an
 // actual need for it.  Note that this fix cannot rely on value_type
@@ -120,7 +120,7 @@ namespace testing {
         template<typename T>
         void UniversalPrint(const T &value, ::std::ostream *os);
 
-// Used to print an STL-style container when the user doesn't define
+// Used to toString an STL-style container when the user doesn't define
 // a PrintTo() for it.
         struct ContainerPrinter {
             template<typename T,
@@ -128,7 +128,7 @@ namespace testing {
                             (sizeof(IsContainerTest<T>(0)) == sizeof(IsContainer)) &&
                             !IsRecursiveContainer<T>::value>::type>
             static void PrintValue(const T &container, std::ostream *os) {
-                const size_t kMaxCount = 32;  // The maximum number of elements to print.
+                const size_t kMaxCount = 32;  // The maximum number of elements to toString.
                 *os << '{';
                 size_t count = 0;
                 for (auto &&elem : container) {
@@ -153,7 +153,7 @@ namespace testing {
             }
         };
 
-// Used to print a pointer that is neither a char pointer nor a member
+// Used to toString a pointer that is neither a char pointer nor a member
 // pointer, when the user doesn't define PrintTo() for it.  (A member
 // variable pointer or member function pointer doesn't really point to
 // a location in the address space.  Their representation is
@@ -167,7 +167,7 @@ namespace testing {
                     *os << "NULL";
                 } else {
                     // T is a function type, so '*os << p' doesn't do what we want
-                    // (it just prints p as bool).  We want to print p as a const
+                    // (it just prints p as bool).  We want to toString p as a const
                     // void*.
                     *os << reinterpret_cast<const void *>(p);
                 }
@@ -180,7 +180,7 @@ namespace testing {
                 if (p == nullptr) {
                     *os << "NULL";
                 } else {
-                    // T is not a function type.  We just call << to print p,
+                    // T is not a function type.  We just call << to toString p,
                     // relying on ADL to pick up user-defined << for their pointer
                     // types, if any.
                     *os << p;
@@ -201,7 +201,7 @@ namespace testing {
 
             struct StreamPrinter {
                 template<typename T,
-                        // Don't accept member pointers here. We'd print them via implicit
+                        // Don't accept member pointers here. We'd toString them via implicit
                         // conversion to bool, which isn't useful.
                         typename = typename std::enable_if<
                                 !std::is_member_pointer<T>::value>::type,
@@ -219,8 +219,8 @@ namespace testing {
         }  // namespace internal_stream_operator_without_lexical_name_lookup
 
         struct ProtobufPrinter {
-            // We print a protobuf using its ShortDebugString() when the string
-            // doesn't exceed this many characters; otherwise we print it using
+            // We toString a protobuf using its ShortDebugString() when the string
+            // doesn't exceed this many characters; otherwise we toString it using
             // DebugString() for better readability.
             static const size_t kProtobufOneLinerMaxLength = 50;
 
@@ -238,7 +238,7 @@ namespace testing {
 
         struct ConvertibleToIntegerPrinter {
             // Since T has no << operator or PrintTo() but can be implicitly
-            // converted to BiggestInt, we print it as a BiggestInt.
+            // converted to BiggestInt, we toString it as a BiggestInt.
             //
             // Most likely T is an enum type (either named or unnamed), in which
             // case printing it as an integer is the desired behavior.  In case
@@ -315,7 +315,7 @@ namespace testing {
 // compared by value with the string object.  If the value is a char
 // pointer but the other operand is not an STL string object, we don't
 // know whether the pointer is supposed to point to a NUL-terminated
-// string, and thus want to print it as a pointer to be safe.
+// string, and thus want to toString it as a pointer to be safe.
 //
 // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
 
@@ -337,7 +337,7 @@ namespace testing {
             }
         };
 
-// By default, print C string as pointers to be safe, as we don't know
+// By default, toString C string as pointers to be safe, as we don't know
 // whether they actually point to a NUL-terminated string.
 
 #define GTEST_IMPL_FORMAT_C_STRING_AS_POINTER_(CharType)                \
@@ -373,7 +373,7 @@ namespace testing {
 #undef GTEST_IMPL_FORMAT_C_STRING_AS_POINTER_
 
 // If a C string is compared with an STL string object, we know it's meant
-// to point to a NUL-terminated string, and thus can print it as a string.
+// to point to a NUL-terminated string, and thus can toString it as a string.
 
 #define GTEST_IMPL_FORMAT_C_STRING_AS_STRING_(CharType, OtherStringType) \
   template <>                                                           \
@@ -414,8 +414,8 @@ namespace testing {
 // Formats a comparison assertion (e.g. ASSERT_EQ, EXPECT_LT, and etc)
 // operand to be used in a failure message.  The type (but not value)
 // of the other operand may affect the format.  This allows us to
-// print a char* as a raw pointer when it is compared against another
-// char* or void*, and print it as a C string when it is compared
+// toString a char* as a raw pointer when it is compared against another
+// char* or void*, and toString it as a C string when it is compared
 // against an std::string object, for example.
 //
 // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
@@ -452,7 +452,7 @@ namespace testing {
         }
 
 // The following list of PrintTo() overloads tells
-// UniversalPrinter<T>::Print() how to print standard types (built-in
+// UniversalPrinter<T>::Print() how to toString standard types (built-in
 // types, strings, plain arrays, and pointers).
 
 // Overloads for various char types.
@@ -501,7 +501,7 @@ namespace testing {
         }
 
 // signed/unsigned char is often used for representing binary data, so
-// we print pointers to it as void* to be safe.
+// we toString pointers to it as void* to be safe.
         inline void PrintTo(const signed char *s, ::std::ostream *os) {
             PrintTo(ImplicitCast_<const void *>(s), os);
         }

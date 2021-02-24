@@ -150,9 +150,10 @@ Fatal assertion          | Nonfatal assertion       | Verifies
 Value arguments must be comparable by the assertion's comparison operator or you'll get a compiler error. We used to
 require the arguments to support the
 `<<` operator for streaming to an `ostream`, but this is no longer necessary. If
-`<<` is supported, it will be called to print the arguments when the assertion fails; otherwise googletest will attempt
-to print them in the best way it can. For more details and how to customize the printing of the arguments, see the
-[documentation](advanced.md#teaching-googletest-how-to-print-your-values).
+`<<` is supported, it will be called to toString the arguments when the assertion fails; otherwise googletest will
+attempt to toString them in the best way it can. For more details and how to customize the printing of the arguments,
+see the
+[documentation](advanced.md#teaching-googletest-how-to-toString-your-values).
 
 These assertions can work with a user-defined type, but only if you define the corresponding comparison operator (
 e.g., `==` or `<`). Since this is discouraged by the Google

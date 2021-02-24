@@ -12,7 +12,6 @@
 
 class AccountSuite : public ::testing::Test {
 protected:
-    float ammount = 10;
     int id = 1;
     std::string a = "fjdsk", b = "fjdskl", c = "fhjdks";
     Account *at = new Account(10, a, b, id, c);
@@ -21,7 +20,6 @@ protected:
     AccountFileManager *fileAccount = new AccountFileManager("./fileTXT/accountFile.txt");
     LogFileManager *fileLog = new LogFileManager("./fileTXT/log.txt");
     Movements *movement = new Movements(user);
-
 
 };
 
@@ -42,15 +40,15 @@ TEST_F(AccountSuite, movementAccount) {
 
 
 TEST_F(AccountSuite, logFile) {
-    auto t = fileLog->getallTransiction("IT00A0004");
+    auto t = fileLog->getAllTransiction("IT00A0004");
     EXPECT_EQ(t.size(), 7);
 }
 
 TEST_F(AccountSuite, movementLog) {
     user->setSelectedIban("IT00A0002");
     movement->makeMovement(10, 'b', "IT00A0005");
-    auto t = fileLog->getallTransiction("IT00A0005");
-    EXPECT_EQ(t.at(t.size() - 1).get()->print(), "IT00A0002 10.000000 IT00A0005");
+    auto t = fileLog->getAllTransiction("IT00A0005");
+    EXPECT_EQ(t.at(t.size() - 1).get()->toString(), "IT00A0002 10.000000 IT00A0005");
 }
 
 TEST_F(AccountSuite, utilityTEST) {

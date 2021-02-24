@@ -16,7 +16,7 @@ public:
 
     virtual ~LogFileManager() {}
 
-    std::vector<std::unique_ptr<Transaction>> getallTransiction(const std::string &iban);
+    std::vector<std::unique_ptr<Transaction>> getAllTransiction(const std::string &iban);
 
     void addNewTransaction(std::string f, float a, std::string t = "");
 

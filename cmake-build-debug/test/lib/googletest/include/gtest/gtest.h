@@ -242,7 +242,7 @@ namespace testing {
 //   }
 //
 // Then the failed expectation EXPECT_TRUE(IsEven(Fib(5)))
-// will print the message
+// will toString the message
 //
 //   Value of: IsEven(Fib(5))
 //     Actual: false (5 is odd)
@@ -268,7 +268,7 @@ namespace testing {
 //       return testing::AssertionFailure() << n << " is odd";
 //   }
 //
-// Then a statement EXPECT_FALSE(IsEven(Fib(6))) will print
+// Then a statement EXPECT_FALSE(IsEven(Fib(6))) will toString
 //
 //   Value of: IsEven(Fib(6))
 //     Actual: true (8 is even)

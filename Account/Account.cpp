@@ -21,8 +21,8 @@ const std::string Account::generateNewIban() {
 
 }
 
-std::string Account::print() const {
-    return iban + " " + std::to_string(ammount) + " " + fc + " " + nameProprietary;
+std::string Account::toString() const {
+    return iban + " " + std::to_string(amount) + " " + fc + " " + nameProprietary;
 }
 
 

@@ -69,7 +69,7 @@ The `EXPECT_EQ()` macro takes the *expected* value as its first argument and the
 `EXPECT_EQ(NULL, some_expression)`, and this indeed was requested several times. Therefore we implemented it.
 
 The need for `EXPECT_NE(NULL, ptr)` isn't nearly as strong. When the assertion fails, you already know that `ptr` must
-be `NULL`, so it doesn't add any information to print `ptr` in this case. That means `EXPECT_TRUE(ptr != NULL)`
+be `NULL`, so it doesn't add any information to toString `ptr` in this case. That means `EXPECT_TRUE(ptr != NULL)`
 works just as well.
 
 If we were to support `EXPECT_NE(NULL, ptr)`, for consistency we'll have to support `EXPECT_NE(ptr, NULL)` as well, as
@@ -593,7 +593,7 @@ fork-and-exec-style death tests are implemented.
 ## The compiler complains about "no match for 'operator<<'" when I use an assertion. What gives?
 
 If you use a user-defined type `FooType` in an assertion, you must make sure there is
-an `std::ostream& operator<<(std::ostream&, const FooType&)` function defined such that we can print a value
+an `std::ostream& operator<<(std::ostream&, const FooType&)` function defined such that we can toString a value
 of `FooType`.
 
 In addition, if `FooType` is declared in a nameProprietary space, the `<<` operator also needs to be defined in the *

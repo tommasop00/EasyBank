@@ -191,7 +191,7 @@ bool IsEven(int n) {
 }
 ```
 
-the failed assertion `EXPECT_TRUE(IsEven(Fib(4)))` will print:
+the failed assertion `EXPECT_TRUE(IsEven(Fib(4)))` will toString:
 
 ```none
 Value of: IsEven(Fib(4))
@@ -220,7 +220,7 @@ testing::AssertionResult IsEven(int n) {
 }
 ```
 
-Then the statement `EXPECT_FALSE(IsEven(Fib(6)))` will print
+Then the statement `EXPECT_FALSE(IsEven(Fib(6)))` will toString
 
 ```none
   Value of: IsEven(Fib(6))
@@ -500,7 +500,8 @@ partially-destructed state! You almost certainly want to `abort` or use
 When a test assertion such as `EXPECT_EQ` fails, googletest prints the argument values to help you debug. It does this
 using a user-extensible value printer.
 
-This printer knows how to print built-in C++ types, native arrays, STL containers, and any type that supports the `<<`
+This printer knows how to toString built-in C++ types, native arrays, STL containers, and any type that supports
+the `<<`
 operator. For other types, it prints the raw bytes in the value and hopes that you the user can figure it out.
 
 As mentioned earlier, the printer is *extensible*. That means you can teach it to do a better job at printing your
@@ -511,11 +512,11 @@ particular type than to dump the bytes. To do that, define `<<` for your type:
 
 namespace foo {
 
-class Bar {  // We want googletest to be able to print instances of this.
+class Bar {  // We want googletest to be able to toString instances of this.
 ...
   // Create a free inline friend function.
   friend std::ostream& operator<<(std::ostream& os, const Bar& bar) {
-    return os << bar.DebugString();  // whatever needed to print bar to os
+    return os << bar.DebugString();  // whatever needed to toString bar to os
   }
 };
 
@@ -523,7 +524,7 @@ class Bar {  // We want googletest to be able to print instances of this.
 // << operator is defined in the SAME namespace that defines Bar.  C++'s look-up
 // rules rely on that.
 std::ostream& operator<<(std::ostream& os, const Bar& bar) {
-  return os << bar.DebugString();  // whatever needed to print bar to os
+  return os << bar.DebugString();  // whatever needed to toString bar to os
 }
 
 }  // namespace foo
@@ -541,7 +542,7 @@ namespace foo {
 class Bar {
   ...
   friend void PrintTo(const Bar& bar, std::ostream* os) {
-    *os << bar.DebugString();  // whatever needed to print bar to os
+    *os << bar.DebugString();  // whatever needed to toString bar to os
   }
 };
 
@@ -549,7 +550,7 @@ class Bar {
 // is defined in the SAME namespace that defines Bar.  C++'s look-up rules rely
 // on that.
 void PrintTo(const Bar& bar, std::ostream* os) {
-  *os << bar.DebugString();  // whatever needed to print bar to os
+  *os << bar.DebugString();  // whatever needed to toString bar to os
 }
 
 }  // namespace foo
@@ -559,7 +560,7 @@ If you have defined both `<<` and `PrintTo()`, the latter will be used when goog
 customize how the value appears in googletest's output without affecting code that relies on the behavior of its
 `<<` operator.
 
-If you want to print a value `x` using googletest's value printer yourself, just call `::testing::PrintToString(x)`,
+If you want to toString a value `x` using googletest's value printer yourself, just call `::testing::PrintToString(x)`,
 which returns an `std::string`:
 
 ```c++
@@ -672,7 +673,7 @@ TEST(MyDeathTest, KillMyself) {
 verifies that:
 
 * calling `Foo(5)` causes the process to die with the given error message,
-* calling `NormalExit()` causes the process to print `"Success"` to stderr and exit with exit code 0, and
+* calling `NormalExit()` causes the process to toString `"Success"` to stderr and exit with exit code 0, and
 * calling `KillMyself()` kills the process with signal `SIGKILL`.
 
 The test function body may contain other assertions and statements as well, if necessary.
@@ -1977,7 +1978,7 @@ TEST_F(DISABLED_BarTest, DoesXyz) { ... }
 ```
 
 NOTE: This feature should only be used for temporary pain-relief. You still have to fix the disabled tests at a later
-date. As a reminder, googletest will print a banner warning you if a test program contains any disabled tests.
+date. As a reminder, googletest will toString a banner warning you if a test program contains any disabled tests.
 
 TIP: You can easily count the number of disabled tests you have using `gsearch`
 and/or `grep`. This number can be used as a metric for improving your test quality.

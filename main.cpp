@@ -116,9 +116,9 @@ int main() {
                             case 't':
                                 try {
                                     LogFileManager logManager("./fileTXT/log.txt");
-                                    auto allLog = logManager.getallTransiction(userAccount->getSelectedIban());
+                                    auto allLog = logManager.getAllTransiction(userAccount->getSelectedIban());
                                     for (const auto &log : allLog) {
-                                        std::cout << log->print() << std::endl;
+                                        std::cout << log->toString() << std::endl;
                                     }
                                 } catch (std::runtime_error &e) {
                                     std::cerr << e.what() << std::endl;
@@ -219,34 +219,34 @@ char presentMenu(const char liv) {
 void doTransfer(User *pa, Movements *movementObj, char type) {
     std::string ibanOther;
     std::string temp;
-    float ammount;
+    float amount;
     std::cout << "Inserire valore movimento" << std::endl;
     std::cin >> temp;
-    ammount = std::stof(temp);
+    amount = std::stof(temp);
 
     if (type == 'b' || type == 'o') {
         std::cout << "Inserire iban con cui fare il movimento" << std::endl;
         std::cin >> ibanOther;
-        movementObj->makeMovement(ammount, type, ibanOther);
+        movementObj->makeMovement(amount, type, ibanOther);
 
     } else if (type == 'v' || type == 'p') {
         ibanOther = pa->getSelectedIban();
-        movementObj->makeMovement(ammount, type);
+        movementObj->makeMovement(amount, type);
     }
 }
 
 void createNewCurrentAccount(User *userAccount) {
-    std::string ammount, fc, name;
+    std::string amount, fc, name;
     std::cout << "Inserisca valore conto iniziale" << std::endl;
-    std::cin >> ammount;
+    std::cin >> amount;
     std::cout << "Inserisca il suo codice fiscale" << std::endl;
     std::cin >> fc;
     std::cout << "Inserisca il suo nome" << std::endl;
     std::cin >> name;
-    float ammountFloat;
+    float amountFloat;
     try {
-        ammountFloat = std::stof(ammount);
-        userAccount->createNewCurrentAccount(ammountFloat, fc, name, userAccount->getUser().second);
+        amountFloat = std::stof(amount);
+        userAccount->createNewCurrentAccount(amountFloat, fc, name, userAccount->getUser().second);
     } catch (std::invalid_argument &e) {
         std::cerr << "caratteri non validi : " << e.what() << std::endl;
         chooseAccount(userAccount);

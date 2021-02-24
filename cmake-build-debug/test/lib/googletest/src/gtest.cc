@@ -318,10 +318,10 @@ namespace testing {
                                " should randomize tests' order on every run.");
 
     GTEST_DEFINE_int32_(
-            stack_trace_depth,
-            internal::Int32FromGTestEnv("stack_trace_depth", kMaxStackTraceDepth),
-            "The maximum number of stack frames to print when an "
-            "assertion fails.  The valid range is 0 through 100, inclusive.");
+    stack_trace_depth,
+    internal::Int32FromGTestEnv("stack_trace_depth", kMaxStackTraceDepth),
+    "The maximum number of stack frames to toString when an "
+    "assertion fails.  The valid range is 0 through 100, inclusive.");
 
     GTEST_DEFINE_string_(
             stream_result_to,
@@ -6066,7 +6066,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                             printf("%s.", test_suite->name());
                             if (test_suite->type_param() != nullptr) {
                                 printf("  # %s = ", kTypeParamLabel);
-                                // We print the type parameter on a single line to make
+                                // We toString the type parameter on a single line to make
                                 // the output easy to parse by a program.
                                 PrintOnOneLine(test_suite->type_param(), kMaxParamLength);
                             }
@@ -6075,7 +6075,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
                         printf("  %s", test_info->name());
                         if (test_info->value_param() != nullptr) {
                             printf("  # %s = ", kValueParamLabel);
-                            // We print the value parameter on a single line to make the
+                            // We toString the value parameter on a single line to make the
                             // output easy to parse by a program.
                             PrintOnOneLine(test_info->value_param(), kMaxParamLength);
                         }
@@ -6306,7 +6306,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
 // Determines whether a string has a prefix that Google Test uses for its
 // flags, i.e., starts with GTEST_FLAG_PREFIX_ or GTEST_FLAG_PREFIX_DASH_.
 // If Google Test detects that a command line flag has its prefix but is not
-// recognized, it will print its help message. Flags starting with
+// recognized, it will toString its help message. Flags starting with
 // GTEST_INTERNAL_PREFIX_ followed by "internal_" are considered Google Test
 // internal flags and do not trigger the help message.
         static bool HasGoogleTestFlagPrefix(const char *str) {
@@ -6331,7 +6331,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             GTestColor color = GTestColor::kDefault;  // The current color.
 
             // Conceptually, we split the string into segments divided by escape
-            // sequences.  Then we print one segment at a time.  At the end of
+            // sequences.  Then we toString one segment at a time.  At the end of
             // each iteration, the str pointer advances to the beginning of the
             // next segment.
             for (;;) {
@@ -6401,10 +6401,10 @@ void TestEventRepeater::Name(const Type& parameter) { \
                 "      Enable/disable colored output. The default is @Gauto@D.\n"
                 "  @G--" GTEST_FLAG_PREFIX_
                 "brief=1@D\n"
-                "      Only print test failures.\n"
+                "      Only toString test failures.\n"
                 "  @G--" GTEST_FLAG_PREFIX_
                 "print_time=0@D\n"
-                "      Don't print the elapsed time of each test.\n"
+                "      Don't toString the elapsed time of each test.\n"
                 "  @G--" GTEST_FLAG_PREFIX_
                 "output=@Y(@Gjson@Y|@Gxml@Y)[@G:@YDIRECTORY_PATH@G" GTEST_PATH_SEP_
                 "@Y|@G:@YFILE_PATH]@D\n"
@@ -6554,7 +6554,7 @@ void TestEventRepeater::Name(const Type& parameter) { \
             }
 
             if (g_help_flag) {
-                // We print the help here instead of in RUN_ALL_TESTS(), as the
+                // We toString the help here instead of in RUN_ALL_TESTS(), as the
                 // latter may not be called at all if the user is using Google
                 // Test with another testing framework.
                 PrintColorEncoded(kColorEncodedHelpMessage);

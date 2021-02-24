@@ -21,7 +21,7 @@ void Movements::update() {
 }
 
 
-void Movements::makeMovement(float ammount, char type, std::string ibanOther) {
+void Movements::makeMovement(float amount, char type, std::string ibanOther) {
     const char *path1 = "./fileTXT/accountFile.txt";
 
     const char *pathlog = "./fileTXT/log.txt";
@@ -34,36 +34,36 @@ void Movements::makeMovement(float ammount, char type, std::string ibanOther) {
             throw MovementError("Iban non trovato");
     }
     if (type == 'b') {
-        float ammountAccount = allAccount.find(this->currentIban)->second->getAmmount();
-        if (ammountAccount >= ammount) {
-            allAccount.find(this->currentIban)->second->setAmmount(
-                    allAccount.find(this->currentIban)->second->getAmmount() - ammount);
-            allAccount.find(ibanOther)->second->setAmmount(allAccount.find(ibanOther)->second->getAmmount() + ammount);
-            logManager.addNewTransaction(this->currentIban, ammount, ibanOther);
+        float amountAccount = allAccount.find(this->currentIban)->second->getAmount();
+        if (amountAccount >= amount) {
+            allAccount.find(this->currentIban)->second->setAmount(
+                    allAccount.find(this->currentIban)->second->getAmount() - amount);
+            allAccount.find(ibanOther)->second->setAmount(allAccount.find(ibanOther)->second->getAmount() + amount);
+            logManager.addNewTransaction(this->currentIban, amount, ibanOther);
         } else {
             throw MovementError("Il movimento è maggiore del valore del conto");
         }
     } else if (type == 'o') {
-        float ammountAccount = allAccount.find(ibanOther)->second->getAmmount();
-        if (ammountAccount >= ammount) {
-            allAccount.find(this->currentIban)->second->setAmmount(
-                    allAccount.find(this->currentIban)->second->getAmmount() + ammount);
-            allAccount.find(ibanOther)->second->setAmmount(allAccount.find(ibanOther)->second->getAmmount() - ammount);
-            logManager.addNewTransaction(ibanOther, ammount, this->currentIban);
+        float amountAccount = allAccount.find(ibanOther)->second->getAmount();
+        if (amountAccount >= amount) {
+            allAccount.find(this->currentIban)->second->setAmount(
+                    allAccount.find(this->currentIban)->second->getAmount() + amount);
+            allAccount.find(ibanOther)->second->setAmount(allAccount.find(ibanOther)->second->getAmount() - amount);
+            logManager.addNewTransaction(ibanOther, amount, this->currentIban);
 
         } else {
             throw MovementError("Il movimento è maggiore del valore del conto");
         }
     } else if (type == 'v') {
-        allAccount.find(this->currentIban)->second->setAmmount(
-                allAccount.find(this->currentIban)->second->getAmmount() + ammount);
-        logManager.addNewTransaction(this->currentIban, ammount);
+        allAccount.find(this->currentIban)->second->setAmount(
+                allAccount.find(this->currentIban)->second->getAmount() + amount);
+        logManager.addNewTransaction(this->currentIban, amount);
     } else if (type == 'p') {
-        float ammountAccount = allAccount.find(this->currentIban)->second->getAmmount();
-        if (ammountAccount >= ammount) {
-            allAccount.find(this->currentIban)->second->setAmmount(
-                    allAccount.find(this->currentIban)->second->getAmmount() - ammount);
-            logManager.addNewTransaction(this->currentIban, -ammount);
+        float amountAccount = allAccount.find(this->currentIban)->second->getAmount();
+        if (amountAccount >= amount) {
+            allAccount.find(this->currentIban)->second->setAmount(
+                    allAccount.find(this->currentIban)->second->getAmount() - amount);
+            logManager.addNewTransaction(this->currentIban, -amount);
         } else {
             throw MovementError("Il movimento è maggiore del valore del conto");
         }

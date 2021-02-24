@@ -30,7 +30,7 @@
 
 // Google Test - The Google C++ Testing and Mocking Framework
 //
-// This file implements a universal value printer that can print a
+// This file implements a universal value printer that can toString a
 // value of any type T:
 //
 //   void ::testing::internal::UniversalPrinter<T>::Print(value, ostream_ptr);
@@ -107,7 +107,7 @@ namespace testing {
 
     namespace internal {
 
-// Delegates to PrintBytesInObjectToImpl() to print the bytes in the
+// Delegates to PrintBytesInObjectToImpl() to toString the bytes in the
 // given object.  The delegation simplifies the implementation, which
 // uses the << operator and thus is easier done outside of the
 // ::testing::internal namespace, which contains a << operator that
@@ -117,7 +117,7 @@ namespace testing {
             PrintBytesInObjectToImpl(obj_bytes, count, os);
         }
 
-// Depending on the value of a char (or wchar_t), we print it in one
+// Depending on the value of a char (or wchar_t), we toString it in one
 // of three formats:
 //   - as is if it's a printable ASCII (e.g. 'a', '2', ' '),
 //   - as a hexadecimal escape sequence (e.g. '\x7F'), or
@@ -216,19 +216,19 @@ namespace testing {
 // UnsignedChar is the unsigned version of Char, which is the type of c.
         template<typename UnsignedChar, typename Char>
         void PrintCharAndCodeTo(Char c, ostream *os) {
-            // First, print c as a literal in the most readable form we can find.
+            // First, toString c as a literal in the most readable form we can find.
             *os << ((sizeof(c) > 1) ? "L'" : "'");
             const CharFormat format = PrintAsCharLiteralTo<UnsignedChar>(c, os);
             *os << "'";
 
-            // To aid user debugging, we also print c's code in decimal, unless
+            // To aid user debugging, we also toString c's code in decimal, unless
             // it's 0 (in which case c was printed as '\\0', making the code
             // obvious).
             if (c == 0)
                 return;
             *os << " (" << static_cast<int>(c);
 
-            // For more convenience, we print c's code again in hexadecimal,
+            // For more convenience, we toString c's code again in hexadecimal,
             // unless c was already printed in the form '\x##' or the code is in
             // [1, 9].
             if (format == kHexEscape || (1 <= c && c <= 9)) {
@@ -304,7 +304,7 @@ namespace testing {
             //   const char kFoo[] = "foo";
             // generates an array of 4, not 3, elements, with the last one being '\0'.
             //
-            // Therefore when printing a char array, we don't print the last element if
+            // Therefore when printing a char array, we don't toString the last element if
             // it's '\0', such that the output matches the string literal as it's
             // written in the source code.
             if (len > 0 && begin[len - 1] == '\0') {
@@ -314,7 +314,7 @@ namespace testing {
 
             // If, however, the last element in the array is not '\0', e.g.
             //    const char kFoo[] = { 'f', 'o', 'o' };
-            // we must print the entire array.  We also print a message to indicate
+            // we must toString the entire array.  We also toString a message to indicate
             // that the array is not NUL-terminated.
             PrintCharsAsStringTo(begin, len, os);
             *os << " (no terminating NUL)";

@@ -11,9 +11,9 @@ std::map<std::string, std::unique_ptr<Account>> AccountFileManager::getAllAccoun
     std::vector<std::string> arraySplit;
     for (auto account : ibanAccounts) {
         arraySplit = split(account, ' ', 5);
-        float ammount = std::stof(arraySplit[2]);
+        float amount = std::stof(arraySplit[2]);
         int id = std::stoi(arraySplit[0]);
-        std::unique_ptr<Account> a(new Account(ammount, arraySplit[3], arraySplit[4], id, arraySplit[1]));
+        std::unique_ptr<Account> a(new Account(amount, arraySplit[3], arraySplit[4], id, arraySplit[1]));
         ret.insert(std::make_pair(arraySplit[1], std::move(a)));
     }
     return ret;
@@ -29,7 +29,7 @@ void AccountFileManager::updateFile(std::map<std::string, std::unique_ptr<Accoun
 
     for (const auto &account: allAccount) {
         std::string temp = std::to_string(account.second->getId()) + " " + account.second->getIban() + " " +
-                           std::to_string(account.second->getAmmount()) + " " + account.second->getfc() + " " +
+                           std::to_string(account.second->getAmount()) + " " + account.second->getfc() + " " +
                            account.second->getSurnameBusinessName();
         if (first == false) {
             fileManager2.write(temp, true);
@@ -51,9 +51,9 @@ void AccountFileManager::updateFile(std::map<std::string, std::unique_ptr<Accoun
     }
 }
 
-float AccountFileManager::getAmmount(const std::string iban) {
+float AccountFileManager::getAmount(const std::string iban) {
     auto t = this->getAllAccountFromFile();
-    return t.find(iban)->second->getAmmount();
+    return t.find(iban)->second->getAmount();
 }
 
 

@@ -16,13 +16,13 @@ public:
 
     Account(float ammount, std::string &FC, std::string &nameProprietary, int &id, std::string &iban) : id(id),
                                                                                                         iban(iban),
-                                                                                                        ammount(
+                                                                                                        amount(
                                                                                                                 ammount),
                                                                                                         fc(FC),
                                                                                                         nameProprietary(
                                                                                                                 nameProprietary) {}
 
-    Account(float ammount, std::string &FC, std::string &nameProprietary, int id) : ammount(ammount),
+    Account(float ammount, std::string &FC, std::string &nameProprietary, int id) : amount(ammount),
                                                                                     fc(FC),
                                                                                     nameProprietary(nameProprietary),
                                                                                     id(id) {
@@ -30,11 +30,10 @@ public:
         this->iban = ibanRet;
         FileManager fileManager("./fileTXT/accountFile.txt");
         std::string accountString =
-                std::to_string(this->id) + " " + this->iban + " " + std::to_string(this->ammount) + " " + this->fc +
+                std::to_string(this->id) + " " + this->iban + " " + std::to_string(this->amount) + " " + this->fc +
                 " " + this->nameProprietary;
         fileManager.write(accountString);
     };
-
 
 
     const std::string &getIban() const {
@@ -45,12 +44,12 @@ public:
         return fc;
     }
 
-    float getAmmount() const {
-        return ammount;
+    float getAmount() const {
+        return amount;
     }
 
-    void setAmmount(float ammount) {
-        this->ammount = ammount;
+    void setAmount(float amount) {
+        this->amount = amount;
     }
 
     int getId() const {
@@ -63,13 +62,13 @@ public:
 
     const std::string generateNewIban();
 
-    std::string print() const;
+    std::string toString() const;
 
 protected:
     int id;
     std::string iban;
     std::string fc;
-    float ammount;
+    float amount;
     std::string nameProprietary;
 
 };

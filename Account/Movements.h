@@ -20,10 +20,10 @@ public:
     };
 
     virtual ~Movements() {
-        this->detach();
+        detach();
     };
 
-    void makeMovement(float ammount, char type, std::string ibanOther = "");
+    void makeMovement(float amount, char type, std::string ibanOther = "");
 
     void update() override;
 

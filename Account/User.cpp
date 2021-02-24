@@ -17,8 +17,8 @@ const std::string &User::getSelectedIban() const {
     return selectedIban;
 }
 
-void User::setSelectedIban(const std::string &selectedIbanmain) {
-    selectedIban = selectedIbanmain;
+void User::setSelectedIban(const std::string &selectedIbanMain) {
+    selectedIban = selectedIbanMain;
     this->notify();
 }
 
@@ -80,7 +80,7 @@ const std::list<Observer *> &User::getObservers() const {
 
 float User::getAmount() const {
     AccountFileManager fileManager("./fileTXT/accountFile.txt");
-    return fileManager.getAmmount(selectedIban);
+    return fileManager.getAmount(selectedIban);
 }
 
 const std::pair<std::string, int> &User::getUser() const {
@@ -92,9 +92,9 @@ void User::pushIban(std::unique_ptr<Account> a) {
     this->notify();
 }
 
-void User::createNewCurrentAccount(float ammount, std::string fc, std::string name, int id) {
-    if (ammount >= 0) {
-        std::unique_ptr<Account> a(new Account(ammount, fc, name, id));
+void User::createNewCurrentAccount(float amount, std::string fc, std::string name, int id) {
+    if (amount >= 0) {
+        std::unique_ptr<Account> a(new Account(amount, fc, name, id));
         setSelectedIban(a->getIban());
         pushIban(std::move(a));
     } else {

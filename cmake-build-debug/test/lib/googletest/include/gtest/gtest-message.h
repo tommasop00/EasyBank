@@ -78,7 +78,7 @@ namespace testing {
 //   foo << 1 << " != " << 2;
 //   std::cout << foo;
 //
-// will print "1 != 2".
+// will toString "1 != 2".
 //
 // Message is not intended to be inherited from.  In particular, its
 // destructor is not virtual.

@@ -22,10 +22,7 @@ public:
 
     void updateFile(std::map<std::string, std::unique_ptr<Account>> &allAccount);
 
-    float getAmmount(const std::string iban);
-
-
-private:
+    float getAmount(const std::string iban);
 };
 
 
