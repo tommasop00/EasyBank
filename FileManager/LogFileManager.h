@@ -14,6 +14,8 @@ class LogFileManager : public FileManager {
 public:
     LogFileManager(const char *filename, const char *type = "a+") : FileManager(filename, type) {}
 
+    virtual ~LogFileManager() {}
+
     std::vector<std::unique_ptr<Transaction>> getallTransiction(const std::string &iban);
 
     void addNewTransaction(std::string f, float a, std::string t = "");

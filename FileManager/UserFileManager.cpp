@@ -30,3 +30,5 @@ bool UserFileManager::findUsername(std::string &username) {
     }
     return false;
 }
+
+

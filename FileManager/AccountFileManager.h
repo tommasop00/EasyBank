@@ -16,11 +16,14 @@ class AccountFileManager : public FileManager {
 public:
     AccountFileManager(const char *filename, const char *type = "a+") : FileManager(filename, type) {}
 
+    virtual ~AccountFileManager() {};
+
     std::map<std::string, std::unique_ptr<Account>> getAllAccountFromFile();
 
     void updateFile(std::map<std::string, std::unique_ptr<Account>> &allAccount);
 
     float getAmmount(const std::string iban);
+
 
 private:
 };

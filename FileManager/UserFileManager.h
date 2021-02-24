@@ -15,6 +15,8 @@ class UserFileManager : public FileManager {
 public:
     UserFileManager(const char *filename, const char *type = "a+") : FileManager(filename, type) {}
 
+    virtual ~UserFileManager() {}
+
     int login(std::string &username, std::string &password);
 
     bool findUsername(std::string &username);

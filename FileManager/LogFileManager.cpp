@@ -33,3 +33,4 @@ void LogFileManager::addNewTransaction(std::string f, float a, std::string t) {
     this->write(temp);
 }
 
+
